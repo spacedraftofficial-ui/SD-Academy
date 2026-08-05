@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login — SD Academy</title>
   <meta name="description" content="Login to SD Academy and access your personalized learning path based on your organizational role." />
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -40,15 +42,6 @@
         <div class="auth-card-header">
           <h1>Welcome Back</h1>
           <p>Sign in to your SD Academy account</p>
-        </div>
-
-        <!-- Demo role quick-select -->
-        <div class="demo-selector">
-          <p class="demo-label">Demo — quick login as:</p>
-          <div class="demo-btns">
-            <button class="demo-btn" id="demo-learner-btn" onclick="fillDemo('learner')">👤 Learner (John Abraham)</button>
-            <button class="demo-btn" id="demo-admin-btn" onclick="fillDemo('admin')">🛡️ Admin</button>
-          </div>
         </div>
 
         <form class="auth-form" id="login-form" onsubmit="handleLogin(event)" novalidate>
@@ -96,14 +89,6 @@
       learner: { email: 'john.abraham@sdacademy.in', password: 'learner123', role: 'learner' },
       admin:   { email: 'admin@sdacademy.in',         password: 'admin123',   role: 'admin'   },
     };
-
-    function fillDemo(role) {
-      const creds = DEMO_CREDS[role];
-      document.getElementById('email').value    = creds.email;
-      document.getElementById('password').value = creds.password;
-      document.querySelectorAll('.demo-btn').forEach(b => b.classList.remove('active'));
-      document.getElementById(`demo-${role}-btn`).classList.add('active');
-    }
 
     function togglePassword() {
       const pw = document.getElementById('password');
