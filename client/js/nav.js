@@ -104,12 +104,11 @@
 
     return `
       <aside class="sidebar" id="sidebar">
-        <div class="sidebar-brand">
-          <div class="avatar">
-            <span>${user.initials}</span>
-          </div>
+        <div class="sidebar-brand" style="display:flex;align-items:center;gap:12px;padding:18px 16px;border-bottom:1px solid rgba(255,255,255,0.08);">
+          <img src="${base}assets/logo.png" alt="SD Academy Logo" class="brand-logo-img" style="width:38px;height:38px;background:#fff;padding:2px;border-radius:50%;object-fit:contain;box-shadow:0 2px 8px rgba(0,0,0,0.2);" />
           <div class="brand-info">
-            <div class="brand-name">${user.name}</div>
+            <div class="brand-name" style="font-family:'Outfit',sans-serif;font-weight:800;font-size:15px;color:#ffffff;letter-spacing:0.3px;">SD Academy</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.65);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:130px;">${user.name} • ${user.roleLabel}</div>
           </div>
         </div>
         <nav class="sidebar-nav">

@@ -79,6 +79,25 @@
   --duration: 250ms;
 }
 
+/* Brand Logo Image Styling */
+.brand-logo-img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 2px;
+  box-shadow: 0 4px 12px rgba(20, 25, 51, 0.15);
+  transition: transform 0.3s var(--ease-bounce);
+  flex-shrink: 0;
+}
+
+.logo:hover .brand-logo-img,
+.auth-logo:hover .brand-logo-img {
+  transform: scale(1.1) rotate(4deg);
+}
+
+
 /* ── Reset & Core Styles ────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
