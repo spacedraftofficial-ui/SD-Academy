@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Course Builder — SD Academy Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/main.css"/>
+  <link rel="stylesheet" href="../css/admin.css"/>
+</head>
+<body>
+<div class="app-shell" id="app-shell">
+  <div class="main-content">
+    <div class="page-content" id="content" style="display:none">
+      <div class="flex items-center justify-between mb-16">
+        <h1 class="admin-page-title" style="margin:0">Course Builder</h1>
+        <button class="btn btn-primary" id="create-course-btn">+ Create Course</button>
+      </div>
+
+      <div class="grid-3 stagger" id="courses-grid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Create / Edit Course -->
+<div class="modal-overlay" id="course-modal-overlay">
+  <div class="modal" style="max-width:500px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+      <h3 style="margin:0;font-size:18px;font-weight:700" id="course-modal-title">Create New Course</h3>
+      <button class="btn btn-ghost btn-sm" id="close-course-modal">✕</button>
+    </div>
+    <form id="course-form">
+      <input type="hidden" id="modal-course-id" value=""/>
+      <div style="margin-bottom:14px">
+        <label style="display:block;font-size:12px;font-weight:600;color:var(--gray-700);margin-bottom:4px">Course Title *</label>
+        <input type="text" id="modal-course-title" required placeholder="e.g. Intro to Architectural Fundamentals" style="width:100%;height:38px;border:1.5px solid var(--gray-200);border-radius:8px;padding:0 12px;font-size:13px;outline:none"/>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
+        <div>
+          <label style="display:block;font-size:12px;font-weight:600;color:var(--gray-700);margin-bottom:4px">Department / Track</label>
+          <select id="modal-course-track" style="width:100%;height:38px;border:1.5px solid var(--gray-200);border-radius:8px;padding:0 10px;font-size:13px;outline:none">
+            <option value="Architecture">Architecture</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Projects">Projects</option>
+            <option value="IT Support">IT Support</option>
+          </select>
+        </div>
+        <div>
+          <label style="display:block;font-size:12px;font-weight:600;color:var(--gray-700);margin-bottom:4px">Status</label>
+          <select id="modal-course-status" style="width:100%;height:38px;border:1.5px solid var(--gray-200);border-radius:8px;padding:0 10px;font-size:13px;outline:none">
+            <option value="Published">Published</option>
+            <option value="Draft">Draft</option>
+          </select>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:14px">
+        <div>
+          <label style="display:block;font-size:12px;font-weight:600;color:var(--gray-700);margin-bottom:4px">Modules Count</label>
+          <input type="number" id="modal-course-modules" min="1" value="4" style="width:100%;height:38px;border:1.5px solid var(--gray-200);border-radius:8px;padding:0 12px;font-size:13px;outline:none"/>
+        </div>
+        <div>
+          <label style="display:block;font-size:12px;font-weight:600;color:var(--gray-700);margin-bottom:4px">Duration</label>
+          <input type="text" id="modal-course-duration" placeholder="e.g. 2h 30m" value="2h 30m" style="width:100%;height:38px;border:1.5px solid var(--gray-200);border-radius:8px;padding:0 12px;font-size:13px;outline:none"/>
+        </div>
+        <div>
+          <label style="display:block;font-size:12px;font-weight:600;color:var(--gray-700);margin-bottom:4px">Icon Emoji</label>
+          <input type="text" id="modal-course-icon" placeholder="🏛️" value="🏛️" style="width:100%;height:38px;border:1.5px solid var(--gray-200);border-radius:8px;padding:0 12px;font-size:16px;text-align:center;outline:none"/>
+        </div>
+      </div>
+      <div style="margin-bottom:20px">
+        <label style="display:block;font-size:12px;font-weight:600;color:var(--gray-700);margin-bottom:4px">Course Description</label>
+        <textarea id="modal-course-desc" rows="3" placeholder="Brief summary of the course content..." style="width:100%;border:1.5px solid var(--gray-200);border-radius:8px;padding:10px 12px;font-size:13px;outline:none;resize:vertical"></textarea>
+      </div>
+      <div style="display:flex;gap:10px;justify-content:flex-end">
+        <button type="button" class="btn btn-ghost" id="delete-course-btn" style="display:none;color:var(--danger);margin-right:auto">Delete Course</button>
+        <button type="button" class="btn btn-outline" id="cancel-course-btn">Cancel</button>
+        <button type="submit" class="btn btn-primary" id="save-course-btn">Save Course</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/nav.js"></script>
+<script>
+  let allCourses = [
+    { id: 1, title: 'Intro to Architectural Fundamentals', track: 'Architecture', modules_count: 4, duration: '2h 30m', icon: '🏛️', status: 'Published', bg: 'linear-gradient(135deg,#667eea,#764ba2)' },
+    { id: 2, title: 'Modern Architecture Principles', track: 'Architecture', modules_count: 6, duration: '3h 45m', icon: '📐', status: 'Draft', bg: 'linear-gradient(135deg,#4facfe,#00f2fe)' },
+    { id: 3, title: 'Advanced Structural Engineering', track: 'Engineering', modules_count: 5, duration: '4h 15m', icon: '🏗️', status: 'Published', bg: 'linear-gradient(135deg,#ff0844,#ffb199)' }
+  ];
+
+  const grid = document.getElementById('courses-grid');
+  const courseModal = document.getElementById('course-modal-overlay');
+
+  async function loadCourses() {
+    try {
+      if (window.SDA_API && window.SDA_API.getCourses) {
+        const fetched = await window.SDA_API.getCourses();
+        if (Array.isArray(fetched) && fetched.length > 0) {
+          const grads = [
+            'linear-gradient(135deg,#667eea,#764ba2)',
+            'linear-gradient(135deg,#4facfe,#00f2fe)',
+            'linear-gradient(135deg,#ff0844,#ffb199)',
+            'linear-gradient(135deg,#f6d365,#fda085)'
+          ];
+          allCourses = fetched.map((c, i) => ({
+            id: c.id,
+            title: c.title,
+            track: c.track || c.department || 'Architecture',
+            modules_count: c.modules_count || (c.Modules ? c.Modules.length : 4),
+            duration: c.duration || '2h 30m',
+            icon: c.icon || '🏛️',
+            status: c.status || 'Published',
+            bg: grads[i % grads.length]
+          }));
+        }
+      }
+    } catch(err) {
+      console.warn('Using default courses list:', err);
+    }
+    renderCourses();
+  }
+
+  function renderCourses() {
+    grid.innerHTML = '';
+    allCourses.forEach(c => {
+      const isPub = c.status === 'Published';
+      const pubBtnCls = isPub ? 'btn-primary' : 'btn-ghost';
+      const pubBtnTxt = isPub ? 'Publish' : 'Draft';
+      grid.innerHTML += `
+        <div class="card animate-fade-up">
+          <div style="height:120px;background:${c.bg || 'linear-gradient(135deg,#667eea,#764ba2)'};border-radius:var(--radius-md);margin-bottom:14px;display:flex;align-items:center;justify-content:center;font-size:40px">${c.icon}</div>
+          <div style="font-size:14px;font-weight:700;color:var(--gray-800);margin-bottom:6px">${c.title}</div>
+          <div style="font-size:12px;color:var(--gray-500);margin-bottom:12px">${c.modules_count} modules · ${c.duration} · ${c.track}</div>
+          <div class="flex gap-8">
+            <button class="btn btn-outline btn-sm" style="flex:1" onclick="editCourse(${c.id})">Edit</button>
+            <button class="btn ${pubBtnCls} btn-sm" style="flex:1" onclick="toggleStatus(${c.id})">${pubBtnTxt}</button>
+          </div>
+        </div>
+      `;
+    });
+
+    // Add New Course Card
+    grid.innerHTML += `
+      <div class="card animate-fade-up" style="border:2px dashed var(--gray-200);background:var(--gray-50);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:200px;cursor:pointer" onclick="openCreateModal()">
+        <div style="font-size:40px;margin-bottom:12px">➕</div>
+        <div style="font-size:14px;font-weight:600;color:var(--gray-500)">Create New Course</div>
+      </div>
+    `;
+  }
+
+  function openCreateModal() {
+    document.getElementById('course-modal-title').textContent = 'Create New Course';
+    document.getElementById('modal-course-id').value = '';
+    document.getElementById('modal-course-title').value = '';
+    document.getElementById('modal-course-track').value = 'Architecture';
+    document.getElementById('modal-course-status').value = 'Published';
+    document.getElementById('modal-course-modules').value = '4';
+    document.getElementById('modal-course-duration').value = '2h 30m';
+    document.getElementById('modal-course-icon').value = '🏛️';
+    document.getElementById('modal-course-desc').value = '';
+    document.getElementById('delete-course-btn').style.display = 'none';
+    courseModal.classList.add('open');
+  }
+
+  function editCourse(id) {
+    const course = allCourses.find(c => c.id === id);
+    if (!course) return;
+    document.getElementById('course-modal-title').textContent = 'Edit Course';
+    document.getElementById('modal-course-id').value = course.id;
+    document.getElementById('modal-course-title').value = course.title;
+    document.getElementById('modal-course-track').value = course.track;
+    document.getElementById('modal-course-status').value = course.status;
+    document.getElementById('modal-course-modules').value = course.modules_count;
+    document.getElementById('modal-course-duration').value = course.duration;
+    document.getElementById('modal-course-icon').value = course.icon;
+    document.getElementById('modal-course-desc').value = course.description || '';
+    document.getElementById('delete-course-btn').style.display = 'block';
+    courseModal.classList.add('open');
+  }
+
+  async function toggleStatus(id) {
+    const course = allCourses.find(c => c.id === id);
+    if (!course) return;
+    const newStatus = course.status === 'Published' ? 'Draft' : 'Published';
+    course.status = newStatus;
+    try {
+      if (window.SDA_API && window.SDA_API.updateCourse) {
+        await window.SDA_API.updateCourse(id, { status: newStatus });
+      }
+      if (window.SDA && SDA.toast) SDA.toast(`Course marked as ${newStatus}!`, 'info');
+    } catch(err) {
+      console.warn('Updated status locally:', err);
+    }
+    renderCourses();
+  }
+
+  document.getElementById('create-course-btn').addEventListener('click', openCreateModal);
+  document.getElementById('close-course-modal').addEventListener('click', () => courseModal.classList.remove('open'));
+  document.getElementById('cancel-course-btn').addEventListener('click', () => courseModal.classList.remove('open'));
+
+  // Save Course (Create / Update)
+  document.getElementById('course-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const id = document.getElementById('modal-course-id').value;
+    const title = document.getElementById('modal-course-title').value;
+    const track = document.getElementById('modal-course-track').value;
+    const status = document.getElementById('modal-course-status').value;
+    const modules_count = parseInt(document.getElementById('modal-course-modules').value) || 4;
+    const duration = document.getElementById('modal-course-duration').value || '2h 30m';
+    const icon = document.getElementById('modal-course-icon').value || '🏛️';
+    const description = document.getElementById('modal-course-desc').value || '';
+
+    const courseData = { title, track, status, modules_count, duration, icon, description };
+
+    try {
+      if (id) {
+        if (window.SDA_API && window.SDA_API.updateCourse) {
+          await window.SDA_API.updateCourse(id, courseData);
+        }
+        const idx = allCourses.findIndex(c => c.id == id);
+        if (idx !== -1) allCourses[idx] = { ...allCourses[idx], ...courseData };
+        if (window.SDA && SDA.toast) SDA.toast('Course updated successfully!', 'success');
+      } else {
+        let created;
+        if (window.SDA_API && window.SDA_API.createCourse) {
+          created = await window.SDA_API.createCourse(courseData);
+        }
+        const newCourse = created ? {
+          id: created.id,
+          title: created.title,
+          track: created.track || track,
+          modules_count: created.modules_count || modules_count,
+          duration: created.duration || duration,
+          icon: created.icon || icon,
+          status: created.status || status,
+          bg: 'linear-gradient(135deg,#667eea,#764ba2)'
+        } : {
+          id: Date.now(),
+          ...courseData,
+          bg: 'linear-gradient(135deg,#667eea,#764ba2)'
+        };
+        allCourses.unshift(newCourse);
+        if (window.SDA && SDA.toast) SDA.toast('Course created successfully!', 'success');
+      }
+    } catch(err) {
+      if (window.SDA && SDA.toast) SDA.toast('Error saving course: ' + err.message, 'danger');
+    }
+
+    courseModal.classList.remove('open');
+    renderCourses();
+  });
+
+  // Delete Course
+  document.getElementById('delete-course-btn').addEventListener('click', async () => {
+    const id = document.getElementById('modal-course-id').value;
+    if (!id || !confirm('Are you sure you want to delete this course?')) return;
+
+    try {
+      if (window.SDA_API && window.SDA_API.deleteCourse) {
+        await window.SDA_API.deleteCourse(id);
+      }
+      allCourses = allCourses.filter(c => c.id != id);
+      if (window.SDA && SDA.toast) SDA.toast('Course deleted.', 'warning');
+    } catch(err) {
+      if (window.SDA && SDA.toast) SDA.toast('Error deleting course: ' + err.message, 'danger');
+    }
+
+    courseModal.classList.remove('open');
+    renderCourses();
+  });
+
+  const user = SDA.init({ role: 'admin' });
+  if (user) {
+    document.getElementById('content').style.display = '';
+    loadCourses();
+  }
+</script>
+</body>
+</html>

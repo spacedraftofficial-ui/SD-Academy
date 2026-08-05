@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard — SD Academy</title>
+  <meta name="description" content="Admin dashboard to monitor active users, completion rates, overdue trainings, and course analytics in SD Academy."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/main.css"/>
+  <link rel="stylesheet" href="../css/admin.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="app-shell" id="app-shell">
+  <div class="main-content">
+    <div class="page-content" id="admin-content" style="display:none">
+
+      <h1 class="admin-page-title animate-fade-up">Admin Dashboard</h1>
+
+      <!-- ── KPI Cards ────────────────────────────────────── -->
+      <div class="kpi-grid stagger">
+        <div class="kpi-card animate-fade-up" id="kpi-users">
+          <div class="kpi-icon" style="color:#3b82f6">👥</div>
+          <div class="kpi-info">
+            <div class="kpi-label">Active Users</div>
+            <div class="kpi-value">5,927</div>
+            <div class="kpi-sub">250 Online now</div>
+          </div>
+        </div>
+        <div class="kpi-card animate-fade-up" id="kpi-completion">
+          <div class="kpi-donut-wrap">
+            <canvas id="completion-donut" width="80" height="80"></canvas>
+            <span class="kpi-donut-pct">72%</span>
+          </div>
+          <div class="kpi-info">
+            <div class="kpi-label">Completion</div>
+            <div class="kpi-sub">Goal: 85%</div>
+          </div>
+        </div>
+        <div class="kpi-card animate-fade-up" id="kpi-overdue">
+          <div class="kpi-icon" style="color:#ef4444">📅</div>
+          <div class="kpi-info">
+            <div class="kpi-label">Overdue Trainings</div>
+            <div class="kpi-value danger">217</div>
+            <a href="reports.html" class="kpi-link">View Reports ›</a>
+          </div>
+        </div>
+        <div class="kpi-card animate-fade-up" id="kpi-joiners">
+          <div class="kpi-info" style="flex:1">
+            <div class="kpi-label">New Joiners</div>
+            <div class="kpi-value" style="font-size:32px">128</div>
+            <div class="kpi-sub">Last 30 Days</div>
+            <a href="users.html" class="btn btn-ghost btn-sm mt-4" style="display:inline-flex">View Details</a>
+          </div>
+          <div class="kpi-sparkline">📈</div>
+        </div>
+      </div>
+
+      <!-- ── Charts Row ──────────────────────────────────── -->
+      <div class="admin-charts-row mt-16 stagger">
+
+        <!-- Completion Trends -->
+        <div class="card animate-fade-up admin-chart-card">
+          <div class="card-header">
+            <div class="card-title">Completion Trends</div>
+            <div class="chart-legend">
+              <span class="cl-item"><span class="cl-dot" style="background:var(--blue-500)"></span> Completion %</span>
+              <span class="cl-item"><span class="cl-dot dashed"></span> Goal</span>
+            </div>
+          </div>
+          <canvas id="completion-trend-chart" height="200"></canvas>
+        </div>
+
+        <!-- Most Viewed Modules -->
+        <div class="card animate-fade-up">
+          <div class="card-header">
+            <div class="card-title">Most Viewed Modules</div>
+          </div>
+          <div class="mvm-list">
+            <div class="mvm-item">
+              <span class="mvm-icon">🎯</span>
+              <div class="mvm-info">
+                <div class="mvm-title">Core department SOPs</div>
+              </div>
+              <span class="mvm-views">600 Views</span>
+            </div>
+            <div class="mvm-item">
+              <span class="mvm-icon">🎯</span>
+              <div class="mvm-info">
+                <div class="mvm-title">Core department SOPs</div>
+              </div>
+              <span class="mvm-views">800 Views</span>
+            </div>
+            <div class="mvm-item">
+              <span class="mvm-icon">🎯</span>
+              <div class="mvm-info">
+                <div class="mvm-title">Core department SOPs</div>
+              </div>
+              <span class="mvm-views">600 Views</span>
+            </div>
+          </div>
+          <a href="content.html" class="btn btn-primary mt-16" style="width:100%">View All</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../js/nav.js"></script>
+<script>
+  const user = SDA.init({ role: 'admin' });
+  if (user) {
+    document.getElementById('admin-content').style.display = '';
+    initCharts();
+  }
+
+  function initCharts() {
+    // Donut
+    const dCtx = document.getElementById('completion-donut').getContext('2d');
+    new Chart(dCtx, {
+      type: 'doughnut',
+      data: {
+        datasets: [{ data:[72,28], backgroundColor:['#3b82f6','#e2e8f0'], borderWidth:0, circumference:360 }]
+      },
+      options: { cutout:'75%', plugins:{ legend:{ display:false }, tooltip:{ enabled:false } }, responsive:false }
+    });
+
+    // Line trend chart
+    const tCtx = document.getElementById('completion-trend-chart').getContext('2d');
+    new Chart(tCtx, {
+      type: 'line',
+      data: {
+        labels: ['Jan','Feb','Mar','Apr','May'],
+        datasets: [
+          {
+            label: 'Completion %',
+            data: [28, 45, 58, 70, 88],
+            borderColor: '#3b82f6',
+            backgroundColor: 'rgba(59,130,246,.08)',
+            borderWidth: 2.5,
+            fill: true,
+            tension: .4,
+            pointBackgroundColor: '#3b82f6',
+            pointRadius: 5,
+          },
+          {
+            label: 'Goal',
+            data: [50,60,70,80,90],
+            borderColor: '#94a3b8',
+            borderDash: [6,4],
+            borderWidth: 1.5,
+            fill: false,
+            tension: .4,
+            pointRadius: 0,
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend:{ display:false } },
+        scales: {
+          y: {
+            min: 0, max: 100,
+            ticks: { callback: v => v+'%', font:{ size:11 }, color:'#94a3b8' },
+            grid: { color:'#f1f5f9' },
+            border: { dash:[4,2] }
+          },
+          x: {
+            ticks: { font:{ size:11 }, color:'#94a3b8' },
+            grid: { display:false }
+          }
+        }
+      }
+    });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Learning Path — SD Academy</title>
+  <meta name="description" content="Track your learning path across Onboarding, Core Department, Role Excellence and Leadership tracks in SD Academy."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/learning-path.css"/>
+</head>
+<body>
+<div class="app-shell" id="app-shell">
+  <div class="main-content">
+    <!-- Track Tabs (in topbar area) -->
+    <div class="track-tabs-bar" id="track-tabs-bar" style="display:none">
+      <button class="track-tab" data-track="onboarding" onclick="switchTrack(this)">Onboarding Track</button>
+      <button class="track-tab active" data-track="core" onclick="switchTrack(this)">Core Department Track</button>
+      <button class="track-tab" data-track="role" onclick="switchTrack(this)">Role Excellent Track</button>
+      <button class="track-tab" data-track="leadership" onclick="switchTrack(this)">Leadership Track</button>
+    </div>
+
+    <div class="page-content" id="lp-content" style="display:none">
+
+      <!-- ── Module Grid ──────────────────────────────────── -->
+      <div class="card animate-fade-up">
+        <div class="card-header">
+          <div class="card-title">My Learning Path</div>
+        </div>
+        <div class="module-grid stagger" id="module-grid">
+          <!-- populated by JS -->
+        </div>
+      </div>
+
+      <!-- ── Module Detail ────────────────────────────────── -->
+      <div class="module-detail-row mt-16" id="module-detail-row">
+
+        <!-- Video Preview -->
+        <div class="card mod-preview animate-fade-up">
+          <div class="mod-video-thumb" onclick="window.location.href='video-player.html'" style="cursor:pointer">
+            <div class="mvt-overlay">
+              <div class="mvt-play">▶</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Module Overview -->
+        <div class="card mod-overview animate-fade-up">
+          <h3 class="card-title mb-12">Module Overview</h3>
+          <p class="mod-overview-desc">Learn the fundamental principles and concepts of architecture. Understand the basic elements and design principles to create functional and aesthetic building designs.</p>
+          <div class="divider"></div>
+          <div class="mod-overview-meta">
+            <span>🕐</span>
+            <span>Estimated Time</span>
+            <span class="mod-time-val">1h 30m</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── Outcomes + Requirements ───────────────────────── -->
+      <div class="db-row mt-16 stagger">
+
+        <!-- Outcomes -->
+        <div class="card animate-fade-up">
+          <h3 class="card-title mb-16">Outcomes</h3>
+          <div class="outcome-list">
+            <div class="outcome-item">
+              <span class="oi-icon">▶</span>
+              <div class="oi-info">
+                <div class="oi-title">Watch: Architectural Fundamentals</div>
+                <div class="oi-tag"><span class="dot info"></span> Architecture basics</div>
+              </div>
+              <span class="badge badge-warning">Due Soon</span>
+            </div>
+            <div class="outcome-item">
+              <span class="oi-icon">📄</span>
+              <div class="oi-info">
+                <div class="oi-title">Read Architectural Design SOP</div>
+                <div class="oi-progress">
+                  <div class="progress-bar-wrap" style="width:140px"><div class="progress-bar-fill" style="width:60%"></div></div>
+                  <span class="text-sm text-muted">45 min</span>
+                </div>
+              </div>
+              <span style="color:var(--blue-600);font-size:18px">›</span>
+            </div>
+            <div class="outcome-item">
+              <span class="oi-icon">📄</span>
+              <div class="oi-info">
+                <div class="oi-title">Read the standard operating procedures for basics and Designs</div>
+              </div>
+              <span style="color:var(--blue-600);font-size:18px">›</span>
+            </div>
+          </div>
+          <a href="video-player.html" class="btn btn-primary mt-16" id="resume-btn">Resume</a>
+        </div>
+
+        <!-- Requirements -->
+        <div class="card animate-fade-up">
+          <h3 class="card-title mb-16">Requirements</h3>
+          <div class="req-list">
+            <div class="req-item">
+              <span class="req-icon">▶</span>
+              <div class="req-info">
+                <div class="req-label">Video</div>
+                <div class="progress-bar-wrap mt-4"><div class="progress-bar-fill" style="width:70%"></div></div>
+              </div>
+            </div>
+            <div class="req-item">
+              <span class="req-icon">📋</span>
+              <div class="req-info">
+                <div class="req-label">SOP</div>
+                <div class="progress-bar-wrap mt-4"><div class="progress-bar-fill" style="width:45%"></div></div>
+              </div>
+            </div>
+            <div class="req-item">
+              <span class="req-icon">📦</span>
+              <div class="req-info">
+                <div class="req-label">Module</div>
+                <div class="progress-bar-wrap mt-4"><div class="progress-bar-fill" style="width:55%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /page-content -->
+  </div>
+</div>
+
+<script src="js/nav.js"></script>
+<script>
+  const MODULES = {
+    core: [
+      { title: 'Intro to Architectural Fundamentals', status: 'completed', date: 'Completed on Feb 10.' },
+      { title: 'Building Codes & Regulations',        status: 'not-started', date: '' },
+      { title: 'Conceptual Design Presentation',      status: 'in-progress', date: '', tags: ['Module','Video'] },
+      { title: 'Eco-Friendly Building materials',     status: 'due',         date: 'Due feb 10' },
+    ],
+    onboarding: [
+      { title: 'Company Orientation',      status: 'completed',  date: 'Completed on Jan 5.' },
+      { title: 'HR Policies Overview',     status: 'completed',  date: 'Completed on Jan 8.' },
+      { title: 'Tools & Systems Setup',    status: 'in-progress',date: '' },
+      { title: 'Meet Your Team',           status: 'not-started',date: '' },
+    ],
+    role: [
+      { title: 'Advanced AutoCAD',         status: 'in-progress',date: '' },
+      { title: 'Design Review Process',    status: 'not-started',date: '' },
+      { title: 'Client Communication',     status: 'not-started',date: '' },
+      { title: 'Site Assessment Methods',  status: 'not-started',date: '' },
+    ],
+    leadership: [
+      { title: 'Leading Design Teams',     status: 'not-started',date: '' },
+      { title: 'Project Management Basics',status: 'not-started',date: '' },
+      { title: 'Stakeholder Management',   status: 'not-started',date: '' },
+      { title: 'Strategic Planning',       status: 'not-started',date: '' },
+    ],
+  };
+
+  const STATUS_MAP = {
+    'completed':   { label:'Completed',  cls:'badge-success' },
+    'in-progress': { label:'In Progress',cls:'badge-info' },
+    'not-started': { label:'Not Started',cls:'badge-gray' },
+    'due':         { label:'Due feb 10', cls:'badge-danger' },
+  };
+
+  let currentTrack = 'core';
+
+  function renderModules(track) {
+    const grid = document.getElementById('module-grid');
+    grid.innerHTML = MODULES[track].map(m => {
+      const s = STATUS_MAP[m.status];
+      const tags = m.tags ? m.tags.map(t => `<span class="badge badge-gray" style="font-size:10px">${t}</span>`).join('') : '';
+      return `<div class="module-card" onclick="selectModule(this)" data-status="${m.status}">
+        <div class="mc-icon">👤</div>
+        <div class="mc-info">
+          <div class="mc-title">${m.title}</div>
+          ${m.date ? `<div class="mc-date">${m.date}</div>` : ''}
+          ${tags ? `<div class="mc-tags">${tags}</div>` : ''}
+        </div>
+        <span class="badge ${s.cls}">${s.label}</span>
+      </div>`;
+    }).join('');
+  }
+
+  function switchTrack(btn) {
+    document.querySelectorAll('.track-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentTrack = btn.dataset.track;
+    renderModules(currentTrack);
+  }
+
+  function selectModule(el) {
+    document.querySelectorAll('.module-card').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+  }
+
+  const user = SDA.init({ role: 'learner' });
+  if (user) {
+    document.getElementById('track-tabs-bar').style.display = 'flex';
+    document.getElementById('lp-content').style.display = '';
+    renderModules('core');
+  }
+</script>
+</body>
+</html>

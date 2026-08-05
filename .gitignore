@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Database (local SQLite file — server uses MySQL)
+database.db
+
+# Environment secrets — NEVER upload this
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Zip files
+*.zip

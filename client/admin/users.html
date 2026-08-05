@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Management — SD Academy Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/main.css"/>
+  <link rel="stylesheet" href="../css/admin.css"/>
+</head>
+<body>
+<div class="app-shell" id="app-shell">
+  <div class="main-content">
+    <div class="page-content" id="content" style="display:none">
+      <div class="flex items-center justify-between mb-16">
+        <h1 class="admin-page-title" style="margin:0">User Management</h1>
+        <button class="btn btn-primary" id="add-user-btn">+ Add User</button>
+      </div>
+      <div class="card animate-fade-up">
+        <div class="flex items-center gap-12 mb-16" style="flex-wrap:wrap">
+          <input type="text" id="user-search" placeholder="Search users..." style="flex:1;min-width:200px;height:36px;border:1.5px solid var(--gray-200);border-radius:8px;padding:0 14px;outline:none;font-size:13px"/>
+          <select id="user-dept-filter" style="height:36px;border:1.5px solid var(--gray-200);border-radius:8px;padding:0 12px;font-size:13px;outline:none">
+            <option value="">All Departments</option>
+            <option value="Architecture">Architecture</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Projects">Projects</option>
+            <option value="IT Support">IT Support</option>
+            <option value="HR">HR</option>
+          </select>
+          <select id="user-role-filter" style="height:36px;border:1.5px solid var(--gray-200);border-radius:8px;padding:0 12px;font-size:13px;outline:none">
+            <option value="">All Roles</option>
+            <option value="learner">Learner</option>
+            <option value="manager">Manager</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+        <table style="width:100%;border-collapse:collapse">
+          <thead>
+            <tr style="background:var(--gray-50);border-bottom:2px solid var(--gray-200)">
+              <th style="padding:10px 14px;text-align:left;font-size:12px;color:var(--gray-500);font-weight:700;text-transform:uppercase">Name</th>
+              <th style="padding:10px 14px;text-align:left;font-size:12px;color:var(--gray-500);font-weight:700;text-transform:uppercase">Department</th>
+              <th style="padding:10px 14px;text-align:left;font-size:12px;color:var(--gray-500);font-weight:700;text-transform:uppercase">Role</th>
+              <th style="padding:10px 14px;text-align:left;font-size:12px;color:var(--gray-500);font-weight:700;text-transform:uppercase">Progress</th>
+              <th style="padding:10px 14px;text-align:left;font-size:12px;color:var(--gray-500);font-weight:700;text-transform:uppercase">Status</th>
+              <th style="padding:10px 14px;text-align:left;font-size:12px;color:var(--gray-500);font-weight:700;text-transform:uppercase">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="user-table-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Add / Edit User -->
+<div class="modal-overlay" id="user-modal-overlay">
+  <div class="modal" style="max-width:480px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+      <h3 style="margin:0;font-size:18px;font-weight:700" id="user-modal-title">Add New User</h3>
+      <button class="btn btn-ghost btn-sm" id="close-user-modal">✕</button>
+    </div>
+    <form id="user-form">
+      <input type="hidden" id="modal-user-id" value=""/>
+      <div style="margin-bottom:14px">
+        <label style="display:block;font-size:12px;font-weight:600;color:var(--gray-700);margin-bottom:4px">Full Name *</label>
+        <input type="text" id="modal-user-name" required placeholder="e.g. John Abraham" style="width:100%;height:38px;border:1.5px solid var(--gray-200);border-radius:8px;padding:0 12px;font-size:13px;outline:none"/>
+      </div>
+      <div style="margin-bottom:14px">
+        <label style="display:block;font-size:12px;font-weight:600;color:var(--gray-700);margin-bottom:4px">Email Address *</label>
+        <input type="email" id="modal-user-email" required placeholder="john@sdacademy.com" style="width:100%;height:38px;border:1.5px solid var(--gray-200);border-radius:8px;padding:0 12px;font-size:13px;outline:none"/>
+      </div>
+      <div style="margin-bottom:14px" id="modal-password-group">
+        <label style="display:block;font-size:12px;font-weight:600;color:var(--gray-700);margin-bottom:4px">Password *</label>
+        <input type="password" id="modal-user-password" placeholder="••••••••" style="width:100%;height:38px;border:1.5px solid var(--gray-200);border-radius:8px;padding:0 12px;font-size:13px;outline:none"/>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
+        <div>
+          <label style="display:block;font-size:12px;font-weight:600;color:var(--gray-700);margin-bottom:4px">Department</label>
+          <select id="modal-user-dept" style="width:100%;height:38px;border:1.5px solid var(--gray-200);border-radius:8px;padding:0 10px;font-size:13px;outline:none">
+            <option value="Architecture">Architecture</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Projects">Projects</option>
+            <option value="IT Support">IT Support</option>
+            <option value="HR">HR</option>
+          </select>
+        </div>
+        <div>
+          <label style="display:block;font-size:12px;font-weight:600;color:var(--gray-700);margin-bottom:4px">System Role</label>
+          <select id="modal-user-role" style="width:100%;height:38px;border:1.5px solid var(--gray-200);border-radius:8px;padding:0 10px;font-size:13px;outline:none">
+            <option value="learner">Learner</option>
+            <option value="manager">Manager</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
+      </div>
+      <div style="margin-bottom:20px">
+        <label style="display:block;font-size:12px;font-weight:600;color:var(--gray-700);margin-bottom:4px">Job Title / Label</label>
+        <input type="text" id="modal-user-role-label" placeholder="e.g. Architect, Lead Designer" style="width:100%;height:38px;border:1.5px solid var(--gray-200);border-radius:8px;padding:0 12px;font-size:13px;outline:none"/>
+      </div>
+      <div style="display:flex;gap:10px;justify-content:flex-end">
+        <button type="button" class="btn btn-ghost" id="delete-user-btn" style="display:none;color:var(--danger);margin-right:auto">Delete</button>
+        <button type="button" class="btn btn-outline" id="cancel-user-btn">Cancel</button>
+        <button type="submit" class="btn btn-primary" id="save-user-btn">Save User</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/nav.js"></script>
+<script>
+  let allUsers = [
+    { id: 1, name:'John Abraham', email:'john@sdacademy.com', department:'Architecture', role:'learner', role_label:'Architect', progress:55, status:'Active' },
+    { id: 2, name:'Sarah Kim',    email:'sarah@sdacademy.com', department:'Architecture', role:'learner', role_label:'Designer',  progress:82, status:'Active' },
+    { id: 3, name:'David K',      email:'david@sdacademy.com', department:'Engineering',  role:'learner', role_label:'Engineer',  progress:30, status:'Overdue'},
+    { id: 4, name:'Jessica B',    email:'jessica@sdacademy.com',department:'Projects',     role:'manager', role_label:'PM',        progress:67, status:'Active' },
+    { id: 5, name:'Rachel T',     email:'rachel@sdacademy.com', department:'IT Support',   role:'learner', role_label:'Support Lead', progress:90, status:'Active' },
+    { id: 6, name:'Marcus L',     email:'marcus@sdacademy.com', department:'Architecture', role:'learner', role_label:'Architect', progress:15, status:'Overdue'},
+  ];
+
+  const tbody = document.getElementById('user-table-body');
+  const userModal = document.getElementById('user-modal-overlay');
+
+  async function loadUsers() {
+    try {
+      if (window.SDA_API && window.SDA_API.getUsers) {
+        const fetched = await window.SDA_API.getUsers();
+        if (Array.isArray(fetched) && fetched.length > 0) {
+          allUsers = fetched.map(u => ({
+            id: u.id,
+            name: u.name || 'User',
+            email: u.email || '',
+            department: u.department || 'Architecture',
+            role: u.role || 'learner',
+            role_label: u.role_label || 'Learner',
+            progress: u.progress || 50,
+            status: u.status || 'Active'
+          }));
+        }
+      }
+    } catch(err) {
+      console.warn('Using local users list:', err);
+    }
+    renderUsers();
+  }
+
+  function renderUsers() {
+    const query = document.getElementById('user-search').value.toLowerCase();
+    const dept = document.getElementById('user-dept-filter').value;
+    const role = document.getElementById('user-role-filter').value;
+
+    const filtered = allUsers.filter(u => {
+      const matchesQuery = !query || u.name.toLowerCase().includes(query) || u.email.toLowerCase().includes(query) || (u.role_label && u.role_label.toLowerCase().includes(query));
+      const matchesDept = !dept || u.department === dept;
+      const matchesRole = !role || u.role.toLowerCase() === role.toLowerCase();
+      return matchesQuery && matchesDept && matchesRole;
+    });
+
+    tbody.innerHTML = '';
+    if (filtered.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="6" style="padding:24px;text-align:center;color:var(--gray-500);font-size:13px">No matching users found.</td></tr>`;
+      return;
+    }
+
+    filtered.forEach(u => {
+      const statusCls = u.status === 'Active' ? 'badge-success' : 'badge-danger';
+      const initials = (u.name || 'U').split(' ').map(w=>w[0]).join('').substring(0,2).toUpperCase();
+      tbody.innerHTML += `<tr style="border-bottom:1px solid var(--gray-100)">
+        <td style="padding:12px 14px"><div style="display:flex;align-items:center;gap:10px">
+          <div style="width:32px;height:32px;border-radius:50%;background:var(--navy-600);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0">${initials}</div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:var(--gray-800)">${u.name}</div>
+            <div style="font-size:11px;color:var(--gray-400)">${u.email}</div>
+          </div>
+        </div></td>
+        <td style="padding:12px 14px;font-size:13px;color:var(--gray-600)">${u.department}</td>
+        <td style="padding:12px 14px;font-size:13px;color:var(--gray-600)">${u.role_label || u.role}</td>
+        <td style="padding:12px 14px"><div style="display:flex;align-items:center;gap:8px">
+          <div class="progress-bar-wrap" style="width:100px"><div class="progress-bar-fill" style="width:${u.progress || 50}%"></div></div>
+          <span style="font-size:12px;font-weight:600;color:var(--gray-600)">${u.progress || 50}%</span>
+        </div></td>
+        <td style="padding:12px 14px"><span class="badge ${statusCls}">${u.status || 'Active'}</span></td>
+        <td style="padding:12px 14px"><button class="btn btn-ghost btn-sm" onclick="editUser(${u.id})">Edit</button></td>
+      </tr>`;
+    });
+  }
+
+  // Filter Listeners
+  document.getElementById('user-search').addEventListener('input', renderUsers);
+  document.getElementById('user-dept-filter').addEventListener('change', renderUsers);
+  document.getElementById('user-role-filter').addEventListener('change', renderUsers);
+
+  // Modal Handlers
+  document.getElementById('add-user-btn').addEventListener('click', () => {
+    document.getElementById('user-modal-title').textContent = 'Add New User';
+    document.getElementById('modal-user-id').value = '';
+    document.getElementById('modal-user-name').value = '';
+    document.getElementById('modal-user-email').value = '';
+    document.getElementById('modal-user-password').value = '';
+    document.getElementById('modal-password-group').style.display = 'block';
+    document.getElementById('modal-user-dept').value = 'Architecture';
+    document.getElementById('modal-user-role').value = 'learner';
+    document.getElementById('modal-user-role-label').value = '';
+    document.getElementById('delete-user-btn').style.display = 'none';
+    userModal.classList.add('open');
+  });
+
+  function editUser(id) {
+    const user = allUsers.find(u => u.id === id);
+    if (!user) return;
+    document.getElementById('user-modal-title').textContent = 'Edit User';
+    document.getElementById('modal-user-id').value = user.id;
+    document.getElementById('modal-user-name').value = user.name;
+    document.getElementById('modal-user-email').value = user.email;
+    document.getElementById('modal-password-group').style.display = 'none';
+    document.getElementById('modal-user-dept').value = user.department;
+    document.getElementById('modal-user-role').value = user.role.toLowerCase();
+    document.getElementById('modal-user-role-label').value = user.role_label || '';
+    document.getElementById('delete-user-btn').style.display = 'block';
+    userModal.classList.add('open');
+  }
+
+  document.getElementById('close-user-modal').addEventListener('click', () => userModal.classList.remove('open'));
+  document.getElementById('cancel-user-btn').addEventListener('click', () => userModal.classList.remove('open'));
+
+  // Save User (Create or Update)
+  document.getElementById('user-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const id = document.getElementById('modal-user-id').value;
+    const name = document.getElementById('modal-user-name').value;
+    const email = document.getElementById('modal-user-email').value;
+    const password = document.getElementById('modal-user-password').value;
+    const department = document.getElementById('modal-user-dept').value;
+    const role = document.getElementById('modal-user-role').value;
+    const role_label = document.getElementById('modal-user-role-label').value || role;
+
+    const userData = { name, email, department, role, role_label };
+    if (password) userData.password = password;
+
+    try {
+      if (id) {
+        if (window.SDA_API && window.SDA_API.updateUser) {
+          await window.SDA_API.updateUser(id, userData);
+        }
+        const idx = allUsers.findIndex(u => u.id == id);
+        if (idx !== -1) {
+          allUsers[idx] = { ...allUsers[idx], ...userData };
+        }
+        if (window.SDA && SDA.toast) SDA.toast('User updated successfully!', 'success');
+      } else {
+        let created;
+        if (window.SDA_API && window.SDA_API.createUser) {
+          created = await window.SDA_API.createUser(userData);
+        }
+        const newUser = created ? {
+          id: created.id,
+          name: created.name,
+          email: created.email,
+          department: created.department,
+          role: created.role,
+          role_label: created.role_label,
+          progress: 0,
+          status: 'Active'
+        } : {
+          id: Date.now(),
+          ...userData,
+          progress: 0,
+          status: 'Active'
+        };
+        allUsers.unshift(newUser);
+        if (window.SDA && SDA.toast) SDA.toast('User added successfully!', 'success');
+      }
+    } catch(err) {
+      if (window.SDA && SDA.toast) SDA.toast('Error saving user: ' + err.message, 'danger');
+    }
+
+    userModal.classList.remove('open');
+    renderUsers();
+  });
+
+  // Delete User
+  document.getElementById('delete-user-btn').addEventListener('click', async () => {
+    const id = document.getElementById('modal-user-id').value;
+    if (!id || !confirm('Are you sure you want to delete this user?')) return;
+
+    try {
+      if (window.SDA_API && window.SDA_API.deleteUser) {
+        await window.SDA_API.deleteUser(id);
+      }
+      allUsers = allUsers.filter(u => u.id != id);
+      if (window.SDA && SDA.toast) SDA.toast('User deleted.', 'warning');
+    } catch(err) {
+      if (window.SDA && SDA.toast) SDA.toast('Error deleting user: ' + err.message, 'danger');
+    }
+
+    userModal.classList.remove('open');
+    renderUsers();
+  });
+
+  const user = SDA.init({ role: 'admin' });
+  if (user) {
+    document.getElementById('content').style.display = '';
+    loadUsers();
+  }
+</script>
+</body>
+</html>

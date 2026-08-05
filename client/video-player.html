@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Video Player — SD Academy</title>
+  <meta name="description" content="Watch your learning module videos, add notes, and track your progress in SD Academy."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/video-player.css"/>
+</head>
+<body>
+<div class="app-shell" id="app-shell">
+  <div class="main-content">
+    <div class="page-content" id="vp-content" style="display:none">
+      <div class="vp-layout">
+
+        <!-- ── LEFT: Player + Notes ──────────────────────── -->
+        <div class="vp-left">
+          <div class="card vp-card">
+            <!-- Video Player -->
+            <div class="video-container" id="video-container">
+              <video id="main-video" preload="metadata">
+                <source src="" type="video/mp4"/>
+              </video>
+              <div class="video-placeholder" id="video-placeholder">
+                <div class="vp-icon">🎬</div>
+                <div class="vp-ph-title">Writing Engaging Content</div>
+                <div class="vp-ph-sub">Think about who is your target audience.</div>
+              </div>
+              <!-- Controls -->
+              <div class="video-controls" id="video-controls">
+                <div class="vc-progress-wrap">
+                  <div class="vc-progress-bar" id="vc-progress-bar">
+                    <div class="vc-progress-fill" id="vc-fill" style="width:22%"></div>
+                    <div class="vc-thumb" id="vc-thumb" style="left:22%"></div>
+                  </div>
+                </div>
+                <div class="vc-bottom">
+                  <div class="vc-left">
+                    <button class="vc-btn" id="play-btn" onclick="togglePlay()" title="Play/Pause">▶</button>
+                    <button class="vc-btn" onclick="" title="Skip back">⏮</button>
+                    <button class="vc-btn" onclick="" title="Skip forward">⏭</button>
+                    <div class="vc-volume">
+                      <button class="vc-btn" title="Volume">🔊</button>
+                    </div>
+                    <span class="vc-time" id="vc-time">05:18 / 23:45</span>
+                  </div>
+                  <div class="vc-right">
+                    <button class="vc-btn" title="Settings">⚙</button>
+                    <button class="vc-btn" title="Picture-in-picture">⬡</button>
+                    <button class="vc-btn" onclick="toggleFullscreen()" title="Fullscreen">⛶</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chapter markers + actions -->
+            <div class="vp-chapter-row">
+              <div class="vp-chapters">
+                <button class="chapter-btn active" id="chap-intro">Intro</button>
+                <button class="chapter-btn" id="chap-define">› Define Audiences</button>
+              </div>
+              <div class="vp-chapter-actions">
+                <button class="btn btn-ghost btn-sm" id="add-note-btn" onclick="openAddNote()">+ Add Note</button>
+                <button class="btn btn-ghost btn-sm" id="ask-doubt-btn">Ask Doubt</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Notes / Bookmarks Table -->
+          <div class="card mt-16">
+            <div class="nb-header">
+              <div class="nb-tabs">
+                <span class="nb-tab-label">Notes</span>
+                <span class="nb-tab-label">Bookmarks</span>
+              </div>
+              <div class="nb-filters">
+                <button class="nb-filter active" onclick="filterNotes('all',this)">All</button>
+                <button class="nb-filter" onclick="filterNotes('mine',this)">Mine only</button>
+                <button class="nb-filter" onclick="filterNotes('bookmarked',this)">Bookmarked</button>
+              </div>
+            </div>
+            <table class="notes-table" id="notes-table">
+              <tbody id="notes-tbody">
+                <!-- populated by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ── RIGHT: Sidebar ────────────────────────────── -->
+        <div class="vp-right">
+          <div class="card vp-sidebar">
+            <h3 class="vs-title">Writing Engaging Content</h3>
+            <div class="vs-progress-row">
+              <span class="vs-prog-label">Watched</span>
+              <span class="vs-prog-pct">45%</span>
+            </div>
+            <div class="progress-bar-wrap mb-16">
+              <div class="progress-bar-fill" style="width:45%"></div>
+            </div>
+
+            <!-- Curriculum -->
+            <div class="curriculum-list">
+              <div class="cl-item active">
+                <span class="cl-icon cl-playing">▶</span>
+                <div class="cl-info">
+                  <div class="cl-title">Watch the video</div>
+                  <div class="cl-meta">05:18 / 23:45  ·  in progress</div>
+                </div>
+              </div>
+              <button class="btn btn-primary btn-sm mt-8 mb-8" style="width:100%" id="download-sop-btn">⬇ Download Sop</button>
+              <div class="cl-item locked">
+                <span class="cl-icon">🔒</span>
+                <div class="cl-info">
+                  <div class="cl-title">Take the Quiz ( locked )</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Notes Sidebar Panel -->
+            <div class="vs-notes-header">
+              <div class="vs-note-tabs">
+                <button class="vs-note-tab active" onclick="switchNoteTab('notes',this)">Notes</button>
+                <button class="vs-note-tab" onclick="switchNoteTab('bookmarks',this)">Bookmarks</button>
+                <button class="vs-note-tab" onclick="">Export PDF ↗</button>
+              </div>
+            </div>
+
+            <div class="vs-note-input">
+              <input type="text" id="vs-note-text" placeholder="Write a note..." />
+              <button class="btn btn-ghost btn-sm" onclick="addSidebarNote()">+add note</button>
+            </div>
+
+            <div class="vs-notes-list" id="vs-notes-list">
+              <!-- populated by JS -->
+            </div>
+
+            <button class="btn btn-primary btn-sm mt-8" style="width:100%" onclick="openAddNote()">+ Add Note</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Note Modal -->
+<div class="modal-overlay" id="add-note-modal">
+  <div class="modal">
+    <h3 style="margin-bottom:16px;font-size:16px">Add Note</h3>
+    <div class="form-group">
+      <label>Timestamp</label>
+      <input type="text" id="modal-timestamp" value="05:18" style="border:1.5px solid var(--gray-200);border-radius:8px;padding:8px 12px;width:100%;outline:none"/>
+    </div>
+    <div class="form-group mt-12">
+      <label>Note</label>
+      <textarea id="modal-note-text" rows="3" placeholder="Write your note..." style="border:1.5px solid var(--gray-200);border-radius:8px;padding:8px 12px;width:100%;outline:none;resize:vertical"></textarea>
+    </div>
+    <div class="flex gap-12 mt-16">
+      <button class="btn btn-ghost" style="flex:1" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-primary" style="flex:1" onclick="saveNote()">Save Note</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/nav.js"></script>
+<script>
+  let notes = [
+    { id:1, ts:'00:45', text:'Defining the target audience is critical', mine:true, bookmarked:false },
+    { id:2, ts:'02:15', text:'Content should be concise and clear',      mine:true, bookmarked:true  },
+    { id:3, ts:'03:30', text:'Gathering date through surveys is important',mine:false,bookmarked:false},
+    { id:4, ts:'05:50', text:'Addressing audience pain points',           mine:true, bookmarked:false },
+  ];
+  let noteFilter = 'all';
+  let isPlaying = false;
+
+  function renderNotes() {
+    const filtered = notes.filter(n => {
+      if (noteFilter === 'mine')      return n.mine;
+      if (noteFilter === 'bookmarked') return n.bookmarked;
+      return true;
+    });
+    const tbody = document.getElementById('notes-tbody');
+    tbody.innerHTML = filtered.map(n => `
+      <tr>
+        <td class="nt-ts"><span class="nt-play">⏸</span> ${n.ts}</td>
+        <td class="nt-text">${n.text}</td>
+        <td class="nt-actions">
+          <button class="nt-btn" title="Edit" onclick="editNote(${n.id})">✏️</button>
+          <button class="nt-btn" title="Link" onclick="">🔗</button>
+          <button class="nt-btn" title="Delete" onclick="deleteNote(${n.id})">🗑️</button>
+        </td>
+      </tr>`).join('');
+
+    // Sidebar notes
+    const slist = document.getElementById('vs-notes-list');
+    slist.innerHTML = filtered.slice(0,3).map(n => `
+      <div class="vsn-item">
+        <span class="vsn-ts">⏸ ${n.ts}</span>
+        <span class="vsn-text">${n.text.substring(0,20)}...</span>
+        <button class="nt-btn" onclick="editNote(${n.id})">✏️</button>
+      </div>`).join('');
+  }
+
+  function filterNotes(f, btn) {
+    noteFilter = f;
+    document.querySelectorAll('.nb-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderNotes();
+  }
+
+  function deleteNote(id) {
+    notes = notes.filter(n => n.id !== id);
+    renderNotes();
+  }
+
+  function editNote(id) {
+    const n = notes.find(x => x.id === id);
+    if (!n) return;
+    document.getElementById('modal-timestamp').value = n.ts;
+    document.getElementById('modal-note-text').value = n.text;
+    document.getElementById('add-note-modal').classList.add('open');
+  }
+
+  function openAddNote() {
+    document.getElementById('modal-timestamp').value = '05:18';
+    document.getElementById('modal-note-text').value = '';
+    document.getElementById('add-note-modal').classList.add('open');
+  }
+
+  function closeModal() {
+    document.getElementById('add-note-modal').classList.remove('open');
+  }
+
+  function saveNote() {
+    const ts   = document.getElementById('modal-timestamp').value;
+    const text = document.getElementById('modal-note-text').value.trim();
+    if (!text) return;
+    notes.push({ id: Date.now(), ts, text, mine: true, bookmarked: false });
+    renderNotes();
+    closeModal();
+  }
+
+  function addSidebarNote() {
+    const text = document.getElementById('vs-note-text').value.trim();
+    if (!text) return;
+    notes.push({ id: Date.now(), ts:'05:18', text, mine: true, bookmarked: false });
+    document.getElementById('vs-note-text').value = '';
+    renderNotes();
+  }
+
+  function togglePlay() {
+    isPlaying = !isPlaying;
+    document.getElementById('play-btn').textContent = isPlaying ? '⏸' : '▶';
+  }
+
+  function toggleFullscreen() {
+    const vc = document.getElementById('video-container');
+    if (!document.fullscreenElement) {
+      vc.requestFullscreen();
+    } else {
+      document.exitFullscreen();
+    }
+  }
+
+  function switchNoteTab(tab, btn) {
+    document.querySelectorAll('.vs-note-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  // Close modal on overlay click
+  document.getElementById('add-note-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  const user = SDA.init({ role: 'learner' });
+  if (user) {
+    document.getElementById('vp-content').style.display = '';
+    renderNotes();
+  }
+</script>
+</body>
+</html>
