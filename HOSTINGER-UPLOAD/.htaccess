@@ -13,7 +13,7 @@ DirectoryIndex index.html
   RewriteCond %{REQUEST_FILENAME}.html -f
   RewriteRule ^(.*)$ .html [L]
 
-  # -- API Route to Native PHP --
+  # -- Native API Engine --
   RewriteRule ^api/(.*)$ api/index.php [L,QSA]
   RewriteRule ^api$ api/index.php [L,QSA]
 </IfModule>
