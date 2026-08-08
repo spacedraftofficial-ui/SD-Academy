@@ -1,0 +1,52 @@
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # ── Enforce HTTPS ──
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # ── Route /api/ requests to High-Performance Native PHP API Bridge ──
+  RewriteRule ^api/(.*)$ api/index.php [L,QSA]
+  RewriteRule ^api$ api/index.php [L,QSA]
+
+  # ── Clean URL Frontend Route Mappings (Works with or without .html) ──
+  RewriteRule ^$                         index.html              [L]
+  RewriteRule ^index(\.html)?$           index.html              [L]
+  RewriteRule ^login(\.html)?$           login.html              [L]
+  RewriteRule ^dashboard(\.html)?$       dashboard.html          [L]
+  RewriteRule ^learning-path(\.html)?$   learning-path.html      [L]
+  RewriteRule ^assessments(\.html)?$     assessments.html        [L]
+  RewriteRule ^certificates(\.html)?$    certificates.html       [L]
+  RewriteRule ^materials(\.html)?$       materials.html          [L]
+  RewriteRule ^support(\.html)?$         support.html            [L]
+  RewriteRule ^announcements(\.html)?$   announcements.html      [L]
+  RewriteRule ^video-player(\.html)?$    video-player.html       [L]
+  RewriteRule ^privacy-policy(\.html)?$  privacy-policy.html     [L]
+  RewriteRule ^terms-of-use(\.html)?$    terms-of-use.html       [L]
+  RewriteRule ^employee-data-policy(\.html)?$ employee-data-policy.html [L]
+  RewriteRule ^help(\.html)?$            help.html               [L]
+  RewriteRule ^404(\.html)?$             404.html                [L]
+  RewriteRule ^robots\.txt$              robots.txt              [L]
+  RewriteRule ^sitemap\.xml$             sitemap.xml             [L]
+
+  # ── Admin HTML pages ──
+  RewriteRule ^admin/(.*)$               admin/$1                [L]
+</IfModule>
+
+# ── Custom 404 Error Document ──
+ErrorDocument 404 /404.html
+
+# ── Browser Caching & Performance ──
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
