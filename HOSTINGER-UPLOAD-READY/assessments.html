@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assessments — SD Academy</title>
+  <meta name="description" content="Take quizzes and submit assignments to assess your learning progress in SD Academy."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/assessments.css"/>
+</head>
+<body>
+<div class="app-shell" id="app-shell">
+  <div class="main-content">
+    <div class="page-content" id="assess-content" style="display:none">
+
+      <!-- Assessment List -->
+      <div class="card animate-fade-up">
+        <div class="assess-filter-tabs" id="assess-tabs">
+          <button class="af-tab active" onclick="filterAssess('all',this)">All</button>
+          <button class="af-tab" onclick="filterAssess('not-started',this)">Not Started</button>
+          <button class="af-tab" onclick="filterAssess('attempted',this)">Attempted</button>
+          <button class="af-tab" onclick="filterAssess('passed',this)">Passed</button>
+          <button class="af-tab" onclick="filterAssess('needs-review',this)">Needs Review</button>
+          <button class="af-tab" onclick="">More ▾</button>
+        </div>
+        <div class="assess-grid" id="assess-grid">
+          <!-- rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Quiz + Assignment Row -->
+      <div class="assess-detail-row mt-16 stagger">
+
+        <!-- Quiz Attempt -->
+        <div class="card animate-fade-up">
+          <div class="quiz-header">
+            <h3 class="card-title">Quiz Attempt</h3>
+            <div class="quiz-counter">Question 2 of 10</div>
+          </div>
+
+          <div class="quiz-question" id="quiz-question">
+            What is the focal point in Architectural Sketching?
+          </div>
+
+          <div class="quiz-options" id="quiz-options">
+            <label class="quiz-option" id="opt-0">
+              <input type="radio" name="quiz-ans" value="0"/> The Vanishing Point
+            </label>
+            <label class="quiz-option selected" id="opt-1">
+              <input type="radio" name="quiz-ans" value="1" checked/> The Central element or area of the Drawing
+            </label>
+            <label class="quiz-option" id="opt-2">
+              <input type="radio" name="quiz-ans" value="2"/> The Sketch ruler
+            </label>
+            <label class="quiz-option" id="opt-3">
+              <input type="radio" name="quiz-ans" value="3"/> The horizon line
+            </label>
+          </div>
+
+          <!-- Submit Confirmation -->
+          <div class="quiz-confirm">
+            <div class="qc-icon">⚠️</div>
+            <div class="qc-text">
+              <strong>Submit answer ?</strong>
+              <p>Are you sure you want to submit your answer</p>
+            </div>
+            <div class="qc-btns">
+              <button class="btn btn-ghost" id="cancel-quiz-btn" onclick="hideConfirm()">Cancel</button>
+              <button class="btn btn-primary" id="submit-quiz-btn" onclick="submitQuiz()">Submit</button>
+            </div>
+          </div>
+
+          <div class="quiz-pagination">
+            <button class="qp-btn" onclick="prevQ()">‹</button>
+            <button class="qp-num" onclick="">1</button>
+            <button class="qp-num active" onclick="">2</button>
+            <button class="qp-btn" onclick="nextQ()">›</button>
+          </div>
+
+          <div class="quiz-result" id="quiz-result" style="display:none">
+            <div class="qr-icon">🎉</div>
+            <div class="qr-text">Correct! Well done.</div>
+          </div>
+        </div>
+
+        <!-- Assignment Submission -->
+        <div class="card animate-fade-up">
+          <h3 class="card-title mb-4">Assignment Submission</h3>
+          <div class="as-subtitle">Advance CAD Assignment</div>
+          <div class="as-linked">Linked to advanced CAD Module</div>
+
+          <div class="as-tabs mt-12" id="as-tabs">
+            <button class="ast-tab active" onclick="switchAssignTab(this)">Submission</button>
+            <button class="ast-tab" onclick="switchAssignTab(this)">Comments</button>
+            <button class="ast-tab" onclick="switchAssignTab(this)">Checklist</button>
+            <button class="ast-tab" onclick="switchAssignTab(this)">Reviewer</button>
+          </div>
+
+          <div class="as-content">
+            <h4 class="as-content-title">Advance CAD Assignment</h4>
+            <p class="as-content-desc">Upload and submit your advanced CAD project files following the requirements below</p>
+
+            <div class="as-checklist">
+              <div class="asc-item checked">
+                <input type="checkbox" id="chk0" checked/><label for="chk0">Submission Checklist</label>
+              </div>
+              <div class="asc-item">
+                <input type="checkbox" id="chk1"/><label for="chk1">Include 3D CAD models and floor plans</label>
+              </div>
+              <div class="asc-item">
+                <input type="checkbox" id="chk2"/><label for="chk2">Perform a layer organization check</label>
+              </div>
+              <div class="asc-item">
+                <input type="checkbox" id="chk3"/><label for="chk3">Attach a project brief and overview check</label>
+              </div>
+            </div>
+
+            <div class="as-comments mt-16">
+              <div class="asc-label">Comments</div>
+              <div class="asc-comment-item">
+                <div class="asc-avatar">DK</div>
+                <div class="asc-comment-info">
+                  <div class="asc-commenter">David k <span class="text-muted text-sm">HOD reviewer</span></div>
+                  <div class="progress-bar-wrap mt-4" style="width:120px"><div class="progress-bar-fill" style="width:60%"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn btn-primary mt-16 w-full" id="submit-assignment-btn" onclick="submitAssignment()">Submit Assignment</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="js/nav.js"></script>
+<script>
+  const ASSESSMENTS = [
+    { title:'Sketching Essential Quiz',   status:'attempted',    btnLabel:'Continue Quiz', btnCls:'primary' },
+    { title:'Energy Efficient Quiz',      status:'not-started',  btnLabel:'Start Quiz',    btnCls:'warning' },
+    { title:'Advanced CAD Assignment',    status:'passed',       btnLabel:'View Results',  btnCls:'ghost' },
+    { title:'Modern Architecture Quiz',   status:'passed',       btnLabel:'View Results',  btnCls:'ghost' },
+  ];
+
+  const STATUS_MAP2 = {
+    'attempted':   { label:'Attempted',   cls:'badge-warning' },
+    'not-started': { label:'Not Started', cls:'badge-danger' },
+    'passed':      { label:'Passed',      cls:'badge-success' },
+    'needs-review':{ label:'Needs Review',cls:'badge-gray' },
+  };
+
+  let currentFilter = 'all';
+
+  function renderAssessments(filter) {
+    const grid = document.getElementById('assess-grid');
+    const items = filter === 'all' ? ASSESSMENTS : ASSESSMENTS.filter(a => a.status === filter);
+    grid.innerHTML = items.map(a => {
+      const s = STATUS_MAP2[a.status];
+      const btnMap = { primary:'btn-primary', warning:'badge-warning-btn', ghost:'btn-ghost' };
+      return `<div class="assess-card">
+        <span class="ac-icon">👤</span>
+        <div class="ac-info">
+          <div class="ac-title">${a.title}</div>
+          <span class="badge ${s.cls}">${s.label}</span>
+        </div>
+        <button class="btn btn-sm ${a.btnCls === 'primary' ? 'btn-primary' : a.btnCls === 'ghost' ? 'btn-ghost' : 'btn-assess-warn'}"
+          onclick="startQuiz('${a.title}')">${a.btnLabel}</button>
+      </div>`;
+    }).join('');
+  }
+
+  function filterAssess(filter, btn) {
+    currentFilter = filter;
+    document.querySelectorAll('.af-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderAssessments(filter);
+  }
+
+  // Quiz logic
+  let currentQ = 2;
+  const totalQ = 10;
+
+  function nextQ() {
+    if (currentQ < totalQ) {
+      currentQ++;
+      document.querySelector('.quiz-counter').textContent = `Question ${currentQ} of ${totalQ}`;
+    }
+  }
+
+  function prevQ() {
+    if (currentQ > 1) {
+      currentQ--;
+      document.querySelector('.quiz-counter').textContent = `Question ${currentQ} of ${totalQ}`;
+    }
+  }
+
+  // Option selection
+  document.addEventListener('change', e => {
+    if (e.target.name === 'quiz-ans') {
+      document.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+      e.target.closest('.quiz-option').classList.add('selected');
+    }
+  });
+
+  function hideConfirm() {
+    document.querySelector('.quiz-confirm').style.display = 'none';
+  }
+
+  function submitQuiz() {
+    document.querySelector('.quiz-confirm').style.display = 'none';
+    const result = document.getElementById('quiz-result');
+    result.style.display = 'flex';
+    setTimeout(() => { result.style.display = 'none'; nextQ(); }, 2000);
+  }
+
+  function startQuiz(title) {
+    document.querySelector('.quiz-counter').textContent = 'Question 1 of 10';
+    document.querySelector('.quiz-confirm').style.display = 'flex';
+  }
+
+  function switchAssignTab(btn) {
+    document.querySelectorAll('.ast-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+
+  function submitAssignment() {
+    const btn = document.getElementById('submit-assignment-btn');
+    btn.textContent = '✅ Submitted!';
+    btn.disabled = true;
+    setTimeout(() => { btn.textContent = 'Submit Assignment'; btn.disabled = false; }, 3000);
+  }
+
+  const user = SDA.init({ role: 'learner' });
+  if (user) {
+    document.getElementById('assess-content').style.display = '';
+    renderAssessments('all');
+  }
+</script>
+</body>
+</html>

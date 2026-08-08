@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Materials — SD Academy</title>
+  <meta name="description" content="Access SOPs, Policies, Checklists, Templates and Forms in the SD Academy Materials Library."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/materials.css"/>
+</head>
+<body>
+<div class="app-shell" id="app-shell">
+  <div class="main-content">
+    <div class="page-content" id="mat-content" style="display:none">
+
+      <!-- Materials Library -->
+      <div class="card animate-fade-up">
+        <div class="card-header">
+          <div class="card-title">Materials Library</div>
+          <div class="mat-type-tabs" id="mat-type-tabs">
+            <button class="mat-tab active" onclick="switchMatTab(this,'sop')">SOP</button>
+            <button class="mat-tab" onclick="switchMatTab(this,'policy')">Policy</button>
+            <button class="mat-tab" onclick="switchMatTab(this,'checklist')">Checklist</button>
+            <button class="mat-tab" onclick="switchMatTab(this,'template')">Template</button>
+            <button class="mat-tab" onclick="switchMatTab(this,'form')">Form</button>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="mat-filters">
+          <div class="mat-filter-select">
+            <span class="mf-label">Department</span>
+            <select class="mf-select" id="dept-filter" onchange="applyFilters()">
+              <option>Architecture</option>
+              <option>Engineering</option>
+              <option>HR</option>
+              <option>Projects</option>
+            </select>
+          </div>
+          <div class="mat-filter-select">
+            <select class="mf-select" id="phase-filter" onchange="applyFilters()">
+              <option value="">All Phases</option>
+              <option>Design Phase</option>
+              <option>Preliminary</option>
+              <option>Construction</option>
+            </select>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="clearFilters()">Clear Filters</button>
+        </div>
+
+        <!-- Material Cards -->
+        <div class="mat-grid" id="mat-grid">
+          <!-- rendered by JS -->
+        </div>
+      </div>
+
+      <!-- Material Detail -->
+      <div class="card mt-16 animate-fade-up" id="mat-detail-card">
+        <div class="card-title mb-16">Material Detail</div>
+        <div class="mat-detail-layout">
+          <div class="mat-preview">
+            <div class="mat-pdf-preview">
+              <div class="mpv-inner">📄<br><span>Preview</span><br><span class="text-muted">(PDF viewer)</span></div>
+            </div>
+          </div>
+          <div class="mat-actions-panel">
+            <div class="map-actions">
+              <div class="map-title">Actions</div>
+              <a href="#" class="map-action-btn" id="download-btn">⬇ Download <span>›</span></a>
+              <a href="#" class="map-action-btn" id="acknowledge-btn">✅ Acknowledge <span>›</span></a>
+              <a href="#" class="map-action-btn primary" id="version-history-btn">⟳ Version history <span>›</span></a>
+            </div>
+            <div class="map-versions">
+              <div class="map-title">Version history</div>
+              <div class="version-item">
+                <input type="checkbox" checked id="v1" class="version-check"/>
+                <label for="v1">V1.4</label>
+                <div class="progress-bar-wrap" style="flex:1"><div class="progress-bar-fill" style="width:100%"></div></div>
+              </div>
+              <div class="version-item">
+                <input type="checkbox" checked id="v2" class="version-check"/>
+                <label for="v2">V1.4</label>
+                <div class="progress-bar-wrap" style="flex:1"><div class="progress-bar-fill" style="width:80%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="js/nav.js"></script>
+<script>
+  const MATERIALS = {
+    sop: [
+      { title:'Architectural Design SOP',  phase:'Design Phase',  icon:'📋' },
+      { title:'Site Analysis SOP',         phase:'Design Phase',  icon:'📋' },
+      { title:'Permit Application SOP',    phase:'Preliminary',   icon:'📋' },
+      { title:'Design Review Checklist',   phase:'Design Phase',  icon:'📋' },
+    ],
+    policy: [
+      { title:'Company Safety Policy',     phase:'All Phases',    icon:'📃' },
+      { title:'Remote Work Policy',        phase:'HR',            icon:'📃' },
+      { title:'IT Usage Policy',           phase:'IT',            icon:'📃' },
+    ],
+    checklist: [
+      { title:'Design Review Checklist',   phase:'Design Phase',  icon:'☑️' },
+      { title:'Site Visit Checklist',      phase:'Preliminary',   icon:'☑️' },
+    ],
+    template: [
+      { title:'Project Brief Template',    phase:'Preliminary',   icon:'📝' },
+      { title:'Design Proposal Template',  phase:'Design Phase',  icon:'📝' },
+    ],
+    form: [
+      { title:'Leave Application Form',    phase:'HR',            icon:'📄' },
+      { title:'Expense Claim Form',        phase:'Finance',       icon:'📄' },
+    ],
+  };
+
+  let currentMatTab = 'sop';
+  let selectedMat = null;
+
+  function renderMaterials(tab) {
+    const grid = document.getElementById('mat-grid');
+    const items = MATERIALS[tab] || [];
+    grid.innerHTML = items.map((m,i) => `
+      <div class="mat-card" onclick="selectMaterial(this,'${m.title}','${m.phase}')" data-phase="${m.phase}" id="matcard-${i}">
+        <span class="mc-mat-icon">${m.icon}</span>
+        <div class="mc-mat-info">
+          <div class="mc-mat-title">${m.title}</div>
+          <span class="badge badge-navy mc-mat-phase">${m.phase}</span>
+        </div>
+      </div>`).join('');
+  }
+
+  function switchMatTab(btn, tab) {
+    document.querySelectorAll('.mat-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentMatTab = tab;
+    renderMaterials(tab);
+  }
+
+  function selectMaterial(el, title, phase) {
+    document.querySelectorAll('.mat-card').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    document.querySelector('.mat-pdf-preview .mpv-inner').innerHTML =
+      `📄<br><span>${title}</span><br><span class="text-muted">${phase}</span>`;
+    document.getElementById('mat-detail-card').scrollIntoView({ behavior:'smooth', block:'nearest' });
+  }
+
+  function applyFilters() { /* filter logic placeholder */ }
+  function clearFilters() {
+    document.getElementById('dept-filter').selectedIndex = 0;
+    document.getElementById('phase-filter').selectedIndex = 0;
+    renderMaterials(currentMatTab);
+  }
+
+  const user = SDA.init({ role: 'learner' });
+  if (user) {
+    document.getElementById('mat-content').style.display = '';
+    renderMaterials('sop');
+  }
+</script>
+</body>
+</html>

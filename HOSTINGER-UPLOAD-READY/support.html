@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Support — SD Academy</title>
+  <meta name="description" content="Find answers, browse FAQs by department, and track your support tickets in SD Academy."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/support.css"/>
+</head>
+<body>
+<div class="app-shell" id="app-shell">
+  <div class="main-content">
+    <div class="page-content" id="support-content" style="display:none">
+
+      <div class="card animate-fade-up">
+        <div class="card-title mb-16">Support Center</div>
+
+        <!-- Search -->
+        <div class="support-search">
+          <span>🔍</span>
+          <input type="text" id="support-search-input" placeholder="Search : How can we help you?" oninput="searchFAQ(this.value)"/>
+        </div>
+
+        <!-- FAQs -->
+        <div class="faq-section mt-20">
+          <h3 class="faq-section-title">FAQs by Department</h3>
+
+          <div class="faq-dept" id="faq-hr">
+            <div class="faq-dept-header" onclick="toggleFAQ('hr')">
+              <div class="faq-dept-icon">❓</div>
+              <span>HR / L&D</span>
+              <span class="faq-toggle" id="faq-toggle-hr">▲</span>
+            </div>
+            <div class="faq-dept-items" id="faq-items-hr">
+              <a href="#" class="faq-item" id="faq-hr-1">❓ How to apply for leave</a>
+              <a href="#" class="faq-item" id="faq-hr-2">❓ Accessing E-learning courses</a>
+              <a href="#" class="faq-item" id="faq-hr-3">❓ Company Policies Overview</a>
+              <a href="#" class="faq-item" id="faq-hr-4">❓ Project Management rest</a>
+            </div>
+          </div>
+
+          <div class="faq-dept" id="faq-projects">
+            <div class="faq-dept-header" onclick="toggleFAQ('projects')">
+              <div class="faq-dept-icon">❓</div>
+              <span>Projects</span>
+              <span class="faq-toggle" id="faq-toggle-projects">▲</span>
+            </div>
+            <div class="faq-dept-items" id="faq-items-projects">
+              <a href="#" class="faq-item" id="faq-pr-1">❓ Project management best practices</a>
+              <a href="#" class="faq-item" id="faq-pr-2">❓ How to submit project proposals</a>
+              <a href="#" class="faq-item" id="faq-pr-3">❓ Time tracking guidelines</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- My Tickets -->
+        <div class="tickets-section mt-20">
+          <div class="card-header">
+            <h3 class="faq-section-title">My Tickets</h3>
+            <a href="#" class="view-all-link" id="view-all-tickets">View All Tickets</a>
+          </div>
+          <div class="tickets-list" id="tickets-list">
+            <div class="ticket-row" onclick="selectTicket('vpn')" data-ticket="vpn">
+              <div class="tr-icon">🎫</div>
+              <div class="tr-info">
+                <div class="tr-title">VPN Connection issue</div>
+                <div class="tr-time text-muted text-sm">1 Day ago</div>
+              </div>
+              <span class="badge" style="background:#d1fae5;color:#065f46;font-weight:700">In Progress</span>
+            </div>
+            <div class="ticket-row" onclick="selectTicket('crm')" data-ticket="crm">
+              <div class="tr-icon">🎫</div>
+              <div class="tr-info">
+                <div class="tr-title">Unable access CRM system</div>
+                <div class="tr-time text-muted text-sm">3 Days ago</div>
+              </div>
+              <span class="badge badge-warning" style="font-weight:700">Open</span>
+            </div>
+            <div class="ticket-row" onclick="selectTicket('approval')" data-ticket="approval">
+              <div class="tr-icon">🎫</div>
+              <div class="tr-info">
+                <div class="tr-title">Approval process not working</div>
+                <div class="tr-time text-muted text-sm">1 week ago</div>
+              </div>
+              <span class="badge badge-gray" style="font-weight:700">Closed</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track Ticket Status -->
+        <div class="track-section mt-20" id="track-section">
+          <h3 class="faq-section-title mb-12">Track Ticket Status</h3>
+          <div class="track-ticket-card">
+            <div class="ttc-title" id="ttc-title">Ticket VPN Connection issue</div>
+            <div class="ttc-steps">
+              <div class="ttc-step completed">
+                <div class="ttc-step-dot done">✓</div>
+                <div class="ttc-step-line done"></div>
+                <div class="ttc-step-label">Submission</div>
+              </div>
+              <div class="ttc-step active" id="ttc-in-progress">
+                <div class="ttc-step-dot active">✓</div>
+                <div class="ttc-step-line half"></div>
+                <div class="ttc-step-label">In progress</div>
+              </div>
+              <div class="ttc-step">
+                <div class="ttc-step-dot">—</div>
+                <div class="ttc-step-line"></div>
+                <div class="ttc-step-label">Pending review</div>
+              </div>
+              <div class="ttc-step">
+                <div class="ttc-step-dot">—</div>
+                <div class="ttc-step-label">Closed</div>
+              </div>
+            </div>
+            <div class="ttc-comment">
+              <div class="ttc-commenter-avatar">R</div>
+              <div class="ttc-commenter-info">
+                <div class="ttc-commenter-name">Rachel. <span class="text-muted text-sm" id="ttc-commenter-role">It Support</span></div>
+                <div class="ttc-comment-text" id="ttc-comment">We are investigating the issue. Please wait while we resolve it.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- New Ticket Button -->
+      <div class="mt-16 flex justify-between items-center">
+        <button class="btn btn-primary" id="new-ticket-btn" onclick="openNewTicket()">+ Raise New Ticket</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- New Ticket Modal -->
+<div class="modal-overlay" id="new-ticket-modal">
+  <div class="modal">
+    <h3 style="margin-bottom:16px">Raise a Support Ticket</h3>
+    <div class="form-group">
+      <label>Subject</label>
+      <input type="text" id="ticket-subject" placeholder="Describe your issue briefly..." style="border:1.5px solid var(--gray-200);border-radius:8px;padding:8px 12px;width:100%;outline:none"/>
+    </div>
+    <div class="form-group mt-12">
+      <label>Department</label>
+      <select style="border:1.5px solid var(--gray-200);border-radius:8px;padding:8px 12px;width:100%;outline:none">
+        <option>HR / L&D</option><option>IT Support</option><option>Projects</option><option>Finance</option>
+      </select>
+    </div>
+    <div class="form-group mt-12">
+      <label>Description</label>
+      <textarea rows="3" placeholder="Provide more details..." style="border:1.5px solid var(--gray-200);border-radius:8px;padding:8px 12px;width:100%;outline:none;resize:vertical"></textarea>
+    </div>
+    <div class="flex gap-12 mt-16">
+      <button class="btn btn-ghost" style="flex:1" onclick="closeNewTicket()">Cancel</button>
+      <button class="btn btn-primary" style="flex:1" onclick="submitNewTicket()">Submit Ticket</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/nav.js"></script>
+<script>
+  const TICKET_DATA = {
+    vpn:      { title:'VPN Connection issue',      comment:'We are investigating the issue. Please wait while we resolve it.', agent:'Rachel', role:'IT Support', step:2 },
+    crm:      { title:'Unable access CRM system',  comment:'Your ticket is open and will be assigned shortly.',                  agent:'Admin',  role:'HR / L&D',  step:1 },
+    approval: { title:'Approval process not working',comment:'This ticket has been resolved. Please re-test and confirm.',       agent:'David K',role:'IT Support', step:4 },
+  };
+
+  function selectTicket(id) {
+    document.querySelectorAll('.ticket-row').forEach(r => r.classList.remove('selected'));
+    document.querySelector(`[data-ticket="${id}"]`).classList.add('selected');
+    const d = TICKET_DATA[id];
+    document.getElementById('ttc-title').textContent = `Ticket: ${d.title}`;
+    document.getElementById('ttc-comment').textContent = d.comment;
+    document.getElementById('ttc-commenter-role').textContent = d.role;
+    document.querySelector('.ttc-commenter-name').childNodes[0].textContent = d.agent + '. ';
+  }
+
+  function toggleFAQ(dept) {
+    const items = document.getElementById(`faq-items-${dept}`);
+    const toggle = document.getElementById(`faq-toggle-${dept}`);
+    const isOpen = !items.classList.contains('collapsed');
+    items.classList.toggle('collapsed', isOpen);
+    toggle.textContent = isOpen ? '▼' : '▲';
+  }
+
+  function searchFAQ(query) {
+    const items = document.querySelectorAll('.faq-item');
+    items.forEach(item => {
+      const match = item.textContent.toLowerCase().includes(query.toLowerCase());
+      item.style.display = (query === '' || match) ? '' : 'none';
+    });
+  }
+
+  function openNewTicket() {
+    document.getElementById('new-ticket-modal').classList.add('open');
+  }
+
+  function closeNewTicket() {
+    document.getElementById('new-ticket-modal').classList.remove('open');
+  }
+
+  function submitNewTicket() {
+    closeNewTicket();
+    alert('✅ Your ticket has been submitted. Our support team will respond shortly.');
+  }
+
+  document.getElementById('new-ticket-modal').addEventListener('click', e => {
+    if (e.target === document.getElementById('new-ticket-modal')) closeNewTicket();
+  });
+
+  const user = SDA.init({ role: 'learner' });
+  if (user) {
+    document.getElementById('support-content').style.display = '';
+    selectTicket('vpn');
+  }
+</script>
+</body>
+</html>
