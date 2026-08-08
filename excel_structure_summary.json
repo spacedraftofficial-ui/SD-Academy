@@ -1,0 +1,4610 @@
+{
+  "SDG_Register_01_Common_SD_Group_v1.0.xlsx": {
+    "sheets": [
+      "Dashboard",
+      "Register",
+      "Level_Matrix",
+      "Level_Guide",
+      "Upload_Checklist",
+      "Access_Matrix",
+      "Status_Flow",
+      "Change_Log",
+      "Lists"
+    ],
+    "details": {
+      "Dashboard": {
+        "rowCount": 55,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "COMMON SD GROUP - GOVERNANCE DASHBOARD"
+          ],
+          [
+            "All figures are live formulas reading the Register tab."
+          ],
+          [],
+          [
+            "GOVERNANCE SUMMARY"
+          ],
+          [
+            "Metric",
+            "Value"
+          ],
+          [
+            "Total books"
+          ],
+          [
+            "Books requiring HR review"
+          ],
+          [
+            "Books requiring legal review (legal-sensitive)"
+          ],
+          [
+            "Books requiring management approval"
+          ]
+        ]
+      },
+      "Register": {
+        "rowCount": 35,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "COMMON SD GROUP - HANDBOOK REGISTER (30 books)"
+          ],
+          [
+            "Standalone company register. Source of truth for this entity. Update Current Status here; the Dashboard recalculates automatically."
+          ],
+          [],
+          [
+            "Book ID",
+            "Book Title",
+            "Brand / Division",
+            "Department",
+            "Book Category",
+            "Employee Level Access",
+            "Confidentiality Level",
+            "Book Owner",
+            "HR Review Required",
+            "Legal Review Required",
+            "Management Approval Required",
+            "Employee Acknowledgement Required",
+            "Quiz / Assessment Required",
+            "Passing Score",
+            "Related SD Academy Course ID",
+            "SD Academy Folder Path",
+            "PDF File Name",
+            "Version Number",
+            "Current Status",
+            "Priority",
+            "Production Wave",
+            "Review Frequency",
+            "Next Review Due Date",
+            "Remarks / Gap Notes"
+          ],
+          [
+            "CM-CMN-01",
+            "SD Group Common Employee Handbook",
+            "Group Common",
+            "All Departments",
+            "Common Handbook",
+            "L1-L5",
+            "Internal",
+            "Group HR",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-CM-CMN-01",
+            "SD Academy/01_Common_SD_Group",
+            "SDG_Common_Employee_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "Critical",
+            "Wave 1",
+            "Annual + on law change",
+            46478,
+            "Was Employee Handbook; base book for every employee"
+          ],
+          [
+            "CM-CMN-02",
+            "HR Policy Handbook",
+            "Group Common",
+            "HR",
+            "Common Handbook",
+            "L1-L5",
+            "Internal",
+            "Group HR",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-CM-CMN-02",
+            "SD Academy/01_Common_SD_Group",
+            "SDG_Common_HR_Policy_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "Critical",
+            "Wave 1",
+            "Annual + on law change",
+            46478,
+            ""
+          ],
+          [
+            "CM-CMN-03",
+            "Attendance, Leave, Permission & Working Hours Handbook",
+            "Group Common",
+            "HR",
+            "Common Handbook",
+            "L1-L5",
+            "Internal",
+            "Group HR",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-CM-CMN-03",
+            "SD Academy/01_Common_SD_Group",
+            "SDG_Common_Attendance_Leave_Permission_Working_Hours_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "Critical",
+            "Wave 1",
+            "Annual + on law change",
+            46478,
+            ""
+          ],
+          [
+            "CM-CMN-04",
+            "EHS Basics Handbook",
+            "Group Common",
+            "EHS",
+            "Common Handbook",
+            "L1-L5",
+            "Internal",
+            "Group HR",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            80,
+            "SDA-CRS-CM-CMN-04",
+            "SD Academy/01_Common_SD_Group",
+            "SDG_Common_EHS_Basics_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "Critical",
+            "Wave 1",
+            "Annual + on law change",
+            46478,
+            "Safety basics for all; site/factory detail in company SOP books"
+          ],
+          [
+            "CM-CMN-05",
+            "Information Security Handbook",
+            "Group Common",
+            "IT",
+            "Common Handbook",
+            "L1-L5",
+            "Internal",
+            "Group HR",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            80,
+            "SDA-CRS-CM-CMN-05",
+            "SD Academy/01_Common_SD_Group",
+            "SDG_Common_Information_Security_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "Critical",
+            "Wave 1",
+            "Annual + on law change",
+            46478,
+            ""
+          ]
+        ]
+      },
+      "Level_Matrix": {
+        "rowCount": 35,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "COMMON SD GROUP - LEVEL MATRIX (L1-L5)"
+          ],
+          [
+            "Cumulative: each level includes every level below it. Yes = the book sits in that level's path for people in scope."
+          ],
+          [],
+          [
+            "Book ID",
+            "Book Title",
+            "Brand / Division",
+            "Department",
+            "Book Category",
+            "Access Band",
+            "Min Level",
+            "L1",
+            "L2",
+            "L3",
+            "L4",
+            "L5"
+          ],
+          [
+            "CM-CMN-01",
+            "SD Group Common Employee Handbook",
+            "Group Common",
+            "All Departments",
+            "Common Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "CM-CMN-02",
+            "HR Policy Handbook",
+            "Group Common",
+            "HR",
+            "Common Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "CM-CMN-03",
+            "Attendance, Leave, Permission & Working Hours Handbook",
+            "Group Common",
+            "HR",
+            "Common Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "CM-CMN-04",
+            "EHS Basics Handbook",
+            "Group Common",
+            "EHS",
+            "Common Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "CM-CMN-05",
+            "Information Security Handbook",
+            "Group Common",
+            "IT",
+            "Common Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ]
+        ]
+      },
+      "Level_Guide": {
+        "rowCount": 10,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "5-LEVEL LEARNING STRUCTURE"
+          ],
+          [
+            "Levels define who reads what. Paths are cumulative."
+          ],
+          [],
+          [
+            "Level",
+            "Level Name",
+            "Typical Roles",
+            "What This Level Adds",
+            "Completion Gate",
+            "Common SD Group books at this level"
+          ],
+          [
+            "L1",
+            "L1 - Foundation",
+            "Trainee / Executive / Operator",
+            "Group core conduct & safety, own company handbook, own department basics",
+            "Induction: complete within 30 days of joining",
+            12
+          ],
+          [
+            "L2",
+            "L2 - Practitioner",
+            "Senior Executive / Technician / Specialist",
+            "Adds own-function SOPs: how the job is done to standard",
+            "Complete before independent working / unsupervised sign-off",
+            18
+          ],
+          [
+            "L3",
+            "L3 - Senior / Coordinator",
+            "Senior Specialist / Team Coordinator / Lead",
+            "Adds compliance books, escalation ownership, audit-facing material",
+            "Complete before holding escalation or client-facing authority",
+            19
+          ],
+          [
+            "L4",
+            "L4 - Manager / HOD",
+            "Manager / Head of Department",
+            "Adds the management set: DoA, MIS review, appraisal, risk, targets, HOD role",
+            "Complete before confirmation in a people-management role",
+            28
+          ],
+          [
+            "L5",
+            "L5 - Leadership",
+            "Company Head / Function Head / Management",
+            "Adds leadership set: Leadership Operating and Strategic Planning & Review",
+            "Complete within 90 days of appointment to leadership",
+            30
+          ]
+        ]
+      },
+      "Upload_Checklist": {
+        "rowCount": 54,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "COMMON SD GROUP - SD ACADEMY WEBSITE UPLOAD CHECKLIST (30 books)"
+          ],
+          [
+            "Portal admin working sheet. Complete every tick column per book, then set Current Status in the Register to 'Uploaded to SD Academy' / 'Access Tagged'."
+          ],
+          [],
+          [
+            "A. PRE-UPLOAD STANDARDS - verify these before uploading any file"
+          ],
+          [
+            "1. File is the FINAL branded PDF - entity logo on cover, corner logo and watermark on every interior page."
+          ],
+          [
+            "2. File name matches the 'PDF File Name' column EXACTLY (case, underscores and _V1.0.pdf suffix included)."
+          ],
+          [
+            "3. Version block reads V1.0 | Effective 03-Jul-2026 | Next Review 01-Jul-2027 on the document control page."
+          ],
+          [
+            "4. Upload to the exact 'SD Academy Folder Path' shown - do not create new folders or rename existing ones."
+          ],
+          [
+            "5. Link the file to its 'Related SD Academy Course ID' before publishing."
+          ]
+        ]
+      },
+      "Access_Matrix": {
+        "rowCount": 10,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "ACCESS BAND REFERENCE"
+          ],
+          [
+            "What each access band is used for across SD Group."
+          ],
+          [],
+          [
+            "Access band",
+            "Used for"
+          ],
+          [
+            "L1-L5",
+            "Common employee, code of conduct, attendance & leave, HR basics, company/division handbook, department execution, basic safety, basic training, acknowledgement books"
+          ],
+          [
+            "L2-L5",
+            "SOP-heavy, tool usage, department workflow, execution process, software books"
+          ],
+          [
+            "L3-L5",
+            "Senior coordination, client escalation, advanced reporting, commercial process, data quality, compliance process"
+          ],
+          [
+            "L4-L5",
+            "Management review, approval matrix, team monitoring, internal audit, escalation control, corrective action"
+          ],
+          [
+            "L5",
+            "Founder/director strategy, confidential strategy, restructuring, sensitive legal strategy, high-level governance"
+          ]
+        ]
+      },
+      "Status_Flow": {
+        "rowCount": 20,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "STATUS FLOW - 15 STAGES"
+          ],
+          [
+            "Each book moves through these stages. Use the dropdown in Register."
+          ],
+          [],
+          [
+            "#",
+            "Stage",
+            "Gate owner",
+            "Exit criteria"
+          ],
+          [
+            1,
+            "Not Started",
+            "Register owner",
+            "Data sheet received"
+          ],
+          [
+            2,
+            "Draft Content Created",
+            "Book Owner",
+            "Full draft on approved template"
+          ],
+          [
+            3,
+            "HR Review Pending",
+            "Group HR",
+            "Queued for HR check"
+          ],
+          [
+            4,
+            "HR Approved",
+            "Group HR",
+            "Policy consistency verified"
+          ],
+          [
+            5,
+            "Legal Review Pending",
+            "Legal & Compliance",
+            "Queued where Legal = Yes"
+          ]
+        ]
+      },
+      "Change_Log": {
+        "rowCount": 6,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "CHANGE LOG"
+          ],
+          [
+            "Record every structural or status change to this register."
+          ],
+          [],
+          [
+            "Date",
+            "Version",
+            "Change Type",
+            "Description",
+            "By"
+          ],
+          [
+            "23-Jul-2026",
+            "v1.0",
+            "Register split from group master - Common SD Group",
+            "Common SD Group register separated from SDG_Handbook_Master_Register_v3.1 into a standalone workbook covering 30 books. All 30 handbooks produced as entity-branded, QC-audited PDFs; status 'PDF Final Checked'. Next stages: HR/Legal/Management sign-off, SD Academy upload, access tagging, acknowledgement campaign.",
+            "Group HR"
+          ]
+        ]
+      },
+      "Lists": {
+        "rowCount": 18,
+        "sampleRows": [
+          [
+            "Validation lists (do not delete)"
+          ],
+          [],
+          [
+            "Status",
+            "Access",
+            "Yes/No"
+          ],
+          [
+            "Not Started",
+            "L1-L5",
+            "Yes"
+          ],
+          [
+            "Draft Content Created",
+            "L2-L5",
+            "No"
+          ],
+          [
+            "HR Review Pending",
+            "L3-L5"
+          ],
+          [
+            "HR Approved",
+            "L4-L5"
+          ],
+          [
+            "Legal Review Pending",
+            "L5"
+          ],
+          [
+            "Legal Approved"
+          ],
+          [
+            "Management Review Pending"
+          ]
+        ]
+      }
+    }
+  },
+  "SDG_Register_02_SpaceDraft_v1.0.xlsx": {
+    "sheets": [
+      "Dashboard",
+      "Register",
+      "Level_Matrix",
+      "Level_Guide",
+      "Upload_Checklist",
+      "Access_Matrix",
+      "Status_Flow",
+      "Change_Log",
+      "Lists"
+    ],
+    "details": {
+      "Dashboard": {
+        "rowCount": 56,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "SPACEDRAFT - GOVERNANCE DASHBOARD"
+          ],
+          [
+            "All figures are live formulas reading the Register tab."
+          ],
+          [],
+          [
+            "GOVERNANCE SUMMARY"
+          ],
+          [
+            "Metric",
+            "Value"
+          ],
+          [
+            "Total books"
+          ],
+          [
+            "Books requiring HR review"
+          ],
+          [
+            "Books requiring legal review (legal-sensitive)"
+          ],
+          [
+            "Books requiring management approval"
+          ]
+        ]
+      },
+      "Register": {
+        "rowCount": 33,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "SPACEDRAFT - HANDBOOK REGISTER (28 books)"
+          ],
+          [
+            "Standalone company register. Source of truth for this entity. Update Current Status here; the Dashboard recalculates automatically."
+          ],
+          [],
+          [
+            "Book ID",
+            "Book Title",
+            "Brand / Division",
+            "Department",
+            "Book Category",
+            "Employee Level Access",
+            "Confidentiality Level",
+            "Book Owner",
+            "HR Review Required",
+            "Legal Review Required",
+            "Management Approval Required",
+            "Employee Acknowledgement Required",
+            "Quiz / Assessment Required",
+            "Passing Score",
+            "Related SD Academy Course ID",
+            "SD Academy Folder Path",
+            "PDF File Name",
+            "Version Number",
+            "Current Status",
+            "Priority",
+            "Production Wave",
+            "Review Frequency",
+            "Next Review Due Date",
+            "Remarks / Gap Notes"
+          ],
+          [
+            "SD-BRD-01",
+            "SpaceDraft Company Handbook",
+            "All Divisions",
+            "Company-wide",
+            "Company / Division Handbook",
+            "L1-L5",
+            "Internal",
+            "HRBP - SpaceDraft India Pvt Ltd",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-SD-BRD-01",
+            "SD Academy/02_SpaceDraft/01_Company_Handbooks",
+            "SDG_SpaceDraft_Company_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 2",
+            "Annual + on law change",
+            46478,
+            "Company and brand handbook combined (single-brand entity)"
+          ],
+          [
+            "SD-DPT-01",
+            "CRM Department Handbook",
+            "SpaceDraft",
+            "CRM",
+            "Department Handbook",
+            "L1-L5",
+            "Internal",
+            "Dept Head - SD/CRM",
+            "Yes",
+            "No",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-SD-DPT-01",
+            "SD Academy/02_SpaceDraft/03_Department_Handbooks",
+            "SDG_SpaceDraft_CRM_Department_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 3",
+            "Annual",
+            46478,
+            ""
+          ],
+          [
+            "SD-DPT-02",
+            "Business Development Handbook",
+            "SpaceDraft",
+            "Business Development",
+            "Department Handbook",
+            "L1-L5",
+            "Internal",
+            "Dept Head - SD/Business Development",
+            "Yes",
+            "No",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-SD-DPT-02",
+            "SD Academy/02_SpaceDraft/03_Department_Handbooks",
+            "SDG_SpaceDraft_Business_Development_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 3",
+            "Annual",
+            46478,
+            ""
+          ],
+          [
+            "SD-DPT-03",
+            "Design Studio Handbook",
+            "SpaceDraft",
+            "Design Studio",
+            "Department Handbook",
+            "L1-L5",
+            "Internal",
+            "Dept Head - SD/Design Studio",
+            "Yes",
+            "No",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-SD-DPT-03",
+            "SD Academy/02_SpaceDraft/03_Department_Handbooks",
+            "SDG_SpaceDraft_Design_Studio_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 3",
+            "Annual",
+            46478,
+            ""
+          ],
+          [
+            "SD-DPT-04",
+            "Tender Department Handbook",
+            "SpaceDraft",
+            "Tender",
+            "Department Handbook",
+            "L2-L5",
+            "Internal",
+            "Dept Head - SD/Tender",
+            "Yes",
+            "No",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-SD-DPT-04",
+            "SD Academy/02_SpaceDraft/03_Department_Handbooks",
+            "SDG_SpaceDraft_Tender_Department_Handbook_L2-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 3",
+            "Annual",
+            46478,
+            ""
+          ]
+        ]
+      },
+      "Level_Matrix": {
+        "rowCount": 33,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "SPACEDRAFT - LEVEL MATRIX (L1-L5)"
+          ],
+          [
+            "Cumulative: each level includes every level below it. Yes = the book sits in that level's path for people in scope."
+          ],
+          [],
+          [
+            "Book ID",
+            "Book Title",
+            "Brand / Division",
+            "Department",
+            "Book Category",
+            "Access Band",
+            "Min Level",
+            "L1",
+            "L2",
+            "L3",
+            "L4",
+            "L5"
+          ],
+          [
+            "SD-BRD-01",
+            "SpaceDraft Company Handbook",
+            "All Divisions",
+            "Company-wide",
+            "Company / Division Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "SD-DPT-01",
+            "CRM Department Handbook",
+            "SpaceDraft",
+            "CRM",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "SD-DPT-02",
+            "Business Development Handbook",
+            "SpaceDraft",
+            "Business Development",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "SD-DPT-03",
+            "Design Studio Handbook",
+            "SpaceDraft",
+            "Design Studio",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "SD-DPT-06",
+            "Procurement Handbook",
+            "SpaceDraft",
+            "Procurement",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ]
+        ]
+      },
+      "Level_Guide": {
+        "rowCount": 10,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "5-LEVEL LEARNING STRUCTURE"
+          ],
+          [
+            "Levels define who reads what. Paths are cumulative."
+          ],
+          [],
+          [
+            "Level",
+            "Level Name",
+            "Typical Roles",
+            "What This Level Adds",
+            "Completion Gate",
+            "SpaceDraft books at this level"
+          ],
+          [
+            "L1",
+            "L1 - Foundation",
+            "Trainee / Executive / Operator",
+            "Group core conduct & safety, own company handbook, own department basics",
+            "Induction: complete within 30 days of joining",
+            11
+          ],
+          [
+            "L2",
+            "L2 - Practitioner",
+            "Senior Executive / Technician / Specialist",
+            "Adds own-function SOPs: how the job is done to standard",
+            "Complete before independent working / unsupervised sign-off",
+            23
+          ],
+          [
+            "L3",
+            "L3 - Senior / Coordinator",
+            "Senior Specialist / Team Coordinator / Lead",
+            "Adds compliance books, escalation ownership, audit-facing material",
+            "Complete before holding escalation or client-facing authority",
+            26
+          ],
+          [
+            "L4",
+            "L4 - Manager / HOD",
+            "Manager / Head of Department",
+            "Adds the management set: DoA, MIS review, appraisal, risk, targets, HOD role",
+            "Complete before confirmation in a people-management role",
+            28
+          ],
+          [
+            "L5",
+            "L5 - Leadership",
+            "Company Head / Function Head / Management",
+            "Adds leadership set: Leadership Operating and Strategic Planning & Review",
+            "Complete within 90 days of appointment to leadership",
+            28
+          ]
+        ]
+      },
+      "Upload_Checklist": {
+        "rowCount": 52,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "SPACEDRAFT - SD ACADEMY WEBSITE UPLOAD CHECKLIST (28 books)"
+          ],
+          [
+            "Portal admin working sheet. Complete every tick column per book, then set Current Status in the Register to 'Uploaded to SD Academy' / 'Access Tagged'."
+          ],
+          [],
+          [
+            "A. PRE-UPLOAD STANDARDS - verify these before uploading any file"
+          ],
+          [
+            "1. File is the FINAL branded PDF - entity logo on cover, corner logo and watermark on every interior page."
+          ],
+          [
+            "2. File name matches the 'PDF File Name' column EXACTLY (case, underscores and _V1.0.pdf suffix included)."
+          ],
+          [
+            "3. Version block reads V1.0 | Effective 03-Jul-2026 | Next Review 01-Jul-2027 on the document control page."
+          ],
+          [
+            "4. Upload to the exact 'SD Academy Folder Path' shown - do not create new folders or rename existing ones."
+          ],
+          [
+            "5. Link the file to its 'Related SD Academy Course ID' before publishing."
+          ]
+        ]
+      },
+      "Access_Matrix": {
+        "rowCount": 10,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "ACCESS BAND REFERENCE"
+          ],
+          [
+            "What each access band is used for across SD Group."
+          ],
+          [],
+          [
+            "Access band",
+            "Used for"
+          ],
+          [
+            "L1-L5",
+            "Common employee, code of conduct, attendance & leave, HR basics, company/division handbook, department execution, basic safety, basic training, acknowledgement books"
+          ],
+          [
+            "L2-L5",
+            "SOP-heavy, tool usage, department workflow, execution process, software books"
+          ],
+          [
+            "L3-L5",
+            "Senior coordination, client escalation, advanced reporting, commercial process, data quality, compliance process"
+          ],
+          [
+            "L4-L5",
+            "Management review, approval matrix, team monitoring, internal audit, escalation control, corrective action"
+          ],
+          [
+            "L5",
+            "Founder/director strategy, confidential strategy, restructuring, sensitive legal strategy, high-level governance"
+          ]
+        ]
+      },
+      "Status_Flow": {
+        "rowCount": 20,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "STATUS FLOW - 15 STAGES"
+          ],
+          [
+            "Each book moves through these stages. Use the dropdown in Register."
+          ],
+          [],
+          [
+            "#",
+            "Stage",
+            "Gate owner",
+            "Exit criteria"
+          ],
+          [
+            1,
+            "Not Started",
+            "Register owner",
+            "Data sheet received"
+          ],
+          [
+            2,
+            "Draft Content Created",
+            "Book Owner",
+            "Full draft on approved template"
+          ],
+          [
+            3,
+            "HR Review Pending",
+            "Group HR",
+            "Queued for HR check"
+          ],
+          [
+            4,
+            "HR Approved",
+            "Group HR",
+            "Policy consistency verified"
+          ],
+          [
+            5,
+            "Legal Review Pending",
+            "Legal & Compliance",
+            "Queued where Legal = Yes"
+          ]
+        ]
+      },
+      "Change_Log": {
+        "rowCount": 6,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "CHANGE LOG"
+          ],
+          [
+            "Record every structural or status change to this register."
+          ],
+          [],
+          [
+            "Date",
+            "Version",
+            "Change Type",
+            "Description",
+            "By"
+          ],
+          [
+            "23-Jul-2026",
+            "v1.0",
+            "Register split from group master - SpaceDraft",
+            "SpaceDraft register separated from SDG_Handbook_Master_Register_v3.1 into a standalone workbook covering 28 books. All 28 handbooks produced as entity-branded, QC-audited PDFs; status 'PDF Final Checked'. Next stages: HR/Legal/Management sign-off, SD Academy upload, access tagging, acknowledgement campaign.",
+            "Group HR"
+          ]
+        ]
+      },
+      "Lists": {
+        "rowCount": 18,
+        "sampleRows": [
+          [
+            "Validation lists (do not delete)"
+          ],
+          [],
+          [
+            "Status",
+            "Access",
+            "Yes/No"
+          ],
+          [
+            "Not Started",
+            "L1-L5",
+            "Yes"
+          ],
+          [
+            "Draft Content Created",
+            "L2-L5",
+            "No"
+          ],
+          [
+            "HR Review Pending",
+            "L3-L5"
+          ],
+          [
+            "HR Approved",
+            "L4-L5"
+          ],
+          [
+            "Legal Review Pending",
+            "L5"
+          ],
+          [
+            "Legal Approved"
+          ],
+          [
+            "Management Review Pending"
+          ]
+        ]
+      }
+    }
+  },
+  "SDG_Register_03_Woodify_v1.0.xlsx": {
+    "sheets": [
+      "Dashboard",
+      "Register",
+      "Level_Matrix",
+      "Level_Guide",
+      "Upload_Checklist",
+      "Access_Matrix",
+      "Status_Flow",
+      "Change_Log",
+      "Lists"
+    ],
+    "details": {
+      "Dashboard": {
+        "rowCount": 56,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "WOODIFY - GOVERNANCE DASHBOARD"
+          ],
+          [
+            "All figures are live formulas reading the Register tab."
+          ],
+          [],
+          [
+            "GOVERNANCE SUMMARY"
+          ],
+          [
+            "Metric",
+            "Value"
+          ],
+          [
+            "Total books"
+          ],
+          [
+            "Books requiring HR review"
+          ],
+          [
+            "Books requiring legal review (legal-sensitive)"
+          ],
+          [
+            "Books requiring management approval"
+          ]
+        ]
+      },
+      "Register": {
+        "rowCount": 58,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "WOODIFY - HANDBOOK REGISTER (53 books)"
+          ],
+          [
+            "Standalone company register. Source of truth for this entity. Update Current Status here; the Dashboard recalculates automatically."
+          ],
+          [],
+          [
+            "Book ID",
+            "Book Title",
+            "Brand / Division",
+            "Department",
+            "Book Category",
+            "Employee Level Access",
+            "Confidentiality Level",
+            "Book Owner",
+            "HR Review Required",
+            "Legal Review Required",
+            "Management Approval Required",
+            "Employee Acknowledgement Required",
+            "Quiz / Assessment Required",
+            "Passing Score",
+            "Related SD Academy Course ID",
+            "SD Academy Folder Path",
+            "PDF File Name",
+            "Version Number",
+            "Current Status",
+            "Priority",
+            "Production Wave",
+            "Review Frequency",
+            "Next Review Due Date",
+            "Remarks / Gap Notes"
+          ],
+          [
+            "TSK-BRD-01",
+            "Taskon Brand Handbook",
+            "Taskon",
+            "Division-wide",
+            "Company / Division Handbook",
+            "L1-L5",
+            "Internal",
+            "HRBP - Woodify India Pvt Ltd",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-TSK-BRD-01",
+            "SD Academy/03_Woodify/02_Brand_Division_Handbooks",
+            "SDG_Woodify_Taskon_Brand_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 2",
+            "Annual + on law change",
+            46478,
+            "Seating brand under Woodify"
+          ],
+          [
+            "WFH-BRD-01",
+            "Woodify Homes Division Handbook",
+            "Woodify Homes",
+            "Division-wide",
+            "Company / Division Handbook",
+            "L1-L5",
+            "Internal",
+            "HRBP - Woodify India Pvt Ltd",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-WFH-BRD-01",
+            "SD Academy/03_Woodify/02_Brand_Division_Handbooks",
+            "SDG_Woodify_WoodifyHomes_Division_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 2",
+            "Annual + on law change",
+            46478,
+            "Was Woodify Homes Company Handbook; division of Woodify India Pvt Ltd"
+          ],
+          [
+            "WFY-BRD-01",
+            "Woodify Company Handbook",
+            "All Divisions",
+            "Company-wide",
+            "Company / Division Handbook",
+            "L1-L5",
+            "Internal",
+            "HRBP - Woodify India Pvt Ltd",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-WFY-BRD-01",
+            "SD Academy/03_Woodify/01_Company_Handbooks",
+            "SDG_Woodify_Company_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 2",
+            "Annual + on law change",
+            46478,
+            ""
+          ],
+          [
+            "TSK-DPT-04",
+            "Taskon Sales & Dealer / Channel Handbook",
+            "Taskon",
+            "Sales",
+            "Department Handbook",
+            "L1-L5",
+            "Internal",
+            "Dept Head - TSK/Sales",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-TSK-DPT-04",
+            "SD Academy/03_Woodify/03_Department_Handbooks",
+            "SDG_Woodify_Taskon_Sales_Dealer_Channel_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 3",
+            "Annual + on law change",
+            46478,
+            ""
+          ],
+          [
+            "WFH-DPT-01",
+            "CRM Handbook",
+            "Woodify Homes",
+            "CRM",
+            "Department Handbook",
+            "L1-L5",
+            "Internal",
+            "Dept Head - WFH/CRM",
+            "Yes",
+            "No",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-WFH-DPT-01",
+            "SD Academy/03_Woodify/03_Department_Handbooks",
+            "SDG_Woodify_WoodifyHomes_CRM_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 3",
+            "Annual",
+            46478,
+            ""
+          ]
+        ]
+      },
+      "Level_Matrix": {
+        "rowCount": 58,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "WOODIFY - LEVEL MATRIX (L1-L5)"
+          ],
+          [
+            "Cumulative: each level includes every level below it. Yes = the book sits in that level's path for people in scope."
+          ],
+          [],
+          [
+            "Book ID",
+            "Book Title",
+            "Brand / Division",
+            "Department",
+            "Book Category",
+            "Access Band",
+            "Min Level",
+            "L1",
+            "L2",
+            "L3",
+            "L4",
+            "L5"
+          ],
+          [
+            "TSK-BRD-01",
+            "Taskon Brand Handbook",
+            "Taskon",
+            "Division-wide",
+            "Company / Division Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "TSK-DPT-01",
+            "Product Development Handbook",
+            "Taskon",
+            "Product Development",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "TSK-DPT-02",
+            "Seating Engineering Handbook",
+            "Taskon",
+            "Seating Engineering",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "TSK-DPT-03",
+            "Testing & Certification Handbook",
+            "Taskon",
+            "Testing & Certification",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "TSK-DPT-04",
+            "Taskon Sales & Dealer / Channel Handbook",
+            "Taskon",
+            "Sales",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ]
+        ]
+      },
+      "Level_Guide": {
+        "rowCount": 10,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "5-LEVEL LEARNING STRUCTURE"
+          ],
+          [
+            "Levels define who reads what. Paths are cumulative."
+          ],
+          [],
+          [
+            "Level",
+            "Level Name",
+            "Typical Roles",
+            "What This Level Adds",
+            "Completion Gate",
+            "Woodify books at this level"
+          ],
+          [
+            "L1",
+            "L1 - Foundation",
+            "Trainee / Executive / Operator",
+            "Group core conduct & safety, own company handbook, own department basics",
+            "Induction: complete within 30 days of joining",
+            31
+          ],
+          [
+            "L2",
+            "L2 - Practitioner",
+            "Senior Executive / Technician / Specialist",
+            "Adds own-function SOPs: how the job is done to standard",
+            "Complete before independent working / unsupervised sign-off",
+            51
+          ],
+          [
+            "L3",
+            "L3 - Senior / Coordinator",
+            "Senior Specialist / Team Coordinator / Lead",
+            "Adds compliance books, escalation ownership, audit-facing material",
+            "Complete before holding escalation or client-facing authority",
+            51
+          ],
+          [
+            "L4",
+            "L4 - Manager / HOD",
+            "Manager / Head of Department",
+            "Adds the management set: DoA, MIS review, appraisal, risk, targets, HOD role",
+            "Complete before confirmation in a people-management role",
+            53
+          ],
+          [
+            "L5",
+            "L5 - Leadership",
+            "Company Head / Function Head / Management",
+            "Adds leadership set: Leadership Operating and Strategic Planning & Review",
+            "Complete within 90 days of appointment to leadership",
+            53
+          ]
+        ]
+      },
+      "Upload_Checklist": {
+        "rowCount": 77,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "WOODIFY - SD ACADEMY WEBSITE UPLOAD CHECKLIST (53 books)"
+          ],
+          [
+            "Portal admin working sheet. Complete every tick column per book, then set Current Status in the Register to 'Uploaded to SD Academy' / 'Access Tagged'."
+          ],
+          [],
+          [
+            "A. PRE-UPLOAD STANDARDS - verify these before uploading any file"
+          ],
+          [
+            "1. File is the FINAL branded PDF - entity logo on cover, corner logo and watermark on every interior page."
+          ],
+          [
+            "2. File name matches the 'PDF File Name' column EXACTLY (case, underscores and _V1.0.pdf suffix included)."
+          ],
+          [
+            "3. Version block reads V1.0 | Effective 03-Jul-2026 | Next Review 01-Jul-2027 on the document control page."
+          ],
+          [
+            "4. Upload to the exact 'SD Academy Folder Path' shown - do not create new folders or rename existing ones."
+          ],
+          [
+            "5. Link the file to its 'Related SD Academy Course ID' before publishing."
+          ]
+        ]
+      },
+      "Access_Matrix": {
+        "rowCount": 10,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "ACCESS BAND REFERENCE"
+          ],
+          [
+            "What each access band is used for across SD Group."
+          ],
+          [],
+          [
+            "Access band",
+            "Used for"
+          ],
+          [
+            "L1-L5",
+            "Common employee, code of conduct, attendance & leave, HR basics, company/division handbook, department execution, basic safety, basic training, acknowledgement books"
+          ],
+          [
+            "L2-L5",
+            "SOP-heavy, tool usage, department workflow, execution process, software books"
+          ],
+          [
+            "L3-L5",
+            "Senior coordination, client escalation, advanced reporting, commercial process, data quality, compliance process"
+          ],
+          [
+            "L4-L5",
+            "Management review, approval matrix, team monitoring, internal audit, escalation control, corrective action"
+          ],
+          [
+            "L5",
+            "Founder/director strategy, confidential strategy, restructuring, sensitive legal strategy, high-level governance"
+          ]
+        ]
+      },
+      "Status_Flow": {
+        "rowCount": 20,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "STATUS FLOW - 15 STAGES"
+          ],
+          [
+            "Each book moves through these stages. Use the dropdown in Register."
+          ],
+          [],
+          [
+            "#",
+            "Stage",
+            "Gate owner",
+            "Exit criteria"
+          ],
+          [
+            1,
+            "Not Started",
+            "Register owner",
+            "Data sheet received"
+          ],
+          [
+            2,
+            "Draft Content Created",
+            "Book Owner",
+            "Full draft on approved template"
+          ],
+          [
+            3,
+            "HR Review Pending",
+            "Group HR",
+            "Queued for HR check"
+          ],
+          [
+            4,
+            "HR Approved",
+            "Group HR",
+            "Policy consistency verified"
+          ],
+          [
+            5,
+            "Legal Review Pending",
+            "Legal & Compliance",
+            "Queued where Legal = Yes"
+          ]
+        ]
+      },
+      "Change_Log": {
+        "rowCount": 6,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "CHANGE LOG"
+          ],
+          [
+            "Record every structural or status change to this register."
+          ],
+          [],
+          [
+            "Date",
+            "Version",
+            "Change Type",
+            "Description",
+            "By"
+          ],
+          [
+            "23-Jul-2026",
+            "v1.0",
+            "Register split from group master - Woodify",
+            "Woodify register separated from SDG_Handbook_Master_Register_v3.1 into a standalone workbook covering 53 books. All 53 handbooks produced as entity-branded, QC-audited PDFs; status 'PDF Final Checked'. Next stages: HR/Legal/Management sign-off, SD Academy upload, access tagging, acknowledgement campaign.",
+            "Group HR"
+          ]
+        ]
+      },
+      "Lists": {
+        "rowCount": 18,
+        "sampleRows": [
+          [
+            "Validation lists (do not delete)"
+          ],
+          [],
+          [
+            "Status",
+            "Access",
+            "Yes/No"
+          ],
+          [
+            "Not Started",
+            "L1-L5",
+            "Yes"
+          ],
+          [
+            "Draft Content Created",
+            "L2-L5",
+            "No"
+          ],
+          [
+            "HR Review Pending",
+            "L3-L5"
+          ],
+          [
+            "HR Approved",
+            "L4-L5"
+          ],
+          [
+            "Legal Review Pending",
+            "L5"
+          ],
+          [
+            "Legal Approved"
+          ],
+          [
+            "Management Review Pending"
+          ]
+        ]
+      }
+    }
+  },
+  "SDG_Register_04_Uthra_Media_v1.0.xlsx": {
+    "sheets": [
+      "Dashboard",
+      "Register",
+      "Level_Matrix",
+      "Level_Guide",
+      "Upload_Checklist",
+      "Access_Matrix",
+      "Status_Flow",
+      "Change_Log",
+      "Lists"
+    ],
+    "details": {
+      "Dashboard": {
+        "rowCount": 57,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "UTHRA MEDIA - GOVERNANCE DASHBOARD"
+          ],
+          [
+            "All figures are live formulas reading the Register tab."
+          ],
+          [],
+          [
+            "GOVERNANCE SUMMARY"
+          ],
+          [
+            "Metric",
+            "Value"
+          ],
+          [
+            "Total books"
+          ],
+          [
+            "Books requiring HR review"
+          ],
+          [
+            "Books requiring legal review (legal-sensitive)"
+          ],
+          [
+            "Books requiring management approval"
+          ]
+        ]
+      },
+      "Register": {
+        "rowCount": 47,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "UTHRA MEDIA - HANDBOOK REGISTER (42 books)"
+          ],
+          [
+            "Standalone company register. Source of truth for this entity. Update Current Status here; the Dashboard recalculates automatically."
+          ],
+          [],
+          [
+            "Book ID",
+            "Book Title",
+            "Brand / Division",
+            "Department",
+            "Book Category",
+            "Employee Level Access",
+            "Confidentiality Level",
+            "Book Owner",
+            "HR Review Required",
+            "Legal Review Required",
+            "Management Approval Required",
+            "Employee Acknowledgement Required",
+            "Quiz / Assessment Required",
+            "Passing Score",
+            "Related SD Academy Course ID",
+            "SD Academy Folder Path",
+            "PDF File Name",
+            "Version Number",
+            "Current Status",
+            "Priority",
+            "Production Wave",
+            "Review Frequency",
+            "Next Review Due Date",
+            "Remarks / Gap Notes"
+          ],
+          [
+            "ODY-BRD-01",
+            "Odyssey Square Division Handbook",
+            "Odyssey Square",
+            "Division-wide",
+            "Company / Division Handbook",
+            "L1-L5",
+            "Internal",
+            "HRBP - Uthra Media Pvt Ltd",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-ODY-BRD-01",
+            "SD Academy/05_Uthra_Media/02_Brand_Division_Handbooks",
+            "SDG_UthraMedia_OdysseySquare_Division_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 2",
+            "Annual + on law change",
+            46478,
+            "Was Odyssey Square Company Handbook; brand under Uthra Media"
+          ],
+          [
+            "UTM-BRD-01",
+            "Uthra Media Company Handbook",
+            "All Divisions",
+            "Company-wide",
+            "Company / Division Handbook",
+            "L1-L5",
+            "Internal",
+            "HRBP - Uthra Media Pvt Ltd",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-UTM-BRD-01",
+            "SD Academy/05_Uthra_Media/01_Company_Handbooks",
+            "SDG_UthraMedia_Company_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 2",
+            "Annual + on law change",
+            46478,
+            ""
+          ],
+          [
+            "ODY-DPT-01",
+            "Digital Strategy Handbook",
+            "Odyssey Square",
+            "Digital Strategy",
+            "Department Handbook",
+            "L1-L5",
+            "Internal",
+            "Dept Head - ODY/Digital Strategy",
+            "Yes",
+            "No",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-ODY-DPT-01",
+            "SD Academy/05_Uthra_Media/03_Department_Handbooks",
+            "SDG_UthraMedia_OdysseySquare_Digital_Strategy_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 3",
+            "Annual",
+            46478,
+            ""
+          ],
+          [
+            "ODY-DPT-02",
+            "Performance Marketing Handbook",
+            "Odyssey Square",
+            "Performance Marketing",
+            "Department Handbook",
+            "L1-L5",
+            "Internal",
+            "Dept Head - ODY/Performance Marketing",
+            "Yes",
+            "No",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-ODY-DPT-02",
+            "SD Academy/05_Uthra_Media/03_Department_Handbooks",
+            "SDG_UthraMedia_OdysseySquare_Performance_Marketing_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 3",
+            "Annual",
+            46478,
+            ""
+          ],
+          [
+            "ODY-DPT-03",
+            "SEO Handbook",
+            "Odyssey Square",
+            "SEO",
+            "Department Handbook",
+            "L1-L5",
+            "Internal",
+            "Dept Head - ODY/SEO",
+            "Yes",
+            "No",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-ODY-DPT-03",
+            "SD Academy/05_Uthra_Media/03_Department_Handbooks",
+            "SDG_UthraMedia_OdysseySquare_SEO_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 3",
+            "Annual",
+            46478,
+            ""
+          ]
+        ]
+      },
+      "Level_Matrix": {
+        "rowCount": 47,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "UTHRA MEDIA - LEVEL MATRIX (L1-L5)"
+          ],
+          [
+            "Cumulative: each level includes every level below it. Yes = the book sits in that level's path for people in scope."
+          ],
+          [],
+          [
+            "Book ID",
+            "Book Title",
+            "Brand / Division",
+            "Department",
+            "Book Category",
+            "Access Band",
+            "Min Level",
+            "L1",
+            "L2",
+            "L3",
+            "L4",
+            "L5"
+          ],
+          [
+            "ODY-BRD-01",
+            "Odyssey Square Division Handbook",
+            "Odyssey Square",
+            "Division-wide",
+            "Company / Division Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "ODY-DPT-01",
+            "Digital Strategy Handbook",
+            "Odyssey Square",
+            "Digital Strategy",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "ODY-DPT-02",
+            "Performance Marketing Handbook",
+            "Odyssey Square",
+            "Performance Marketing",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "ODY-DPT-03",
+            "SEO Handbook",
+            "Odyssey Square",
+            "SEO",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "ODY-DPT-04",
+            "Social Media Marketing Handbook",
+            "Odyssey Square",
+            "Social Media",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ]
+        ]
+      },
+      "Level_Guide": {
+        "rowCount": 10,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "5-LEVEL LEARNING STRUCTURE"
+          ],
+          [
+            "Levels define who reads what. Paths are cumulative."
+          ],
+          [],
+          [
+            "Level",
+            "Level Name",
+            "Typical Roles",
+            "What This Level Adds",
+            "Completion Gate",
+            "Uthra Media books at this level"
+          ],
+          [
+            "L1",
+            "L1 - Foundation",
+            "Trainee / Executive / Operator",
+            "Group core conduct & safety, own company handbook, own department basics",
+            "Induction: complete within 30 days of joining",
+            26
+          ],
+          [
+            "L2",
+            "L2 - Practitioner",
+            "Senior Executive / Technician / Specialist",
+            "Adds own-function SOPs: how the job is done to standard",
+            "Complete before independent working / unsupervised sign-off",
+            39
+          ],
+          [
+            "L3",
+            "L3 - Senior / Coordinator",
+            "Senior Specialist / Team Coordinator / Lead",
+            "Adds compliance books, escalation ownership, audit-facing material",
+            "Complete before holding escalation or client-facing authority",
+            40
+          ],
+          [
+            "L4",
+            "L4 - Manager / HOD",
+            "Manager / Head of Department",
+            "Adds the management set: DoA, MIS review, appraisal, risk, targets, HOD role",
+            "Complete before confirmation in a people-management role",
+            42
+          ],
+          [
+            "L5",
+            "L5 - Leadership",
+            "Company Head / Function Head / Management",
+            "Adds leadership set: Leadership Operating and Strategic Planning & Review",
+            "Complete within 90 days of appointment to leadership",
+            42
+          ]
+        ]
+      },
+      "Upload_Checklist": {
+        "rowCount": 66,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "UTHRA MEDIA - SD ACADEMY WEBSITE UPLOAD CHECKLIST (42 books)"
+          ],
+          [
+            "Portal admin working sheet. Complete every tick column per book, then set Current Status in the Register to 'Uploaded to SD Academy' / 'Access Tagged'."
+          ],
+          [],
+          [
+            "A. PRE-UPLOAD STANDARDS - verify these before uploading any file"
+          ],
+          [
+            "1. File is the FINAL branded PDF - entity logo on cover, corner logo and watermark on every interior page."
+          ],
+          [
+            "2. File name matches the 'PDF File Name' column EXACTLY (case, underscores and _V1.0.pdf suffix included)."
+          ],
+          [
+            "3. Version block reads V1.0 | Effective 03-Jul-2026 | Next Review 01-Jul-2027 on the document control page."
+          ],
+          [
+            "4. Upload to the exact 'SD Academy Folder Path' shown - do not create new folders or rename existing ones."
+          ],
+          [
+            "5. Link the file to its 'Related SD Academy Course ID' before publishing."
+          ]
+        ]
+      },
+      "Access_Matrix": {
+        "rowCount": 10,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "ACCESS BAND REFERENCE"
+          ],
+          [
+            "What each access band is used for across SD Group."
+          ],
+          [],
+          [
+            "Access band",
+            "Used for"
+          ],
+          [
+            "L1-L5",
+            "Common employee, code of conduct, attendance & leave, HR basics, company/division handbook, department execution, basic safety, basic training, acknowledgement books"
+          ],
+          [
+            "L2-L5",
+            "SOP-heavy, tool usage, department workflow, execution process, software books"
+          ],
+          [
+            "L3-L5",
+            "Senior coordination, client escalation, advanced reporting, commercial process, data quality, compliance process"
+          ],
+          [
+            "L4-L5",
+            "Management review, approval matrix, team monitoring, internal audit, escalation control, corrective action"
+          ],
+          [
+            "L5",
+            "Founder/director strategy, confidential strategy, restructuring, sensitive legal strategy, high-level governance"
+          ]
+        ]
+      },
+      "Status_Flow": {
+        "rowCount": 20,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "STATUS FLOW - 15 STAGES"
+          ],
+          [
+            "Each book moves through these stages. Use the dropdown in Register."
+          ],
+          [],
+          [
+            "#",
+            "Stage",
+            "Gate owner",
+            "Exit criteria"
+          ],
+          [
+            1,
+            "Not Started",
+            "Register owner",
+            "Data sheet received"
+          ],
+          [
+            2,
+            "Draft Content Created",
+            "Book Owner",
+            "Full draft on approved template"
+          ],
+          [
+            3,
+            "HR Review Pending",
+            "Group HR",
+            "Queued for HR check"
+          ],
+          [
+            4,
+            "HR Approved",
+            "Group HR",
+            "Policy consistency verified"
+          ],
+          [
+            5,
+            "Legal Review Pending",
+            "Legal & Compliance",
+            "Queued where Legal = Yes"
+          ]
+        ]
+      },
+      "Change_Log": {
+        "rowCount": 6,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "CHANGE LOG"
+          ],
+          [
+            "Record every structural or status change to this register."
+          ],
+          [],
+          [
+            "Date",
+            "Version",
+            "Change Type",
+            "Description",
+            "By"
+          ],
+          [
+            "23-Jul-2026",
+            "v1.0",
+            "Register split from group master - Uthra Media",
+            "Uthra Media register separated from SDG_Handbook_Master_Register_v3.1 into a standalone workbook covering 42 books. All 42 handbooks produced as entity-branded, QC-audited PDFs; status 'PDF Final Checked'. Next stages: HR/Legal/Management sign-off, SD Academy upload, access tagging, acknowledgement campaign.",
+            "Group HR"
+          ]
+        ]
+      },
+      "Lists": {
+        "rowCount": 18,
+        "sampleRows": [
+          [
+            "Validation lists (do not delete)"
+          ],
+          [],
+          [
+            "Status",
+            "Access",
+            "Yes/No"
+          ],
+          [
+            "Not Started",
+            "L1-L5",
+            "Yes"
+          ],
+          [
+            "Draft Content Created",
+            "L2-L5",
+            "No"
+          ],
+          [
+            "HR Review Pending",
+            "L3-L5"
+          ],
+          [
+            "HR Approved",
+            "L4-L5"
+          ],
+          [
+            "Legal Review Pending",
+            "L5"
+          ],
+          [
+            "Legal Approved"
+          ],
+          [
+            "Management Review Pending"
+          ]
+        ]
+      }
+    }
+  },
+  "SDG_Register_05_Asgard_v1.0.xlsx": {
+    "sheets": [
+      "Dashboard",
+      "Register",
+      "Level_Matrix",
+      "Level_Guide",
+      "Upload_Checklist",
+      "Access_Matrix",
+      "Status_Flow",
+      "Change_Log",
+      "Lists"
+    ],
+    "details": {
+      "Dashboard": {
+        "rowCount": 57,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "ASGARD - GOVERNANCE DASHBOARD"
+          ],
+          [
+            "All figures are live formulas reading the Register tab."
+          ],
+          [],
+          [
+            "GOVERNANCE SUMMARY"
+          ],
+          [
+            "Metric",
+            "Value"
+          ],
+          [
+            "Total books"
+          ],
+          [
+            "Books requiring HR review"
+          ],
+          [
+            "Books requiring legal review (legal-sensitive)"
+          ],
+          [
+            "Books requiring management approval"
+          ]
+        ]
+      },
+      "Register": {
+        "rowCount": 62,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "ASGARD - HANDBOOK REGISTER (57 books)"
+          ],
+          [
+            "Standalone company register. Source of truth for this entity. Update Current Status here; the Dashboard recalculates automatically."
+          ],
+          [],
+          [
+            "Book ID",
+            "Book Title",
+            "Brand / Division",
+            "Department",
+            "Book Category",
+            "Employee Level Access",
+            "Confidentiality Level",
+            "Book Owner",
+            "HR Review Required",
+            "Legal Review Required",
+            "Management Approval Required",
+            "Employee Acknowledgement Required",
+            "Quiz / Assessment Required",
+            "Passing Score",
+            "Related SD Academy Course ID",
+            "SD Academy Folder Path",
+            "PDF File Name",
+            "Version Number",
+            "Current Status",
+            "Priority",
+            "Production Wave",
+            "Review Frequency",
+            "Next Review Due Date",
+            "Remarks / Gap Notes"
+          ],
+          [
+            "ASH-BRD-01",
+            "Asgard Homes Division Handbook",
+            "Asgard Homes",
+            "Division-wide",
+            "Company / Division Handbook",
+            "L1-L5",
+            "Internal",
+            "HRBP - Asgard Infrastructure Pvt Ltd",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-ASH-BRD-01",
+            "SD Academy/04_Asgard/02_Brand_Division_Handbooks",
+            "SDG_Asgard_AsgardHomes_Division_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 2",
+            "Annual + on law change",
+            46478,
+            "Was Asgard Homes Company Handbook; division of Asgard Infrastructure Pvt Ltd"
+          ],
+          [
+            "ASI-BRD-01",
+            "Asgard Company Handbook",
+            "All Divisions",
+            "Company-wide",
+            "Company / Division Handbook",
+            "L1-L5",
+            "Internal",
+            "HRBP - Asgard Infrastructure Pvt Ltd",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-ASI-BRD-01",
+            "SD Academy/04_Asgard/01_Company_Handbooks",
+            "SDG_Asgard_Company_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 2",
+            "Annual + on law change",
+            46478,
+            ""
+          ],
+          [
+            "ASH-DPT-01",
+            "CRM Handbook",
+            "Asgard Homes",
+            "CRM",
+            "Department Handbook",
+            "L1-L5",
+            "Internal",
+            "Dept Head - ASH/CRM",
+            "Yes",
+            "No",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-ASH-DPT-01",
+            "SD Academy/04_Asgard/03_Department_Handbooks",
+            "SDG_Asgard_AsgardHomes_CRM_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 3",
+            "Annual",
+            46478,
+            ""
+          ],
+          [
+            "ASH-DPT-02",
+            "Sales & Pre-Sales Handbook",
+            "Asgard Homes",
+            "Sales",
+            "Department Handbook",
+            "L1-L5",
+            "Internal",
+            "Dept Head - ASH/Sales",
+            "Yes",
+            "No",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-ASH-DPT-02",
+            "SD Academy/04_Asgard/03_Department_Handbooks",
+            "SDG_Asgard_AsgardHomes_Sales_Pre_Sales_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 3",
+            "Annual",
+            46478,
+            ""
+          ],
+          [
+            "ASH-DPT-03",
+            "Marketing & Digital Handbook",
+            "Asgard Homes",
+            "Marketing",
+            "Department Handbook",
+            "L1-L5",
+            "Internal",
+            "Dept Head - ASH/Marketing",
+            "Yes",
+            "No",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-ASH-DPT-03",
+            "SD Academy/04_Asgard/03_Department_Handbooks",
+            "SDG_Asgard_AsgardHomes_Marketing_Digital_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 3",
+            "Annual",
+            46478,
+            ""
+          ]
+        ]
+      },
+      "Level_Matrix": {
+        "rowCount": 62,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "ASGARD - LEVEL MATRIX (L1-L5)"
+          ],
+          [
+            "Cumulative: each level includes every level below it. Yes = the book sits in that level's path for people in scope."
+          ],
+          [],
+          [
+            "Book ID",
+            "Book Title",
+            "Brand / Division",
+            "Department",
+            "Book Category",
+            "Access Band",
+            "Min Level",
+            "L1",
+            "L2",
+            "L3",
+            "L4",
+            "L5"
+          ],
+          [
+            "ASH-BRD-01",
+            "Asgard Homes Division Handbook",
+            "Asgard Homes",
+            "Division-wide",
+            "Company / Division Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "ASH-DPT-01",
+            "CRM Handbook",
+            "Asgard Homes",
+            "CRM",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "ASH-DPT-02",
+            "Sales & Pre-Sales Handbook",
+            "Asgard Homes",
+            "Sales",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "ASH-DPT-03",
+            "Marketing & Digital Handbook",
+            "Asgard Homes",
+            "Marketing",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "ASH-DPT-06",
+            "Planning & Design Handbook",
+            "Asgard Homes",
+            "Design",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ]
+        ]
+      },
+      "Level_Guide": {
+        "rowCount": 10,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "5-LEVEL LEARNING STRUCTURE"
+          ],
+          [
+            "Levels define who reads what. Paths are cumulative."
+          ],
+          [],
+          [
+            "Level",
+            "Level Name",
+            "Typical Roles",
+            "What This Level Adds",
+            "Completion Gate",
+            "Asgard books at this level"
+          ],
+          [
+            "L1",
+            "L1 - Foundation",
+            "Trainee / Executive / Operator",
+            "Group core conduct & safety, own company handbook, own department basics",
+            "Induction: complete within 30 days of joining",
+            23
+          ],
+          [
+            "L2",
+            "L2 - Practitioner",
+            "Senior Executive / Technician / Specialist",
+            "Adds own-function SOPs: how the job is done to standard",
+            "Complete before independent working / unsupervised sign-off",
+            45
+          ],
+          [
+            "L3",
+            "L3 - Senior / Coordinator",
+            "Senior Specialist / Team Coordinator / Lead",
+            "Adds compliance books, escalation ownership, audit-facing material",
+            "Complete before holding escalation or client-facing authority",
+            55
+          ],
+          [
+            "L4",
+            "L4 - Manager / HOD",
+            "Manager / Head of Department",
+            "Adds the management set: DoA, MIS review, appraisal, risk, targets, HOD role",
+            "Complete before confirmation in a people-management role",
+            57
+          ],
+          [
+            "L5",
+            "L5 - Leadership",
+            "Company Head / Function Head / Management",
+            "Adds leadership set: Leadership Operating and Strategic Planning & Review",
+            "Complete within 90 days of appointment to leadership",
+            57
+          ]
+        ]
+      },
+      "Upload_Checklist": {
+        "rowCount": 81,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "ASGARD - SD ACADEMY WEBSITE UPLOAD CHECKLIST (57 books)"
+          ],
+          [
+            "Portal admin working sheet. Complete every tick column per book, then set Current Status in the Register to 'Uploaded to SD Academy' / 'Access Tagged'."
+          ],
+          [],
+          [
+            "A. PRE-UPLOAD STANDARDS - verify these before uploading any file"
+          ],
+          [
+            "1. File is the FINAL branded PDF - entity logo on cover, corner logo and watermark on every interior page."
+          ],
+          [
+            "2. File name matches the 'PDF File Name' column EXACTLY (case, underscores and _V1.0.pdf suffix included)."
+          ],
+          [
+            "3. Version block reads V1.0 | Effective 03-Jul-2026 | Next Review 01-Jul-2027 on the document control page."
+          ],
+          [
+            "4. Upload to the exact 'SD Academy Folder Path' shown - do not create new folders or rename existing ones."
+          ],
+          [
+            "5. Link the file to its 'Related SD Academy Course ID' before publishing."
+          ]
+        ]
+      },
+      "Access_Matrix": {
+        "rowCount": 10,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "ACCESS BAND REFERENCE"
+          ],
+          [
+            "What each access band is used for across SD Group."
+          ],
+          [],
+          [
+            "Access band",
+            "Used for"
+          ],
+          [
+            "L1-L5",
+            "Common employee, code of conduct, attendance & leave, HR basics, company/division handbook, department execution, basic safety, basic training, acknowledgement books"
+          ],
+          [
+            "L2-L5",
+            "SOP-heavy, tool usage, department workflow, execution process, software books"
+          ],
+          [
+            "L3-L5",
+            "Senior coordination, client escalation, advanced reporting, commercial process, data quality, compliance process"
+          ],
+          [
+            "L4-L5",
+            "Management review, approval matrix, team monitoring, internal audit, escalation control, corrective action"
+          ],
+          [
+            "L5",
+            "Founder/director strategy, confidential strategy, restructuring, sensitive legal strategy, high-level governance"
+          ]
+        ]
+      },
+      "Status_Flow": {
+        "rowCount": 20,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "STATUS FLOW - 15 STAGES"
+          ],
+          [
+            "Each book moves through these stages. Use the dropdown in Register."
+          ],
+          [],
+          [
+            "#",
+            "Stage",
+            "Gate owner",
+            "Exit criteria"
+          ],
+          [
+            1,
+            "Not Started",
+            "Register owner",
+            "Data sheet received"
+          ],
+          [
+            2,
+            "Draft Content Created",
+            "Book Owner",
+            "Full draft on approved template"
+          ],
+          [
+            3,
+            "HR Review Pending",
+            "Group HR",
+            "Queued for HR check"
+          ],
+          [
+            4,
+            "HR Approved",
+            "Group HR",
+            "Policy consistency verified"
+          ],
+          [
+            5,
+            "Legal Review Pending",
+            "Legal & Compliance",
+            "Queued where Legal = Yes"
+          ]
+        ]
+      },
+      "Change_Log": {
+        "rowCount": 6,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "CHANGE LOG"
+          ],
+          [
+            "Record every structural or status change to this register."
+          ],
+          [],
+          [
+            "Date",
+            "Version",
+            "Change Type",
+            "Description",
+            "By"
+          ],
+          [
+            "23-Jul-2026",
+            "v1.0",
+            "Register split from group master - Asgard",
+            "Asgard register separated from SDG_Handbook_Master_Register_v3.1 into a standalone workbook covering 57 books. All 57 handbooks produced as entity-branded, QC-audited PDFs; status 'PDF Final Checked'. Next stages: HR/Legal/Management sign-off, SD Academy upload, access tagging, acknowledgement campaign.",
+            "Group HR"
+          ]
+        ]
+      },
+      "Lists": {
+        "rowCount": 18,
+        "sampleRows": [
+          [
+            "Validation lists (do not delete)"
+          ],
+          [],
+          [
+            "Status",
+            "Access",
+            "Yes/No"
+          ],
+          [
+            "Not Started",
+            "L1-L5",
+            "Yes"
+          ],
+          [
+            "Draft Content Created",
+            "L2-L5",
+            "No"
+          ],
+          [
+            "HR Review Pending",
+            "L3-L5"
+          ],
+          [
+            "HR Approved",
+            "L4-L5"
+          ],
+          [
+            "Legal Review Pending",
+            "L5"
+          ],
+          [
+            "Legal Approved"
+          ],
+          [
+            "Management Review Pending"
+          ]
+        ]
+      }
+    }
+  },
+  "SDG_Register_06_Oura_Networks_v1.0.xlsx": {
+    "sheets": [
+      "Dashboard",
+      "Register",
+      "Level_Matrix",
+      "Level_Guide",
+      "Upload_Checklist",
+      "Access_Matrix",
+      "Status_Flow",
+      "Change_Log",
+      "Lists"
+    ],
+    "details": {
+      "Dashboard": {
+        "rowCount": 57,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "OURA NETWORKS - GOVERNANCE DASHBOARD"
+          ],
+          [
+            "All figures are live formulas reading the Register tab."
+          ],
+          [],
+          [
+            "GOVERNANCE SUMMARY"
+          ],
+          [
+            "Metric",
+            "Value"
+          ],
+          [
+            "Total books"
+          ],
+          [
+            "Books requiring HR review"
+          ],
+          [
+            "Books requiring legal review (legal-sensitive)"
+          ],
+          [
+            "Books requiring management approval"
+          ]
+        ]
+      },
+      "Register": {
+        "rowCount": 76,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "OURA NETWORKS - HANDBOOK REGISTER (71 books)"
+          ],
+          [
+            "Standalone company register. Source of truth for this entity. Update Current Status here; the Dashboard recalculates automatically."
+          ],
+          [],
+          [
+            "Book ID",
+            "Book Title",
+            "Brand / Division",
+            "Department",
+            "Book Category",
+            "Employee Level Access",
+            "Confidentiality Level",
+            "Book Owner",
+            "HR Review Required",
+            "Legal Review Required",
+            "Management Approval Required",
+            "Employee Acknowledgement Required",
+            "Quiz / Assessment Required",
+            "Passing Score",
+            "Related SD Academy Course ID",
+            "SD Academy Folder Path",
+            "PDF File Name",
+            "Version Number",
+            "Current Status",
+            "Priority",
+            "Production Wave",
+            "Review Frequency",
+            "Next Review Due Date",
+            "Remarks / Gap Notes"
+          ],
+          [
+            "OFM-BRD-01",
+            "Oura FM Division Handbook",
+            "Oura FM",
+            "Division-wide",
+            "Company / Division Handbook",
+            "L1-L5",
+            "Internal",
+            "HRBP - Oura Networks",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-OFM-BRD-01",
+            "SD Academy/06_Oura_Networks/02_Brand_Division_Handbooks",
+            "SDG_OuraNetworks_OuraFM_Division_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 2",
+            "Annual + on law change",
+            46478,
+            ""
+          ],
+          [
+            "ONN-BRD-01",
+            "Oura News Division Handbook",
+            "Oura News",
+            "Division-wide",
+            "Company / Division Handbook",
+            "L1-L5",
+            "Internal",
+            "HRBP - Oura Networks",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-ONN-BRD-01",
+            "SD Academy/06_Oura_Networks/02_Brand_Division_Handbooks",
+            "SDG_OuraNetworks_OuraNews_Division_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 2",
+            "Annual + on law change",
+            46478,
+            "Prefix corrected ONS to ONN; division of Oura Networks"
+          ],
+          [
+            "ONW-BRD-01",
+            "Oura Networks Company Handbook",
+            "Oura Networks (Company)",
+            "Company-wide",
+            "Company / Division Handbook",
+            "L1-L5",
+            "Internal",
+            "HRBP - Oura Networks",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-ONW-BRD-01",
+            "SD Academy/06_Oura_Networks/01_Company_Handbooks",
+            "SDG_OuraNetworks_Company_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 2",
+            "Annual + on law change",
+            46478,
+            "Was Oura Media Company Handbook; Oura Networks is the parent company"
+          ],
+          [
+            "OSV-BRD-01",
+            "Oura Survey Division Handbook",
+            "Oura Survey",
+            "Division-wide",
+            "Company / Division Handbook",
+            "L1-L5",
+            "Internal",
+            "HRBP - Oura Networks",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-OSV-BRD-01",
+            "SD Academy/06_Oura_Networks/02_Brand_Division_Handbooks",
+            "SDG_OuraNetworks_OuraSurvey_Division_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 2",
+            "Annual + on law change",
+            46478,
+            "Was Oura Survey Company Handbook; division of Oura Networks"
+          ],
+          [
+            "OTT-BRD-01",
+            "Oura One OTT Division Handbook",
+            "Oura One - OTT",
+            "Division-wide",
+            "Company / Division Handbook",
+            "L1-L5",
+            "Internal",
+            "HRBP - Oura Networks",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-OTT-BRD-01",
+            "SD Academy/06_Oura_Networks/02_Brand_Division_Handbooks",
+            "SDG_OuraNetworks_OuraOne_Division_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 2",
+            "Annual + on law change",
+            46478,
+            ""
+          ]
+        ]
+      },
+      "Level_Matrix": {
+        "rowCount": 76,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "OURA NETWORKS - LEVEL MATRIX (L1-L5)"
+          ],
+          [
+            "Cumulative: each level includes every level below it. Yes = the book sits in that level's path for people in scope."
+          ],
+          [],
+          [
+            "Book ID",
+            "Book Title",
+            "Brand / Division",
+            "Department",
+            "Book Category",
+            "Access Band",
+            "Min Level",
+            "L1",
+            "L2",
+            "L3",
+            "L4",
+            "L5"
+          ],
+          [
+            "OFM-BRD-01",
+            "Oura FM Division Handbook",
+            "Oura FM",
+            "Division-wide",
+            "Company / Division Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "OFM-DPT-01",
+            "FM Programming & RJ Operations Handbook",
+            "Oura FM",
+            "FM Programming",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "OFM-DPT-02",
+            "Audio Production & Engineering Handbook",
+            "Oura FM",
+            "Audio Production",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "OFM-DPT-03",
+            "On-Air Talent, Voice & Presentation Handbook",
+            "Oura FM",
+            "On-Air",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "ONN-BRD-01",
+            "Oura News Division Handbook",
+            "Oura News",
+            "Division-wide",
+            "Company / Division Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ]
+        ]
+      },
+      "Level_Guide": {
+        "rowCount": 10,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "5-LEVEL LEARNING STRUCTURE"
+          ],
+          [
+            "Levels define who reads what. Paths are cumulative."
+          ],
+          [],
+          [
+            "Level",
+            "Level Name",
+            "Typical Roles",
+            "What This Level Adds",
+            "Completion Gate",
+            "Oura Networks books at this level"
+          ],
+          [
+            "L1",
+            "L1 - Foundation",
+            "Trainee / Executive / Operator",
+            "Group core conduct & safety, own company handbook, own department basics",
+            "Induction: complete within 30 days of joining",
+            29
+          ],
+          [
+            "L2",
+            "L2 - Practitioner",
+            "Senior Executive / Technician / Specialist",
+            "Adds own-function SOPs: how the job is done to standard",
+            "Complete before independent working / unsupervised sign-off",
+            55
+          ],
+          [
+            "L3",
+            "L3 - Senior / Coordinator",
+            "Senior Specialist / Team Coordinator / Lead",
+            "Adds compliance books, escalation ownership, audit-facing material",
+            "Complete before holding escalation or client-facing authority",
+            69
+          ],
+          [
+            "L4",
+            "L4 - Manager / HOD",
+            "Manager / Head of Department",
+            "Adds the management set: DoA, MIS review, appraisal, risk, targets, HOD role",
+            "Complete before confirmation in a people-management role",
+            71
+          ],
+          [
+            "L5",
+            "L5 - Leadership",
+            "Company Head / Function Head / Management",
+            "Adds leadership set: Leadership Operating and Strategic Planning & Review",
+            "Complete within 90 days of appointment to leadership",
+            71
+          ]
+        ]
+      },
+      "Upload_Checklist": {
+        "rowCount": 95,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "OURA NETWORKS - SD ACADEMY WEBSITE UPLOAD CHECKLIST (71 books)"
+          ],
+          [
+            "Portal admin working sheet. Complete every tick column per book, then set Current Status in the Register to 'Uploaded to SD Academy' / 'Access Tagged'."
+          ],
+          [],
+          [
+            "A. PRE-UPLOAD STANDARDS - verify these before uploading any file"
+          ],
+          [
+            "1. File is the FINAL branded PDF - entity logo on cover, corner logo and watermark on every interior page."
+          ],
+          [
+            "2. File name matches the 'PDF File Name' column EXACTLY (case, underscores and _V1.0.pdf suffix included)."
+          ],
+          [
+            "3. Version block reads V1.0 | Effective 03-Jul-2026 | Next Review 01-Jul-2027 on the document control page."
+          ],
+          [
+            "4. Upload to the exact 'SD Academy Folder Path' shown - do not create new folders or rename existing ones."
+          ],
+          [
+            "5. Link the file to its 'Related SD Academy Course ID' before publishing."
+          ]
+        ]
+      },
+      "Access_Matrix": {
+        "rowCount": 10,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "ACCESS BAND REFERENCE"
+          ],
+          [
+            "What each access band is used for across SD Group."
+          ],
+          [],
+          [
+            "Access band",
+            "Used for"
+          ],
+          [
+            "L1-L5",
+            "Common employee, code of conduct, attendance & leave, HR basics, company/division handbook, department execution, basic safety, basic training, acknowledgement books"
+          ],
+          [
+            "L2-L5",
+            "SOP-heavy, tool usage, department workflow, execution process, software books"
+          ],
+          [
+            "L3-L5",
+            "Senior coordination, client escalation, advanced reporting, commercial process, data quality, compliance process"
+          ],
+          [
+            "L4-L5",
+            "Management review, approval matrix, team monitoring, internal audit, escalation control, corrective action"
+          ],
+          [
+            "L5",
+            "Founder/director strategy, confidential strategy, restructuring, sensitive legal strategy, high-level governance"
+          ]
+        ]
+      },
+      "Status_Flow": {
+        "rowCount": 20,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "STATUS FLOW - 15 STAGES"
+          ],
+          [
+            "Each book moves through these stages. Use the dropdown in Register."
+          ],
+          [],
+          [
+            "#",
+            "Stage",
+            "Gate owner",
+            "Exit criteria"
+          ],
+          [
+            1,
+            "Not Started",
+            "Register owner",
+            "Data sheet received"
+          ],
+          [
+            2,
+            "Draft Content Created",
+            "Book Owner",
+            "Full draft on approved template"
+          ],
+          [
+            3,
+            "HR Review Pending",
+            "Group HR",
+            "Queued for HR check"
+          ],
+          [
+            4,
+            "HR Approved",
+            "Group HR",
+            "Policy consistency verified"
+          ],
+          [
+            5,
+            "Legal Review Pending",
+            "Legal & Compliance",
+            "Queued where Legal = Yes"
+          ]
+        ]
+      },
+      "Change_Log": {
+        "rowCount": 6,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "CHANGE LOG"
+          ],
+          [
+            "Record every structural or status change to this register."
+          ],
+          [],
+          [
+            "Date",
+            "Version",
+            "Change Type",
+            "Description",
+            "By"
+          ],
+          [
+            "23-Jul-2026",
+            "v1.0",
+            "Register split from group master - Oura Networks",
+            "Oura Networks register separated from SDG_Handbook_Master_Register_v3.1 into a standalone workbook covering 71 books. All 71 handbooks produced as entity-branded, QC-audited PDFs; status 'PDF Final Checked'. Next stages: HR/Legal/Management sign-off, SD Academy upload, access tagging, acknowledgement campaign.",
+            "Group HR"
+          ]
+        ]
+      },
+      "Lists": {
+        "rowCount": 18,
+        "sampleRows": [
+          [
+            "Validation lists (do not delete)"
+          ],
+          [],
+          [
+            "Status",
+            "Access",
+            "Yes/No"
+          ],
+          [
+            "Not Started",
+            "L1-L5",
+            "Yes"
+          ],
+          [
+            "Draft Content Created",
+            "L2-L5",
+            "No"
+          ],
+          [
+            "HR Review Pending",
+            "L3-L5"
+          ],
+          [
+            "HR Approved",
+            "L4-L5"
+          ],
+          [
+            "Legal Review Pending",
+            "L5"
+          ],
+          [
+            "Legal Approved"
+          ],
+          [
+            "Management Review Pending"
+          ]
+        ]
+      }
+    }
+  },
+  "SDG_Register_07_Aram_Pazhaguvom_v1.0.xlsx": {
+    "sheets": [
+      "Dashboard",
+      "Register",
+      "Level_Matrix",
+      "Level_Guide",
+      "Upload_Checklist",
+      "Access_Matrix",
+      "Status_Flow",
+      "Change_Log",
+      "Lists"
+    ],
+    "details": {
+      "Dashboard": {
+        "rowCount": 57,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "ARAM PAZHAGUVOM FOUNDATION - GOVERNANCE DASHBOARD"
+          ],
+          [
+            "All figures are live formulas reading the Register tab."
+          ],
+          [],
+          [
+            "GOVERNANCE SUMMARY"
+          ],
+          [
+            "Metric",
+            "Value"
+          ],
+          [
+            "Total books"
+          ],
+          [
+            "Books requiring HR review"
+          ],
+          [
+            "Books requiring legal review (legal-sensitive)"
+          ],
+          [
+            "Books requiring management approval"
+          ]
+        ]
+      },
+      "Register": {
+        "rowCount": 25,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "ARAM PAZHAGUVOM FOUNDATION - HANDBOOK REGISTER (20 books)"
+          ],
+          [
+            "Standalone company register. Source of truth for this entity. Update Current Status here; the Dashboard recalculates automatically."
+          ],
+          [],
+          [
+            "Book ID",
+            "Book Title",
+            "Brand / Division",
+            "Department",
+            "Book Category",
+            "Employee Level Access",
+            "Confidentiality Level",
+            "Book Owner",
+            "HR Review Required",
+            "Legal Review Required",
+            "Management Approval Required",
+            "Employee Acknowledgement Required",
+            "Quiz / Assessment Required",
+            "Passing Score",
+            "Related SD Academy Course ID",
+            "SD Academy Folder Path",
+            "PDF File Name",
+            "Version Number",
+            "Current Status",
+            "Priority",
+            "Production Wave",
+            "Review Frequency",
+            "Next Review Due Date",
+            "Remarks / Gap Notes"
+          ],
+          [
+            "APF-BRD-01",
+            "Aram Pazhaguvom Foundation Handbook",
+            "All Divisions",
+            "Foundation-wide",
+            "Company / Division Handbook",
+            "L1-L5",
+            "Internal",
+            "HRBP - Aram Pazhaguvom Foundation",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-APF-BRD-01",
+            "SD Academy/07_Aram_Pazhaguvom/01_Company_Handbooks",
+            "SDG_AramPazhaguvom_Foundation_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 2",
+            "Annual + on law change",
+            46478,
+            ""
+          ],
+          [
+            "APF-DPT-05",
+            "Fundraising & Donor / Sponsor Coordination Handbook",
+            "Donor / Sponsor Coordination",
+            "Fundraising",
+            "Department Handbook",
+            "L2-L5",
+            "Internal",
+            "Dept Head - APF/Fundraising",
+            "Yes",
+            "No",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-APF-DPT-05",
+            "SD Academy/07_Aram_Pazhaguvom/03_Department_Handbooks",
+            "SDG_AramPazhaguvom_Fundraising_Donor_Sponsor_Coordination_Handbook_L2-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 3",
+            "Annual",
+            46478,
+            ""
+          ],
+          [
+            "APF-DPT-06",
+            "Partnerships Handbook",
+            "Donor / Sponsor Coordination",
+            "Partnerships",
+            "Department Handbook",
+            "L2-L5",
+            "Internal",
+            "Dept Head - APF/Partnerships",
+            "Yes",
+            "No",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-APF-DPT-06",
+            "SD Academy/07_Aram_Pazhaguvom/03_Department_Handbooks",
+            "SDG_AramPazhaguvom_Partnerships_Handbook_L2-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 3",
+            "Annual",
+            46478,
+            ""
+          ],
+          [
+            "APF-DPT-01",
+            "CSR Program Management Handbook",
+            "CSR Programs",
+            "CSR",
+            "Department Handbook",
+            "L1-L5",
+            "Internal",
+            "Dept Head - APF/CSR",
+            "Yes",
+            "No",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-APF-DPT-01",
+            "SD Academy/07_Aram_Pazhaguvom/03_Department_Handbooks",
+            "SDG_AramPazhaguvom_CSR_Program_Management_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "Medium",
+            "Wave 4",
+            "Annual",
+            46478,
+            "Was CSR Programs Handbook"
+          ],
+          [
+            "APF-DPT-02",
+            "Plantation Operations Handbook",
+            "Social Projects",
+            "Plantation",
+            "Department Handbook",
+            "L1-L5",
+            "Internal",
+            "Dept Head - APF/Plantation",
+            "Yes",
+            "No",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-APF-DPT-02",
+            "SD Academy/07_Aram_Pazhaguvom/03_Department_Handbooks",
+            "SDG_AramPazhaguvom_Plantation_Operations_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "Medium",
+            "Wave 4",
+            "Annual",
+            46478,
+            ""
+          ]
+        ]
+      },
+      "Level_Matrix": {
+        "rowCount": 25,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "ARAM PAZHAGUVOM FOUNDATION - LEVEL MATRIX (L1-L5)"
+          ],
+          [
+            "Cumulative: each level includes every level below it. Yes = the book sits in that level's path for people in scope."
+          ],
+          [],
+          [
+            "Book ID",
+            "Book Title",
+            "Brand / Division",
+            "Department",
+            "Book Category",
+            "Access Band",
+            "Min Level",
+            "L1",
+            "L2",
+            "L3",
+            "L4",
+            "L5"
+          ],
+          [
+            "APF-BRD-01",
+            "Aram Pazhaguvom Foundation Handbook",
+            "All Divisions",
+            "Foundation-wide",
+            "Company / Division Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "APF-DPT-01",
+            "CSR Program Management Handbook",
+            "CSR Programs",
+            "CSR",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "APF-DPT-02",
+            "Plantation Operations Handbook",
+            "Social Projects",
+            "Plantation",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "APF-DPT-03",
+            "Community Development & Outreach Handbook",
+            "Community Outreach",
+            "Community",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "APF-DPT-04",
+            "Volunteer Management Handbook",
+            "Volunteer Management",
+            "Volunteers",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ]
+        ]
+      },
+      "Level_Guide": {
+        "rowCount": 10,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "5-LEVEL LEARNING STRUCTURE"
+          ],
+          [
+            "Levels define who reads what. Paths are cumulative."
+          ],
+          [],
+          [
+            "Level",
+            "Level Name",
+            "Typical Roles",
+            "What This Level Adds",
+            "Completion Gate",
+            "Aram Pazhaguvom Foundation books at this level"
+          ],
+          [
+            "L1",
+            "L1 - Foundation",
+            "Trainee / Executive / Operator",
+            "Group core conduct & safety, own company handbook, own department basics",
+            "Induction: complete within 30 days of joining",
+            7
+          ],
+          [
+            "L2",
+            "L2 - Practitioner",
+            "Senior Executive / Technician / Specialist",
+            "Adds own-function SOPs: how the job is done to standard",
+            "Complete before independent working / unsupervised sign-off",
+            16
+          ],
+          [
+            "L3",
+            "L3 - Senior / Coordinator",
+            "Senior Specialist / Team Coordinator / Lead",
+            "Adds compliance books, escalation ownership, audit-facing material",
+            "Complete before holding escalation or client-facing authority",
+            18
+          ],
+          [
+            "L4",
+            "L4 - Manager / HOD",
+            "Manager / Head of Department",
+            "Adds the management set: DoA, MIS review, appraisal, risk, targets, HOD role",
+            "Complete before confirmation in a people-management role",
+            20
+          ],
+          [
+            "L5",
+            "L5 - Leadership",
+            "Company Head / Function Head / Management",
+            "Adds leadership set: Leadership Operating and Strategic Planning & Review",
+            "Complete within 90 days of appointment to leadership",
+            20
+          ]
+        ]
+      },
+      "Upload_Checklist": {
+        "rowCount": 44,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "ARAM PAZHAGUVOM FOUNDATION - SD ACADEMY WEBSITE UPLOAD CHECKLIST (20 books)"
+          ],
+          [
+            "Portal admin working sheet. Complete every tick column per book, then set Current Status in the Register to 'Uploaded to SD Academy' / 'Access Tagged'."
+          ],
+          [],
+          [
+            "A. PRE-UPLOAD STANDARDS - verify these before uploading any file"
+          ],
+          [
+            "1. File is the FINAL branded PDF - entity logo on cover, corner logo and watermark on every interior page."
+          ],
+          [
+            "2. File name matches the 'PDF File Name' column EXACTLY (case, underscores and _V1.0.pdf suffix included)."
+          ],
+          [
+            "3. Version block reads V1.0 | Effective 03-Jul-2026 | Next Review 01-Jul-2027 on the document control page."
+          ],
+          [
+            "4. Upload to the exact 'SD Academy Folder Path' shown - do not create new folders or rename existing ones."
+          ],
+          [
+            "5. Link the file to its 'Related SD Academy Course ID' before publishing."
+          ]
+        ]
+      },
+      "Access_Matrix": {
+        "rowCount": 10,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "ACCESS BAND REFERENCE"
+          ],
+          [
+            "What each access band is used for across SD Group."
+          ],
+          [],
+          [
+            "Access band",
+            "Used for"
+          ],
+          [
+            "L1-L5",
+            "Common employee, code of conduct, attendance & leave, HR basics, company/division handbook, department execution, basic safety, basic training, acknowledgement books"
+          ],
+          [
+            "L2-L5",
+            "SOP-heavy, tool usage, department workflow, execution process, software books"
+          ],
+          [
+            "L3-L5",
+            "Senior coordination, client escalation, advanced reporting, commercial process, data quality, compliance process"
+          ],
+          [
+            "L4-L5",
+            "Management review, approval matrix, team monitoring, internal audit, escalation control, corrective action"
+          ],
+          [
+            "L5",
+            "Founder/director strategy, confidential strategy, restructuring, sensitive legal strategy, high-level governance"
+          ]
+        ]
+      },
+      "Status_Flow": {
+        "rowCount": 20,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "STATUS FLOW - 15 STAGES"
+          ],
+          [
+            "Each book moves through these stages. Use the dropdown in Register."
+          ],
+          [],
+          [
+            "#",
+            "Stage",
+            "Gate owner",
+            "Exit criteria"
+          ],
+          [
+            1,
+            "Not Started",
+            "Register owner",
+            "Data sheet received"
+          ],
+          [
+            2,
+            "Draft Content Created",
+            "Book Owner",
+            "Full draft on approved template"
+          ],
+          [
+            3,
+            "HR Review Pending",
+            "Group HR",
+            "Queued for HR check"
+          ],
+          [
+            4,
+            "HR Approved",
+            "Group HR",
+            "Policy consistency verified"
+          ],
+          [
+            5,
+            "Legal Review Pending",
+            "Legal & Compliance",
+            "Queued where Legal = Yes"
+          ]
+        ]
+      },
+      "Change_Log": {
+        "rowCount": 6,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "CHANGE LOG"
+          ],
+          [
+            "Record every structural or status change to this register."
+          ],
+          [],
+          [
+            "Date",
+            "Version",
+            "Change Type",
+            "Description",
+            "By"
+          ],
+          [
+            "23-Jul-2026",
+            "v1.0",
+            "Register split from group master - Aram Pazhaguvom Foundation",
+            "Aram Pazhaguvom Foundation register separated from SDG_Handbook_Master_Register_v3.1 into a standalone workbook covering 20 books. All 20 handbooks produced as entity-branded, QC-audited PDFs; status 'PDF Final Checked'. Next stages: HR/Legal/Management sign-off, SD Academy upload, access tagging, acknowledgement campaign.",
+            "Group HR"
+          ]
+        ]
+      },
+      "Lists": {
+        "rowCount": 18,
+        "sampleRows": [
+          [
+            "Validation lists (do not delete)"
+          ],
+          [],
+          [
+            "Status",
+            "Access",
+            "Yes/No"
+          ],
+          [
+            "Not Started",
+            "L1-L5",
+            "Yes"
+          ],
+          [
+            "Draft Content Created",
+            "L2-L5",
+            "No"
+          ],
+          [
+            "HR Review Pending",
+            "L3-L5"
+          ],
+          [
+            "HR Approved",
+            "L4-L5"
+          ],
+          [
+            "Legal Review Pending",
+            "L5"
+          ],
+          [
+            "Legal Approved"
+          ],
+          [
+            "Management Review Pending"
+          ]
+        ]
+      }
+    }
+  },
+  "SDG_Register_08_SD_Academy_v1.0.xlsx": {
+    "sheets": [
+      "Dashboard",
+      "Register",
+      "Level_Matrix",
+      "Level_Guide",
+      "Upload_Checklist",
+      "Access_Matrix",
+      "Status_Flow",
+      "Change_Log",
+      "Lists"
+    ],
+    "details": {
+      "Dashboard": {
+        "rowCount": 56,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "SD ACADEMY - GOVERNANCE DASHBOARD"
+          ],
+          [
+            "All figures are live formulas reading the Register tab."
+          ],
+          [],
+          [
+            "GOVERNANCE SUMMARY"
+          ],
+          [
+            "Metric",
+            "Value"
+          ],
+          [
+            "Total books"
+          ],
+          [
+            "Books requiring HR review"
+          ],
+          [
+            "Books requiring legal review (legal-sensitive)"
+          ],
+          [
+            "Books requiring management approval"
+          ]
+        ]
+      },
+      "Register": {
+        "rowCount": 22,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "SD ACADEMY - HANDBOOK REGISTER (17 books)"
+          ],
+          [
+            "Standalone company register. Source of truth for this entity. Update Current Status here; the Dashboard recalculates automatically."
+          ],
+          [],
+          [
+            "Book ID",
+            "Book Title",
+            "Brand / Division",
+            "Department",
+            "Book Category",
+            "Employee Level Access",
+            "Confidentiality Level",
+            "Book Owner",
+            "HR Review Required",
+            "Legal Review Required",
+            "Management Approval Required",
+            "Employee Acknowledgement Required",
+            "Quiz / Assessment Required",
+            "Passing Score",
+            "Related SD Academy Course ID",
+            "SD Academy Folder Path",
+            "PDF File Name",
+            "Version Number",
+            "Current Status",
+            "Priority",
+            "Production Wave",
+            "Review Frequency",
+            "Next Review Due Date",
+            "Remarks / Gap Notes"
+          ],
+          [
+            "SDA-CMP-03",
+            "SD Academy Portal Administration & Content Governance Handbook",
+            "SD Academy",
+            "Portal Governance",
+            "Compliance Handbook",
+            "L4-L5",
+            "Restricted",
+            "Dept Head - SDA/Portal Governance",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-SDA-CMP-03",
+            "SD Academy/08_SD_Academy/05_Compliance_Handbooks",
+            "SDG_SDAcademy_Portal_Administration_Content_Governance_Handbook_L4-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "Critical",
+            "Wave 1",
+            "Annual + on law change",
+            46478,
+            "Moved from Common tab; governs uploads, tagging, versioning, approvals for this register"
+          ],
+          [
+            "SDA-BRD-01",
+            "SD Academy Handbook",
+            "SD Academy",
+            "Academy-wide",
+            "Company / Division Handbook",
+            "L1-L5",
+            "Internal",
+            "HRBP - SD Academy",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-SDA-BRD-01",
+            "SD Academy/08_SD_Academy/01_Company_Handbooks",
+            "SDG_SDAcademy_Company_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "High",
+            "Wave 2",
+            "Annual + on law change",
+            46478,
+            ""
+          ],
+          [
+            "SDA-DPT-01",
+            "Learning & Development Handbook",
+            "SD Academy",
+            "L&D",
+            "Department Handbook",
+            "L1-L5",
+            "Internal",
+            "Dept Head - SDA/L&D",
+            "Yes",
+            "No",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-SDA-DPT-01",
+            "SD Academy/08_SD_Academy/03_Department_Handbooks",
+            "SDG_SDAcademy_Learning_Development_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "Medium",
+            "Wave 4",
+            "Annual",
+            46478,
+            ""
+          ],
+          [
+            "SDA-DPT-02",
+            "Curriculum Development Handbook",
+            "SD Academy",
+            "Curriculum",
+            "Department Handbook",
+            "L1-L5",
+            "Internal",
+            "Dept Head - SDA/Curriculum",
+            "Yes",
+            "No",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-SDA-DPT-02",
+            "SD Academy/08_SD_Academy/03_Department_Handbooks",
+            "SDG_SDAcademy_Curriculum_Development_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "Medium",
+            "Wave 4",
+            "Annual",
+            46478,
+            ""
+          ],
+          [
+            "SDA-DPT-03",
+            "Faculty Handbook",
+            "SD Academy",
+            "Faculty",
+            "Department Handbook",
+            "L1-L5",
+            "Internal",
+            "Dept Head - SDA/Faculty",
+            "Yes",
+            "No",
+            "Yes",
+            "Yes",
+            "No",
+            "-",
+            "SDA-CRS-SDA-DPT-03",
+            "SD Academy/08_SD_Academy/03_Department_Handbooks",
+            "SDG_SDAcademy_Faculty_Handbook_L1-L5_V1.0.pdf",
+            1,
+            "PDF Final Checked",
+            "Medium",
+            "Wave 4",
+            "Annual",
+            46478,
+            ""
+          ]
+        ]
+      },
+      "Level_Matrix": {
+        "rowCount": 22,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "SD ACADEMY - LEVEL MATRIX (L1-L5)"
+          ],
+          [
+            "Cumulative: each level includes every level below it. Yes = the book sits in that level's path for people in scope."
+          ],
+          [],
+          [
+            "Book ID",
+            "Book Title",
+            "Brand / Division",
+            "Department",
+            "Book Category",
+            "Access Band",
+            "Min Level",
+            "L1",
+            "L2",
+            "L3",
+            "L4",
+            "L5"
+          ],
+          [
+            "SDA-BRD-01",
+            "SD Academy Handbook",
+            "SD Academy",
+            "Academy-wide",
+            "Company / Division Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "SDA-DPT-01",
+            "Learning & Development Handbook",
+            "SD Academy",
+            "L&D",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "SDA-DPT-02",
+            "Curriculum Development Handbook",
+            "SD Academy",
+            "Curriculum",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "SDA-DPT-03",
+            "Faculty Handbook",
+            "SD Academy",
+            "Faculty",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "SDA-DPT-05",
+            "Student Relations Handbook",
+            "SD Academy",
+            "Student Relations",
+            "Department Handbook",
+            "L1-L5",
+            "L1",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ]
+        ]
+      },
+      "Level_Guide": {
+        "rowCount": 10,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "5-LEVEL LEARNING STRUCTURE"
+          ],
+          [
+            "Levels define who reads what. Paths are cumulative."
+          ],
+          [],
+          [
+            "Level",
+            "Level Name",
+            "Typical Roles",
+            "What This Level Adds",
+            "Completion Gate",
+            "SD Academy books at this level"
+          ],
+          [
+            "L1",
+            "L1 - Foundation",
+            "Trainee / Executive / Operator",
+            "Group core conduct & safety, own company handbook, own department basics",
+            "Induction: complete within 30 days of joining",
+            7
+          ],
+          [
+            "L2",
+            "L2 - Practitioner",
+            "Senior Executive / Technician / Specialist",
+            "Adds own-function SOPs: how the job is done to standard",
+            "Complete before independent working / unsupervised sign-off",
+            10
+          ],
+          [
+            "L3",
+            "L3 - Senior / Coordinator",
+            "Senior Specialist / Team Coordinator / Lead",
+            "Adds compliance books, escalation ownership, audit-facing material",
+            "Complete before holding escalation or client-facing authority",
+            14
+          ],
+          [
+            "L4",
+            "L4 - Manager / HOD",
+            "Manager / Head of Department",
+            "Adds the management set: DoA, MIS review, appraisal, risk, targets, HOD role",
+            "Complete before confirmation in a people-management role",
+            17
+          ],
+          [
+            "L5",
+            "L5 - Leadership",
+            "Company Head / Function Head / Management",
+            "Adds leadership set: Leadership Operating and Strategic Planning & Review",
+            "Complete within 90 days of appointment to leadership",
+            17
+          ]
+        ]
+      },
+      "Upload_Checklist": {
+        "rowCount": 41,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "SD ACADEMY - SD ACADEMY WEBSITE UPLOAD CHECKLIST (17 books)"
+          ],
+          [
+            "Portal admin working sheet. Complete every tick column per book, then set Current Status in the Register to 'Uploaded to SD Academy' / 'Access Tagged'."
+          ],
+          [],
+          [
+            "A. PRE-UPLOAD STANDARDS - verify these before uploading any file"
+          ],
+          [
+            "1. File is the FINAL branded PDF - entity logo on cover, corner logo and watermark on every interior page."
+          ],
+          [
+            "2. File name matches the 'PDF File Name' column EXACTLY (case, underscores and _V1.0.pdf suffix included)."
+          ],
+          [
+            "3. Version block reads V1.0 | Effective 03-Jul-2026 | Next Review 01-Jul-2027 on the document control page."
+          ],
+          [
+            "4. Upload to the exact 'SD Academy Folder Path' shown - do not create new folders or rename existing ones."
+          ],
+          [
+            "5. Link the file to its 'Related SD Academy Course ID' before publishing."
+          ]
+        ]
+      },
+      "Access_Matrix": {
+        "rowCount": 10,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "ACCESS BAND REFERENCE"
+          ],
+          [
+            "What each access band is used for across SD Group."
+          ],
+          [],
+          [
+            "Access band",
+            "Used for"
+          ],
+          [
+            "L1-L5",
+            "Common employee, code of conduct, attendance & leave, HR basics, company/division handbook, department execution, basic safety, basic training, acknowledgement books"
+          ],
+          [
+            "L2-L5",
+            "SOP-heavy, tool usage, department workflow, execution process, software books"
+          ],
+          [
+            "L3-L5",
+            "Senior coordination, client escalation, advanced reporting, commercial process, data quality, compliance process"
+          ],
+          [
+            "L4-L5",
+            "Management review, approval matrix, team monitoring, internal audit, escalation control, corrective action"
+          ],
+          [
+            "L5",
+            "Founder/director strategy, confidential strategy, restructuring, sensitive legal strategy, high-level governance"
+          ]
+        ]
+      },
+      "Status_Flow": {
+        "rowCount": 20,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "STATUS FLOW - 15 STAGES"
+          ],
+          [
+            "Each book moves through these stages. Use the dropdown in Register."
+          ],
+          [],
+          [
+            "#",
+            "Stage",
+            "Gate owner",
+            "Exit criteria"
+          ],
+          [
+            1,
+            "Not Started",
+            "Register owner",
+            "Data sheet received"
+          ],
+          [
+            2,
+            "Draft Content Created",
+            "Book Owner",
+            "Full draft on approved template"
+          ],
+          [
+            3,
+            "HR Review Pending",
+            "Group HR",
+            "Queued for HR check"
+          ],
+          [
+            4,
+            "HR Approved",
+            "Group HR",
+            "Policy consistency verified"
+          ],
+          [
+            5,
+            "Legal Review Pending",
+            "Legal & Compliance",
+            "Queued where Legal = Yes"
+          ]
+        ]
+      },
+      "Change_Log": {
+        "rowCount": 6,
+        "sampleRows": [
+          [
+            "SD GROUP - EMPLOYEE HANDBOOK REGISTER"
+          ],
+          [
+            "CHANGE LOG"
+          ],
+          [
+            "Record every structural or status change to this register."
+          ],
+          [],
+          [
+            "Date",
+            "Version",
+            "Change Type",
+            "Description",
+            "By"
+          ],
+          [
+            "23-Jul-2026",
+            "v1.0",
+            "Register split from group master - SD Academy",
+            "SD Academy register separated from SDG_Handbook_Master_Register_v3.1 into a standalone workbook covering 17 books. All 17 handbooks produced as entity-branded, QC-audited PDFs; status 'PDF Final Checked'. Next stages: HR/Legal/Management sign-off, SD Academy upload, access tagging, acknowledgement campaign.",
+            "Group HR"
+          ]
+        ]
+      },
+      "Lists": {
+        "rowCount": 18,
+        "sampleRows": [
+          [
+            "Validation lists (do not delete)"
+          ],
+          [],
+          [
+            "Status",
+            "Access",
+            "Yes/No"
+          ],
+          [
+            "Not Started",
+            "L1-L5",
+            "Yes"
+          ],
+          [
+            "Draft Content Created",
+            "L2-L5",
+            "No"
+          ],
+          [
+            "HR Review Pending",
+            "L3-L5"
+          ],
+          [
+            "HR Approved",
+            "L4-L5"
+          ],
+          [
+            "Legal Review Pending",
+            "L5"
+          ],
+          [
+            "Legal Approved"
+          ],
+          [
+            "Management Review Pending"
+          ]
+        ]
+      }
+    }
+  }
+}

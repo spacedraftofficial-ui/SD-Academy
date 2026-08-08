@@ -124,7 +124,7 @@
     async getUsers() {
       const sb = getSupabase();
       if (sb) {
-        const { data, error } = await sb.from('users').select('id, name, email, role, department, role_label, level, initials, created_at, updated_at').order('id', { ascending: true });
+        const { data, error } = await sb.from('users').select('id, employee_id, name, email, company, division, department, job_title, role, role_label, level, level_code, level_name, status, manager, joining_date, initials, created_at, updated_at').order('id', { ascending: true });
         if (error) throw new Error(error.message);
         return data;
       }
@@ -135,14 +135,27 @@
       const sb = getSupabase();
       if (sb) {
         const initials = (userData.name || '').split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase() || 'SD';
+        const levelCode = userData.level_code || userData.level || 'L1';
+        const levelMap = { 'L1': 'Foundation', 'L2': 'Practitioner', 'L3': 'Senior / Coordinator', 'L4': 'Manager / HOD', 'L5': 'Leadership' };
+        const levelName = userData.level_name || levelMap[levelCode] || 'Foundation';
+
         const { data, error } = await sb.from('users').insert([{
           name: userData.name,
           email: userData.email,
           password_hash: '$2a$10$wSimiMDuL0xALlKzcdN06Ohy9BKBffOZd3tkgxIkaWw75nTGsPwOm',
+          company: userData.company || 'Common SD Group',
+          division: userData.division || 'Group Common',
+          department: userData.department || 'General',
+          job_title: userData.job_title || userData.role_label || 'Specialist',
+          role_label: userData.job_title || userData.role_label || 'Specialist',
           role: userData.role || 'learner',
-          department: userData.department || 'Architecture',
-          role_label: userData.role_label || 'Architect',
-          level: userData.level || 'L1',
+          level: levelCode,
+          level_code: levelCode,
+          level_name: levelName,
+          status: userData.status || 'Active',
+          manager: userData.manager || '',
+          joining_date: userData.joining_date || new Date().toISOString().split('T')[0],
+          employee_id: userData.employee_id || `EMP-${Math.floor(1000 + Math.random() * 9000)}`,
           initials,
         }]).select().single();
         if (error) throw new Error(error.message);
@@ -157,7 +170,18 @@
     async updateUser(id, userData) {
       const sb = getSupabase();
       if (sb) {
-        const { data, error } = await sb.from('users').update(userData).eq('id', id).select().single();
+        const updatePayload = { ...userData };
+        if (userData.level_code || userData.level) {
+          const levelCode = userData.level_code || userData.level;
+          const levelMap = { 'L1': 'Foundation', 'L2': 'Practitioner', 'L3': 'Senior / Coordinator', 'L4': 'Manager / HOD', 'L5': 'Leadership' };
+          updatePayload.level = levelCode;
+          updatePayload.level_code = levelCode;
+          updatePayload.level_name = userData.level_name || levelMap[levelCode] || 'Foundation';
+        }
+        if (userData.job_title) {
+          updatePayload.role_label = userData.job_title;
+        }
+        const { data, error } = await sb.from('users').update(updatePayload).eq('id', id).select().single();
         if (error) throw new Error(error.message);
         return data;
       }

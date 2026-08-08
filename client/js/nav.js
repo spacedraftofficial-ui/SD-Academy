@@ -9,7 +9,7 @@
     return window.location.pathname.includes('/admin/') ? '../' : '';
   }
 
-  // Auto-inject Supabase SDK & Configuration dynamically
+  // Auto-inject Supabase SDK & Master Governance Configuration
   if (!window.supabase) {
     const s = document.createElement('script');
     s.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
@@ -19,6 +19,16 @@
     const cfg = document.createElement('script');
     cfg.src = getBase() + 'js/supabase-config.js';
     document.head.appendChild(cfg);
+  }
+  if (!window.SD_ORG_DATA) {
+    const org = document.createElement('script');
+    org.src = getBase() + 'js/org-master-data.js';
+    document.head.appendChild(org);
+  }
+  if (!window.AccessEngine) {
+    const eng = document.createElement('script');
+    eng.src = getBase() + 'js/access-engine.js';
+    document.head.appendChild(eng);
   }
 
   /* ── Session helpers ─────────────────────────────────────── */
