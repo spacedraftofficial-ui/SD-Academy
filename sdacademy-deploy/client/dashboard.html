@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — SD Academy</title>
+  <meta name="description" content="Your personalized SD Academy learning dashboard with progress tracking, due tasks, announcements and team completion." />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+<div class="app-shell" id="app-shell">
+  <div class="main-content">
+    <div class="page-content" id="dashboard-content" style="display:none">
+
+      <!-- ── ROW 1: Welcome + Progress ────────────────────── -->
+      <div class="db-row stagger">
+        <!-- Welcome Card -->
+        <div class="card welcome-card animate-fade-up">
+          <div class="wc-inner">
+            <div class="wc-avatar" id="wc-avatar">JA</div>
+            <div class="wc-info">
+              <div class="wc-welcome">Welcome back,</div>
+              <h2 class="wc-name" id="wc-name">John Abraham</h2>
+              <div class="wc-role" id="wc-role">Architect</div>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="wc-meta">
+            <div class="wc-badge dept">🏢 <span id="wc-dept">Design & Planning Department</span></div>
+            <div class="wc-badge role-badge">👤 <span id="wc-role-label">Architect</span></div>
+          </div>
+        </div>
+
+        <!-- Progress Overview -->
+        <div class="card progress-card animate-fade-up">
+          <div class="card-header">
+            <div class="card-title">Progress Overview</div>
+            <a href="learning-path.html" class="view-all-link">View All</a>
+          </div>
+          <div class="po-inner">
+            <div class="po-circle">
+              <div class="circular-progress" id="cp-main">
+                <svg width="90" height="90">
+                  <circle class="cp-track" cx="45" cy="45" r="38" stroke-width="8"/>
+                  <circle class="cp-fill" cx="45" cy="45" r="38" stroke-width="8"
+                    stroke-dasharray="238.76"
+                    stroke-dashoffset="107.44"
+                    id="cp-fill-circle"/>
+                </svg>
+                <span class="cp-label" style="font-size:16px">55%</span>
+              </div>
+              <div class="po-prog-label">55% Progress</div>
+            </div>
+            <div class="po-rankings">
+              <div class="po-rank-title">Rankings</div>
+              <div class="rank-badges">
+                <div class="rank-badge gold" title="Gold Learner">🥇</div>
+                <div class="rank-badge silver" title="Module Star">⭐</div>
+                <div class="rank-badge bronze" title="Fast Starter">🚀</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── DUE TODAY ─────────────────────────────────────── -->
+      <div class="card mt-16 animate-fade-up">
+        <div class="card-header">
+          <div class="card-title">Due Today</div>
+          <a href="assessments.html" class="view-all-link">View All</a>
+        </div>
+        <div class="due-grid">
+          <div class="due-item"><span class="di-icon">🖥</span><div class="di-info"><div class="di-name">Conceptual Design Presentation</div></div><div class="di-status"><span class="dot warning"></span><span class="di-tag warning">Due soon</span><span class="di-time">2 hours</span></div></div>
+          <div class="due-item"><span class="di-icon">📐</span><div class="di-info"><div class="di-name">Structural Layout</div></div><div class="di-status"><span class="dot warning"></span><span class="di-tag warning">Due soon</span><span class="di-time">4 hours</span></div></div>
+          <div class="due-item"><span class="di-icon">🖥</span><div class="di-info"><div class="di-name">Throughput Design QR</div></div><div class="di-status"><span class="dot danger"></span><span class="di-tag danger">Over Due</span><span class="di-time">1 day</span></div></div>
+          <div class="due-item"><span class="di-icon">👥</span><div class="di-info"><div class="di-name">Client Design Brief Meeting</div></div><div class="di-status"><span class="dot danger"></span><span class="di-tag due">Due</span><span class="di-time">1 hour</span></div></div>
+        </div>
+      </div>
+
+      <!-- ── ROW 3: Continue Watching + Announcements ───────── -->
+      <div class="db-row mt-16 stagger">
+        <!-- Continue Watching -->
+        <div class="card animate-fade-up">
+          <div class="card-header">
+            <div class="card-title">Continue watching</div>
+            <a href="video-player.html" class="view-all-link">View All</a>
+          </div>
+          <div class="cw-item" onclick="window.location.href='video-player.html'" style="cursor:pointer">
+            <div class="cw-thumb">
+              <div class="cw-play">▶</div>
+            </div>
+            <div class="cw-info">
+              <div class="cw-title">Modern Architecture principles</div>
+              <div class="cw-meta-row">
+                <span class="badge badge-gray">Module</span>
+                <span class="dot info"></span>
+                <span class="badge badge-info">Video</span>
+                <span class="dot warning"></span>
+                <span class="badge badge-warning">Assessment</span>
+              </div>
+              <p class="cw-desc">Learn about sustainable and eco‑friendly material for…</p>
+              <div class="progress-bar-wrap mt-8"><div class="progress-bar-fill" style="width:55%"></div></div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+          <div class="card-header" style="margin-bottom:12px">
+            <div class="card-title" style="font-size:14px">Recommended Next</div>
+          </div>
+          <div class="rec-item">
+            <div class="rec-thumb"></div>
+            <div class="rec-info">
+              <div class="rec-title">Eco-friendly Building Materials</div>
+              <div class="cw-meta-row">
+                <span class="badge badge-gray">Module</span>
+                <span class="dot info"></span>
+                <span class="badge badge-info">Video</span>
+                <span class="dot warning"></span>
+                <span class="badge badge-warning">Assessment</span>
+              </div>
+              <p class="cw-desc">Learn about sustainable and eco‑friendly material for Modern Architecture</p>
+            </div>
+            <a href="learning-path.html" class="btn btn-primary btn-sm">Start Module</a>
+          </div>
+        </div>
+
+        <!-- Announcements -->
+        <div class="card animate-fade-up">
+          <div class="card-header">
+            <div class="card-title">Announcements</div>
+            <a href="announcements.html" class="view-all-link">View All</a>
+          </div>
+          <div class="ann-list">
+            <div class="ann-item">
+              <div class="ann-time">2 hours ago</div>
+              <div class="ann-inner">
+                <span class="ann-icon">📢</span>
+                <div>
+                  <div class="ann-title">HR reminder</div>
+                  <div class="ann-sub">New company holiday policy</div>
+                  <div class="ann-body">A new holiday policy has been introduced, please review the updated holiday schedule.</div>
+                </div>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="ann-item">
+              <div class="ann-time">1 day ago</div>
+              <div class="ann-inner">
+                <span class="ann-icon">🌐</span>
+                <div>
+                  <div class="ann-title">New webinars available</div>
+                  <div class="ann-sub">Upcoming learning webinars have been added. Check out the new topics and schedule.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="announcements.html" class="btn btn-primary btn-sm mt-12" style="width:100%">View All</a>
+        </div>
+      </div>
+
+      <!-- ── TEAM COMPLETION ────────────────────────────────── -->
+      <div class="card mt-16 animate-fade-up">
+        <div class="card-header">
+          <div class="card-title">Team Completion</div>
+          <a href="#" class="view-all-link">View All</a>
+        </div>
+        <div class="tc-meta">Architecture Team &nbsp;·&nbsp; Total members: 7</div>
+        <div class="tc-bar-wrap mt-12">
+          <div class="tc-bar-seg" style="width:52%;background:var(--blue-500)"></div>
+          <div class="tc-bar-seg" style="width:18%;background:var(--info)"></div>
+          <div class="tc-bar-seg" style="width:18%;background:var(--warning)"></div>
+          <div class="tc-bar-seg" style="width:12%;background:var(--danger)"></div>
+        </div>
+        <div class="tc-legend">
+          <div class="tc-big">75%</div>
+          <div class="tc-legend-items">
+            <div class="tl-item"><span class="dot" style="background:var(--blue-500)"></span> Progressing</div>
+            <div class="tl-item"><span class="dot" style="background:var(--info)"></span> Started</div>
+            <div class="tl-item"><span class="dot" style="background:var(--warning)"></span> Due</div>
+            <div class="tl-item"><span class="dot" style="background:var(--danger)"></span> Over Due</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── ROW 5: Overdue + Review Submissions ─────────────── -->
+      <div class="db-row mt-16 stagger">
+        <!-- Over Due -->
+        <div class="card animate-fade-up">
+          <div class="card-header">
+            <div class="card-title">Over Due</div>
+            <a href="assessments.html" class="view-all-link">View All</a>
+          </div>
+          <div class="od-list">
+            <div class="od-item">
+              <div class="od-avatar">DK</div>
+              <div class="od-info">
+                <div class="od-name">David. k</div>
+                <div class="progress-bar-wrap" style="width:140px"><div class="progress-bar-fill danger" style="width:80%"></div></div>
+              </div>
+              <span class="badge badge-danger">Over Due</span>
+            </div>
+            <div class="od-item">
+              <div class="od-avatar">JB</div>
+              <div class="od-info">
+                <div class="od-name">Jessica. b</div>
+                <div class="progress-bar-wrap" style="width:140px"><div class="progress-bar-fill warning" style="width:55%"></div></div>
+              </div>
+              <span class="badge badge-warning">Due</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review Submissions -->
+        <div class="card animate-fade-up">
+          <div class="card-header">
+            <div class="card-title">Review Submissions</div>
+            <a href="assessments.html" class="view-all-link">View All</a>
+          </div>
+          <div class="rs-list">
+            <div class="rs-item"><span class="rs-icon">📝</span><div class="rs-info"><div class="rs-name">Sarah</div><div class="rs-sub">Sketching essentials quiz</div></div><div class="rs-time">1 day ago</div></div>
+            <div class="rs-item"><span class="rs-icon">📝</span><div class="rs-info"><div class="rs-name">Sarah</div><div class="rs-sub">Sketching essentials quiz</div></div><div class="rs-time">1 day ago</div></div>
+            <div class="rs-item"><span class="rs-icon">📝</span><div class="rs-info"><div class="rs-name">Sarah</div><div class="rs-sub">Sketching essentials quiz</div></div><div class="rs-time">1 day ago</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /page-content -->
+  </div><!-- /main-content -->
+</div><!-- /app-shell -->
+
+<script src="js/nav.js"></script>
+<script>
+  const user = SDA.init({ role: 'learner', showHome: true });
+  if (user) {
+    document.getElementById('wc-name').textContent    = user.name;
+    document.getElementById('wc-avatar').textContent  = user.initials;
+    document.getElementById('wc-role').textContent    = user.roleLabel;
+    document.getElementById('wc-dept').textContent    = user.department;
+    document.getElementById('wc-role-label').textContent = user.roleLabel;
+    document.getElementById('dashboard-content').style.display = '';
+  }
+</script>
+</body>
+</html>

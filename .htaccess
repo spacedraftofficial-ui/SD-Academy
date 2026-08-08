@@ -1,0 +1,46 @@
+DirectoryIndex client/index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # ── Enforce HTTPS ──
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # ── Route /api/ requests to High-Performance PHP API Bridge ──
+  RewriteRule ^api/(.*)$ client/api/index.php [L,QSA]
+  RewriteRule ^api$ client/api/index.php [L,QSA]
+
+  # ── Serve static assets from client/ folder ──
+  RewriteRule ^css/(.*)$          client/css/$1          [L]
+  RewriteRule ^js/(.*)$           client/js/$1           [L]
+  RewriteRule ^assets/(.*)$       client/assets/$1       [L]
+  RewriteRule ^admin/css/(.*)$    client/admin/css/$1    [L]
+  RewriteRule ^admin/js/(.*)$     client/admin/js/$1     [L]
+
+  # ── Serve HTML pages from client/ folder ──
+  RewriteRule ^$                         client/index.html              [L]
+  RewriteRule ^index(\.html)?$           client/index.html              [L]
+  RewriteRule ^login(\.html)?$           client/login.html              [L]
+  RewriteRule ^dashboard(\.html)?$       client/dashboard.html          [L]
+  RewriteRule ^learning-path(\.html)?$   client/learning-path.html      [L]
+  RewriteRule ^assessments(\.html)?$     client/assessments.html        [L]
+  RewriteRule ^certificates(\.html)?$    client/certificates.html       [L]
+  RewriteRule ^materials(\.html)?$       client/materials.html          [L]
+  RewriteRule ^support(\.html)?$         client/support.html            [L]
+  RewriteRule ^announcements(\.html)?$   client/announcements.html      [L]
+  RewriteRule ^video-player(\.html)?$    client/video-player.html       [L]
+  RewriteRule ^privacy-policy(\.html)?$  client/privacy-policy.html     [L]
+  RewriteRule ^terms-of-use(\.html)?$    client/terms-of-use.html       [L]
+  RewriteRule ^employee-data-policy(\.html)?$ client/employee-data-policy.html [L]
+  RewriteRule ^help(\.html)?$            client/help.html               [L]
+  RewriteRule ^404(\.html)?$             client/404.html                [L]
+  RewriteRule ^robots\.txt$              client/robots.txt              [L]
+  RewriteRule ^sitemap\.xml$             client/sitemap.xml             [L]
+
+  # ── Admin HTML pages ──
+  RewriteRule ^admin/(.*)$               client/admin/$1                [L]
+</IfModule>
+
+# ── Custom 404 Error Document ──
+ErrorDocument 404 /client/404.html

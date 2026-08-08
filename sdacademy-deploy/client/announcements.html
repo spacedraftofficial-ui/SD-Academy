@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Announcements — SD Academy</title>
+  <meta name="description" content="Stay up to date with HR, department, and project announcements in SD Academy."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/announcements.css"/>
+</head>
+<body>
+<div class="app-shell" id="app-shell">
+  <div class="main-content">
+    <div class="page-content" id="ann-content" style="display:none">
+
+      <div class="card animate-fade-up">
+        <!-- Header -->
+        <div class="ann-feed-header">
+          <div class="card-title mb-8">Announcements Feed</div>
+          <div class="ann-feature-pills">
+            <div class="ann-pill">📢 HR / L&D broadcast</div>
+            <div class="ann-pill">🏢 Dept- Specific announcements</div>
+            <div class="ann-pill">📌 Pin Important posts</div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Filter Tabs -->
+        <div class="ann-filter-row">
+          <div class="ann-filter-label">Announcements</div>
+          <div class="ann-filter-tabs" id="ann-tabs">
+            <button class="ann-tab active" onclick="filterAnn('all',this)">All</button>
+            <button class="ann-tab" onclick="filterAnn('hr',this)">HR/ L&D</button>
+            <button class="ann-tab" onclick="filterAnn('projects',this)">Projects</button>
+            <button class="ann-tab" onclick="filterAnn('it',this)">IT</button>
+            <button class="ann-tab dropdown">Department ▾</button>
+          </div>
+        </div>
+
+        <!-- Announcements List -->
+        <div class="ann-feed-list" id="ann-feed-list">
+          <!-- rendered by JS -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="js/nav.js"></script>
+<script>
+  const ANNOUNCEMENTS = [
+    {
+      id: 1,
+      title: 'Company Team Building Event Next Friday',
+      author: 'Laura HR',
+      category: 'hr',
+      tag: 'HR Announcement',
+      tagCls: 'badge-navy',
+      body: 'We are excited to announce a team-building event next Friday from 2 PM to 5 PM. Activities will include collaborative challenges and networking sessions. All team members are encouraged to participate.',
+      likes: 45, comments: 12,
+    },
+    {
+      id: 2,
+      title: 'New Remote Work Policy Update',
+      author: 'Laura HR',
+      category: 'hr',
+      tag: 'Policy',
+      tagCls: 'badge-warning',
+      body: 'Please note that our remote work policy has been updated effective from the 1st of next month. All employees are required to review the new guidelines regarding hybrid attendance and communication protocols.',
+      likes: 45, comments: 12,
+    },
+    {
+      id: 3,
+      title: 'Q3 Project Milestone Review',
+      author: 'David K',
+      category: 'projects',
+      tag: 'Projects',
+      tagCls: 'badge-info',
+      body: 'The Q3 milestone review meeting is scheduled for next Wednesday. Please ensure all deliverables are submitted by Tuesday EOD. Review the project tracker for your assigned modules.',
+      likes: 22, comments: 7,
+    },
+    {
+      id: 4,
+      title: 'VPN Access Update — IT Notice',
+      author: 'Rachel IT',
+      category: 'it',
+      tag: 'IT',
+      tagCls: 'badge-purple',
+      body: 'The IT team has rolled out an updated VPN client. Please update your VPN application by end of week to ensure uninterrupted access to company resources.',
+      likes: 18, comments: 4,
+    },
+  ];
+
+  let annFilter = 'all';
+  const liked = new Set();
+
+  function renderAnnouncements(filter) {
+    const list = document.getElementById('ann-feed-list');
+    const items = filter === 'all' ? ANNOUNCEMENTS : ANNOUNCEMENTS.filter(a => a.category === filter);
+    list.innerHTML = items.map(a => `
+      <div class="ann-post">
+        <div class="ap-header">
+          <h3 class="ap-title">${a.title}</h3>
+          <span class="badge ${a.tagCls}">${a.tag}</span>
+        </div>
+        <div class="ap-author">
+          <div class="ap-avatar">${a.author.split(' ').map(w=>w[0]).join('')}</div>
+          <span class="ap-name">${a.author}</span>
+        </div>
+        <div class="ap-body">${a.body}</div>
+        <div class="ap-footer">
+          <button class="ap-react ${liked.has(a.id)?'liked':''}" onclick="toggleLike(${a.id},this)">
+            ${liked.has(a.id)?'❤️':'🤍'} <span id="likes-${a.id}">${a.likes + (liked.has(a.id)?1:0)}</span>
+          </button>
+          <button class="ap-react" onclick="">💬 <span>${a.comments}</span></button>
+        </div>
+      </div>`).join('');
+  }
+
+  function filterAnn(f, btn) {
+    annFilter = f;
+    document.querySelectorAll('.ann-tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderAnnouncements(f);
+  }
+
+  function toggleLike(id, btn) {
+    const ann = ANNOUNCEMENTS.find(a => a.id === id);
+    if (!ann) return;
+    if (liked.has(id)) {
+      liked.delete(id);
+    } else {
+      liked.add(id);
+    }
+    renderAnnouncements(annFilter);
+  }
+
+  const user = SDA.init({ role: 'learner' });
+  if (user) {
+    document.getElementById('ann-content').style.display = '';
+    renderAnnouncements('all');
+  }
+</script>
+</body>
+</html>
