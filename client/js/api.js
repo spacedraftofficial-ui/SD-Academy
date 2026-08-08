@@ -139,7 +139,7 @@
         const levelMap = { 'L1': 'Foundation', 'L2': 'Practitioner', 'L3': 'Senior / Coordinator', 'L4': 'Manager / HOD', 'L5': 'Leadership' };
         const levelName = userData.level_name || levelMap[levelCode] || 'Foundation';
 
-        const { data, error } = await sb.from('users').insert([{
+        const fullInsert = {
           name: userData.name,
           email: userData.email,
           password_hash: '$2a$10$wSimiMDuL0xALlKzcdN06Ohy9BKBffOZd3tkgxIkaWw75nTGsPwOm',
@@ -157,9 +157,31 @@
           joining_date: userData.joining_date || new Date().toISOString().split('T')[0],
           employee_id: userData.employee_id || `EMP-${Math.floor(1000 + Math.random() * 9000)}`,
           initials,
-        }]).select().single();
-        if (error) throw new Error(error.message);
-        return data;
+        };
+
+        try {
+          const { data, error } = await sb.from('users').insert([fullInsert]).select().single();
+          if (error) throw error;
+          return data;
+        } catch (err) {
+          // If Supabase table doesn't have the new columns yet, fall back to standard core columns
+          if (err.message && err.message.includes('schema cache')) {
+            const fallbackInsert = {
+              name: userData.name,
+              email: userData.email,
+              password_hash: '$2a$10$wSimiMDuL0xALlKzcdN06Ohy9BKBffOZd3tkgxIkaWw75nTGsPwOm',
+              role: userData.role || 'learner',
+              department: userData.department || 'Architecture',
+              role_label: userData.job_title || userData.role_label || 'Architect',
+              level: levelCode,
+              initials,
+            };
+            const { data, error: fbError } = await sb.from('users').insert([fallbackInsert]).select().single();
+            if (fbError) throw new Error(fbError.message);
+            return { ...data, ...userData };
+          }
+          throw new Error(err.message);
+        }
       }
       return await apiFetch('/users', {
         method: 'POST',
@@ -181,9 +203,27 @@
         if (userData.job_title) {
           updatePayload.role_label = userData.job_title;
         }
-        const { data, error } = await sb.from('users').update(updatePayload).eq('id', id).select().single();
-        if (error) throw new Error(error.message);
-        return data;
+
+        try {
+          const { data, error } = await sb.from('users').update(updatePayload).eq('id', id).select().single();
+          if (error) throw error;
+          return data;
+        } catch (err) {
+          if (err.message && err.message.includes('schema cache')) {
+            const fallbackUpdate = {
+              name: userData.name,
+              email: userData.email,
+              role: userData.role,
+              department: userData.department,
+              role_label: userData.job_title || userData.role_label,
+              level: userData.level_code || userData.level,
+            };
+            const { data, error: fbError } = await sb.from('users').update(fallbackUpdate).eq('id', id).select().single();
+            if (fbError) throw new Error(fbError.message);
+            return { ...data, ...userData };
+          }
+          throw new Error(err.message);
+        }
       }
       return await apiFetch(`/users/${id}`, {
         method: 'PUT',
