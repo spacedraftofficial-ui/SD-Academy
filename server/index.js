@@ -81,6 +81,7 @@ app.get('/api/health', (req, res) => {
 // Clean URL Frontend Route Mappings (Supports URLs with or without .html extension)
 const frontendPage = page => (req, res) => res.sendFile(path.join(__dirname, `../client/${page}`));
 
+app.get(['/', '/index', '/index.html'], frontendPage('index.html'));
 app.get(['/login', '/login.html'], frontendPage('login.html'));
 app.get(['/dashboard', '/dashboard.html'], frontendPage('dashboard.html'));
 app.get(['/learning-path', '/learning-path.html'], frontendPage('learning-path.html'));
