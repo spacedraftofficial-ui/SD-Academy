@@ -5,6 +5,22 @@
 (function () {
   'use strict';
 
+  function getBase() {
+    return window.location.pathname.includes('/admin/') ? '../' : '';
+  }
+
+  // Auto-inject Supabase SDK & Configuration dynamically
+  if (!window.supabase) {
+    const s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+    document.head.appendChild(s);
+  }
+  if (!window.SUPABASE_CONFIG) {
+    const cfg = document.createElement('script');
+    cfg.src = getBase() + 'js/supabase-config.js';
+    document.head.appendChild(cfg);
+  }
+
   /* ── Session helpers ─────────────────────────────────────── */
   function getCurrentUser() {
     const saved = sessionStorage.getItem('sda_user');
@@ -22,10 +38,6 @@
       const base = getBase();
       window.location.href = base + 'login.html';
     }, 600);
-  }
-
-  function getBase() {
-    return window.location.pathname.includes('/admin/') ? '../' : '';
   }
 
   /* ── Toast Framework ─────────────────────────────────────── */

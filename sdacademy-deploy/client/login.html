@@ -110,6 +110,11 @@
     </div>
   </div>
 
+  <!-- Supabase Cloud SDK & Configuration -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/api.js"></script>
+
   <script>
     function togglePassword() {
       const pw = document.getElementById('password');
@@ -135,42 +140,9 @@
       btn.disabled = true;
 
       try {
-        const res = await fetch('/api/auth/login', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, password, remember }),
-        });
+        const data = await window.SDA_API.login(email, password);
 
-        let data = {};
-        try {
-          data = await res.json();
-        } catch (_) {
-          data = { message: 'Server is initializing. Please retry in a few seconds.' };
-        }
-
-        if (!res.ok) {
-          if (res.status === 503 || (data.message && data.message.includes('starting up'))) {
-            errEl.textContent = 'Backend service is starting up. Retrying connection in 3 seconds…';
-            errEl.style.display = 'block';
-            setTimeout(async () => {
-              try {
-                const healthRes = await fetch('/api/health');
-                if (healthRes.ok) {
-                  errEl.textContent = 'Backend service is ready! Please click Sign In again.';
-                  errEl.style.color = '#10b981';
-                }
-              } catch (_) {}
-            }, 3000);
-          } else {
-            errEl.textContent = data.message || data.error || 'Invalid email or password. Please try again.';
-            errEl.style.display = 'block';
-          }
-          btn.textContent = 'Sign In';
-          btn.disabled = false;
-          return;
-        }
-
-        // Store authenticated session from server
+        // Store authenticated session
         sessionStorage.setItem('sda_user', JSON.stringify(data.user));
         if (remember && data.token) {
           localStorage.setItem('sda_token', data.token);
@@ -183,7 +155,7 @@
         }, 500);
 
       } catch (err) {
-        errEl.textContent = 'Backend service is starting up. Please click Sign In again in a few seconds.';
+        errEl.textContent = err.message || 'Invalid email or password. Please try again.';
         errEl.style.display = 'block';
         btn.textContent = 'Sign In';
         btn.disabled = false;
